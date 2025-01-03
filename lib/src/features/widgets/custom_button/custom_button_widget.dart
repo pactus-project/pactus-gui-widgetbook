@@ -15,27 +15,34 @@ class CustomButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: color,
-        fixedSize: Size(size, size),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+    return Center(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: color,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+            onPressed: () {
+              // Action on button press
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Button Pressed!')),
+              );
+            },
+            child: iconState == ButtonIconState.withIcon
+                ? Icon(
+              Icons.check,
+              size: size / 2,
+              color: Colors.white,
+            )
+                : null,
+          ),
+        ],
       ),
-      onPressed: () {
-        // Action on button press
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Button Pressed!')),
-        );
-      },
-      child: iconState == ButtonIconState.withIcon
-          ? Icon(
-        Icons.check,
-        size: size / 2,
-        color: Colors.white,
-      )
-          : null,
     );
   }
 }
