@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/pallets/on_surface_pallet.dart';
 import 'package:pactus_gui_widgetbook/src/core/pallets/surface_pallet.dart';
 import 'package:pactus_gui_widgetbook/src/core/text_styles/inter_text_styles.dart';
@@ -14,28 +14,26 @@ class AppThemeData {
     OnSurfacePallet.dark,
   ];
 
-  static ThemeData lightTheme() => ThemeData.light().copyWith(
-    brightness: Brightness.light,
-    textTheme: textTheme,
-    extensions: lightExtensions,
-  );
+  static FluentThemeData lightTheme() => FluentThemeData(
+        brightness: Brightness.light,
+        typography: typography,
+        extensions: lightExtensions,
+      );
 
-  static ThemeData darkTheme() => ThemeData.dark().copyWith(
-    brightness: Brightness.dark,
-    textTheme: textTheme,
-    extensions: darkExtensions,
-  );
+  static FluentThemeData darkTheme() => FluentThemeData(
+        brightness: Brightness.dark,
+        typography: typography,
+        extensions: darkExtensions,
+      );
 
-  static const textTheme = TextTheme(
-    bodyLarge: InterTextStyles.bodyLarge, // Corresponds to BodyLarge/bold
-    bodyMedium: InterTextStyles.body, // Corresponds to Body/regular
-    displayLarge: InterTextStyles.bodyLarge, // Corresponds to BodyLarge/bold
-    displayMedium: InterTextStyles.display, // Corresponds to Display/semi-bold
-    headlineLarge: InterTextStyles.titleLarge, // Corresponds to TitleLarge/semi-bold
-    headlineMedium: InterTextStyles.title, // Corresponds to Title/semi-bold
-    headlineSmall: InterTextStyles.subtitle, // Corresponds to Subtitle/medium
-    titleLarge: InterTextStyles.titleLarge, // Corresponds to TitleLarge/semi-bold
-    titleMedium: InterTextStyles.title, // Corresponds to Title/semi-bold
-    titleSmall: InterTextStyles.caption, // Corresponds to Caption/light
+  static Typography typography = const Typography.raw(
+    subtitle: InterTextStyles.subtitle,
+    title: InterTextStyles.title,
+    bodyStrong: InterTextStyles.bodyStrong,
+    caption: InterTextStyles.caption,
+    body: InterTextStyles.body,
+    bodyLarge: InterTextStyles.bodyLarge,
+    display: InterTextStyles.display,
+    titleLarge: InterTextStyles.titleLarge,
   );
 }

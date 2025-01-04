@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:fluent_ui/fluent_ui.dart';
 
 class AppTheme extends InheritedWidget {
-  final ThemeData themeData;
+  final FluentThemeData themeData;
 
   const AppTheme({
     required this.themeData,
@@ -9,7 +9,7 @@ class AppTheme extends InheritedWidget {
     super.key,
   });
 
-  static ThemeData of(BuildContext context) {
+  static FluentThemeData of(BuildContext context) {
     final scope =
         context.dependOnInheritedWidgetOfExactType<AppTheme>()!.themeData;
     return scope;
