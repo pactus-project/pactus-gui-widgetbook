@@ -7,10 +7,10 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 import 'main.directories.g.dart';
 
-
 void main() {
   runApp(const WidgetBookApp());
 }
+
 /// ## [WidgetBookApp] Class Documentation
 ///
 /// The `WidgetBookApp` class is the main entry point for

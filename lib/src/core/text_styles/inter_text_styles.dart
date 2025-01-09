@@ -137,7 +137,7 @@ class InterTextStyles {
     fontSize: 24, // font-size: 24px;
     fontWeight: FontWeight.w600, // font-weight: 600 (SemiBold);
     height:
-    1.33, // line-height: 32px (32px line-height / 24px font-size = 1.33);
+        1.33, // line-height: 32px (32px line-height / 24px font-size = 1.33);
   );
 
 // Display/semi-bold
@@ -146,7 +146,7 @@ class InterTextStyles {
     fontSize: 30, // font-size: 30px;
     fontWeight: FontWeight.w600, // font-weight: 600 (SemiBold);
     height:
-    1.47, // line-height: 44px (44px line-height / 30px font-size = 1.47);
+        1.47, // line-height: 44px (44px line-height / 30px font-size = 1.47);
   );
 
 // BodyLarge/bold
@@ -155,7 +155,7 @@ class InterTextStyles {
     fontSize: 36, // font-size: 36px;
     fontWeight: FontWeight.w700, // font-weight: 700 (Bold);
     height:
-    1.33, // line-height: 48px (48px line-height / 36px font-size = 1.33);
+        1.33, // line-height: 48px (48px line-height / 36px font-size = 1.33);
   );
 
 // BodyStrong/bold
@@ -164,7 +164,7 @@ class InterTextStyles {
     fontSize: 14, // font-size: 14px;
     fontWeight: FontWeight.w700, // font-weight: 700 (Bold);
     height:
-    1.43, // line-height: 20px (20px line-height / 14px font-size = 1.43);
+        1.43, // line-height: 20px (20px line-height / 14px font-size = 1.43);
   );
 }
 

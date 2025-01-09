@@ -35,10 +35,10 @@ class CustomButtonWidget extends StatelessWidget {
             },
             child: iconState == ButtonIconState.withIcon
                 ? Icon(
-              Icons.check,
-              size: size / 2,
-              color: Colors.white,
-            )
+                    Icons.check,
+                    size: size / 2,
+                    color: Colors.white,
+                  )
                 : null,
           ),
         ],

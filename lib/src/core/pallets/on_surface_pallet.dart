@@ -1,4 +1,5 @@
 import 'package:fluent_ui/fluent_ui.dart';
+
 /// ## [OnSurfacePallet] Class Documentation
 ///
 /// The `OnSurfacePallet` class is a `ThemeExtension` that defines a palette of

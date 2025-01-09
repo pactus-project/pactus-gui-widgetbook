@@ -1,4 +1,5 @@
 import 'package:fluent_ui/fluent_ui.dart';
+
 /// ## [AppTheme] Class Documentation
 ///
 /// The `AppTheme` class is an `InheritedWidget` used to manage and provide a consistent theme
