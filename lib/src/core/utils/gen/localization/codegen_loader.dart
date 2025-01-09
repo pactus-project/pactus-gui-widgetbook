@@ -1,5 +1,15 @@
 import 'dart:ui' show Locale;
 
+/// [CodegenLoader] class loads translations for different locales.
+///
+/// - [load] : Loads translation data based on the provided locale.
+/// - [mapLocales] : Maps locales (e.g., `en_US`, `fr_FR`, `es_ES`) to their respective translation data.
+///
+/// Example translations include:
+/// - `enUS`: English translations.
+/// - `frFR`: French translations.
+/// - `esES`: Spanish translations.
+///
 class CodegenLoader {
   const CodegenLoader();
 

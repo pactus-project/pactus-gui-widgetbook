@@ -3,6 +3,28 @@ import 'dart:io';
 import 'dart:developer';
 import 'package:pactus_gui_widgetbook/src/features/main/language/core/language_constants.dart';
 
+/// This script generates the necessary files to support localization in your Flutter app.
+///
+/// The main purpose of this code is to:
+/// - Load ARB translation files (in `lib/l10n` directory) for different locales.
+/// - Generate the `LocaleKeys` class, `CodegenLoader` class, and `AppLocales` class dynamically based on the ARB files.
+/// - Create files to store the translations and helper code required for proper localization in the app.
+///
+/// **Flow:**
+/// 1. Loads translations from ARB files for various locales (e.g., `en_US`, `fr_FR`, `es_ES`).
+/// 2. Generates the `LocaleKeys` class, which contains constants for each key in the translations.
+/// 3. Generates the `CodegenLoader` class to load translations based on the current locale.
+/// 4. Generates the `AppLocales` class, which contains locale constants and the supported locales list.
+///
+/// **Generated Files:**
+/// - `locale_keys.dart`: Contains constants for every key found in the ARB files (e.g., `LocaleKeys.app_name`).
+/// - `codegen_loader.dart`: Provides a loader for translations for different locales.
+/// - `app_locales.dart`: Contains static constants for each supported locale and their associated settings.
+///
+/// **Usage:**
+/// - Ensure you have the correct ARB files in the `lib/l10n` directory with language-country-specific naming (e.g., `app_en.arb` for English).
+/// - Run this script to generate the required localization files. These files will help manage and load translations dynamically in the app.
+
 /// ARB files directory and output file paths
 const arbDir = 'lib/l10n';
 const outputCodegenLoaderFilePath =
@@ -34,6 +56,17 @@ Future<void> _generateAppLocalesClass() async {
   final buffer = StringBuffer();
   buffer.writeln('import \'dart:ui\' show Locale;');
   buffer.writeln();
+  buffer.writeln('/// [AppLocales] class manages app localization.');
+  buffer.writeln('///');
+  buffer.writeln(
+      '/// - [translationsPath] : Path to translation files (`lib/l10n`).');
+  buffer.writeln(
+      '/// - [supportedLocales] : List of supported locales, generated from available');
+  buffer.writeln(
+      '/// translations (e.g., `enUSLocale`, `frFRLocale`, `esESLocale`).');
+  buffer.writeln('///');
+  buffer.writeln(
+      '/// The class can be extended by adding more locales as needed.');
   buffer.writeln('class AppLocales {');
   buffer.writeln('  AppLocales._();\n');
   buffer.writeln('  static const translationsPath = \'$translationsPath\';\n');
@@ -42,7 +75,7 @@ Future<void> _generateAppLocalesClass() async {
   for (var locale in languageCases) {
     final localeConstName = '${locale.language}${locale.country}Locale';
     buffer.writeln(
-      '  static const $localeConstName = Locale("${locale.language}", "${locale.country}");',
+      '  static const $localeConstName = Locale(\'${locale.language}\', \'${locale.country}\');',
     );
   }
 
@@ -133,6 +166,19 @@ Future<void> _generateCodegenLoaderFile(
   final buffer = StringBuffer()
     ..writeln('import \'dart:ui\' show Locale;')
     ..writeln()
+    ..writeln(
+        '/// [CodegenLoader] class loads translations for different locales.')
+    ..writeln('///')
+    ..writeln(
+        '/// - [load] : Loads translation data based on the provided locale.')
+    ..writeln(
+        '/// - [mapLocales] : Maps locales (e.g., `en_US`, `fr_FR`, `es_ES`) to their respective translation data.')
+    ..writeln('///')
+    ..writeln('/// Example translations include:')
+    ..writeln('/// - `enUS`: English translations.')
+    ..writeln('/// - `frFR`: French translations.')
+    ..writeln('/// - `esES`: Spanish translations.')
+    ..writeln('///')
     ..writeln('class CodegenLoader {')
     ..writeln('  const CodegenLoader();')
     ..writeln()
