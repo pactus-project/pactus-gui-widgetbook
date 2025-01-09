@@ -26,6 +26,8 @@ class WidgetBookApp extends StatelessWidget {
         DeviceFrameAddon(
           devices: [
             Devices.ios.iPhone13,
+            Devices.windows.laptop,
+            Devices.windows.wideMonitor,
           ],
         ),
         AlignmentAddon(),
