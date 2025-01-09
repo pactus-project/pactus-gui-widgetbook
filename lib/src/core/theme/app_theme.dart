@@ -18,16 +18,14 @@ import 'package:fluent_ui/fluent_ui.dart';
 ///   - The theme data applied across the app.
 ///   - Passed as a required parameter to the constructor.
 ///
-
 class AppTheme extends InheritedWidget {
-  final FluentThemeData themeData;
-
   const AppTheme({
     required this.themeData,
     required super.child,
     super.key,
   });
 
+  final FluentThemeData themeData;
   static FluentThemeData of(BuildContext context) {
     final scope =
         context.dependOnInheritedWidgetOfExactType<AppTheme>()!.themeData;

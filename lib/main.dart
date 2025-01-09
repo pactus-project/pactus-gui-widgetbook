@@ -4,7 +4,11 @@ import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme_data.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
-
+import 'package:flutter/widgets.dart';
+import 'package:pactus_gui_widgetbook/src/core/utils/gen/localization/app_locales.dart';
+import 'package:pactus_gui_widgetbook/src/core/utils/gen/localization/customized_localization_addon.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'main.directories.g.dart';
 
 void main() {
@@ -64,6 +68,16 @@ class WidgetBookApp extends StatelessWidget {
         return child;
       },
       addons: [
+        CustomizedLocalizationAddon(
+          locales: AppLocales.supportedLocales,
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          initialLocale: AppLocales.supportedLocales.first,
+        ),
         DeviceFrameAddon(
           devices: [
             Devices.ios.iPhone13,

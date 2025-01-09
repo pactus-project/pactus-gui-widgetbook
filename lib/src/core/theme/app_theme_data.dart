@@ -43,8 +43,8 @@ import 'package:pactus_gui_widgetbook/src/core/text_styles/inter_text_styles.dar
 ///   - Returns a `FluentThemeData` instance configured for dark mode.
 ///   - Includes dark extensions and typography.
 ///
-
 class AppThemeData {
+  AppThemeData._();
   static const Iterable<ThemeExtension<dynamic>> lightExtensions = [
     SurfacePallet.light,
     OnSurfacePallet.light,
