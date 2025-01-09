@@ -1,6 +1,64 @@
 import 'package:fluent_ui/fluent_ui.dart';
 
-@immutable
+/// ## [SurfacePallet] Class Documentation
+///
+/// The `SurfacePallet` class is a `ThemeExtension` that defines a palette of
+/// colors used for surface-related
+/// elements in both light and dark themes. It allows for dynamic theming and
+/// seamless transitions
+/// between themes using `lerp` for interpolation.
+///
+/// ### Usage:
+///
+/// The `SurfacePallet` class provides a structured way to define multiple
+/// color shades for surfaces,
+/// making it easy to customize and switch between light and dark themes.
+///
+/// ### Properties:
+///
+/// - **[surface3]** (Color?):
+///   - Represents the brightest or most prominent surface color.
+///   - Typically used for primary backgrounds or containers.
+///
+/// - **[surface2]** (Color?):
+///   - A slightly dimmer surface color compared to `surface3`.
+///   - Suitable for secondary containers or less prominent surfaces.
+///
+/// - **[surface1]** (Color?):
+///   - The dimmest surface color in the palette.
+///   - Commonly used for overlays or subtle background accents.
+///
+/// ### Methods:
+///
+/// - **[copyWith]**:
+///   - Creates a new `SurfacePallet` instance with updated properties
+///   while preserving the existing values for non-specified fields.
+///
+/// - **[lerp]**:
+///   - Interpolates between two `SurfacePallet` instances.
+///   - Useful for animating theme transitions.
+///
+/// - **[getByIndex(int index)]**:
+///   - Retrieves a color from the palette based on its index.
+///   - Index range: 1 (dimmest) to 3 (brightest).
+///   - Throws an exception if an invalid index is provided.
+///
+/// - **[toString]**:
+///   - Returns a string representation of the `SurfacePallet` instance for
+///   debugging purposes.
+///
+/// ### Static Properties:
+///
+/// - **[light]**:
+///   - Predefined `SurfacePallet` for the light theme.
+///   - Colors are configured based on Figma specifications, starting from
+///   fully opaque white to 30% opacity.
+///
+/// - **[dark]**:
+///   - Predefined `SurfacePallet` for the dark theme.
+///   - Inverts the shades of the light theme to accommodate dark mode.
+///
+
 class SurfacePallet extends ThemeExtension<SurfacePallet> {
   const SurfacePallet({
     required this.surface3,

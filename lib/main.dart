@@ -1,19 +1,61 @@
 import 'package:flutter/material.dart';
 import 'package:pactus_gui_widgetbook/app_scaffold.dart';
-import 'package:pactus_gui_widgetbook/src/core/utils/gen/localization/app_locales.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme_data.dart';
-import 'package:pactus_gui_widgetbook/src/core/utils/gen/localization/customized_localization_addon.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
+import 'package:flutter/widgets.dart';
+import 'package:pactus_gui_widgetbook/src/core/utils/gen/localization/app_locales.dart';
+import 'package:pactus_gui_widgetbook/src/core/utils/gen/localization/customized_localization_addon.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter/widgets.dart';
 import 'main.directories.g.dart';
 
 void main() {
   runApp(const WidgetBookApp());
 }
+
+/// ## [WidgetBookApp] Class Documentation
+///
+/// The `WidgetBookApp` class is the main entry point for
+/// the Widgetbook application.
+/// It defines the Widgetbook configuration, including the devices,
+/// themes, and addons used for visualizing and testing widgets.
+///
+/// ### Usage:
+///
+/// The `WidgetBookApp` sets up a Widgetbook environment with
+/// predefined themes, devices, and alignment options.
+/// It enables developers to test their widgets in different
+/// contexts and layouts.
+///
+/// ### Addons:
+///
+/// - **[DeviceFrameAddon]**:
+///   - Includes a list of devices for testing widgets.
+///   - **Devices**:
+///     - `Devices.ios.iPhone13`: Simulates an iPhone 13 device.
+///     - `Devices.windows.laptop`: Simulates a standard laptop.
+///     - `Devices.windows.wideMonitor`: Simulates a widescreen monitor.
+///
+/// - **[AlignmentAddon]**:
+///   - Allows testing widget alignment within the parent container.
+///
+/// - **[ThemeAddon]**:
+///   - Provides two themes for testing:
+///     - **Light Theme**: Uses `AppThemeData.lightTheme()` for a
+///     bright interface.
+///     - **Dark Theme**: Uses `AppThemeData.darkTheme()` for a
+///     darker interface.
+///   - Includes a custom theme builder that wraps widgets with
+///   `AppTheme` and `AppScaffold`.
+///
+/// ### Properties:
+///
+/// - **[directories]**:
+///   - Dynamically generated list of widget directories.
+///   - Facilitates organizing and testing widgets within Widgetbook.
+///
 
 @widgetbook.App()
 class WidgetBookApp extends StatelessWidget {
@@ -39,6 +81,8 @@ class WidgetBookApp extends StatelessWidget {
         DeviceFrameAddon(
           devices: [
             Devices.ios.iPhone13,
+            Devices.windows.laptop,
+            Devices.windows.wideMonitor,
           ],
         ),
         AlignmentAddon(),
@@ -51,7 +95,7 @@ class WidgetBookApp extends StatelessWidget {
             WidgetbookTheme(
               name: 'Dark',
               data: AppThemeData.darkTheme(),
-            ),
+            )
           ],
           themeBuilder: (context, data, child) {
             return AppTheme(
