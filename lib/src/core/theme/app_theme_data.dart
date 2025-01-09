@@ -4,6 +4,7 @@ import 'package:pactus_gui_widgetbook/src/core/pallets/surface_pallet.dart';
 import 'package:pactus_gui_widgetbook/src/core/text_styles/inter_text_styles.dart';
 
 class AppThemeData {
+  AppThemeData._();
   static const Iterable<ThemeExtension<dynamic>> lightExtensions = [
     SurfacePallet.light,
     OnSurfacePallet.light,

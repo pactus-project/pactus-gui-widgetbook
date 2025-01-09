@@ -1,13 +1,12 @@
 import 'package:fluent_ui/fluent_ui.dart';
 
 class AppTheme extends InheritedWidget {
-  final FluentThemeData themeData;
-
   const AppTheme({
     required this.themeData,
     required super.child,
     super.key,
   });
+  final FluentThemeData themeData;
 
   static FluentThemeData of(BuildContext context) {
     final scope =

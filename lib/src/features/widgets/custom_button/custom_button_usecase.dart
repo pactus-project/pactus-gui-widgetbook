@@ -26,7 +26,8 @@ Widget customButtonWidgetUseCase(BuildContext context) {
   final iconStateString = context.knobs.string(
     label: 'Icon State',
     initialValue: 'withIcon',
-    description: 'Choose whether the button has an icon or not. Use "withIcon" or "withoutIcon".',
+    description:
+        'Choose whether the button has an icon or not. Use "withIcon" or "withoutIcon".',
   );
 
   // Map string to ButtonIconState enum

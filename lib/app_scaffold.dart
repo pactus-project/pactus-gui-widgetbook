@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
 
-
 class AppScaffold extends StatelessWidget {
   const AppScaffold({
     super.key,
