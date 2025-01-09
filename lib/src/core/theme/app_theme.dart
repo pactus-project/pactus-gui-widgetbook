@@ -19,8 +19,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 ///   - Passed as a required parameter to the constructor.
 ///
 class AppTheme extends InheritedWidget {
-
-   const AppTheme({
+  const AppTheme({
     required this.themeData,
     required super.child,
     super.key,

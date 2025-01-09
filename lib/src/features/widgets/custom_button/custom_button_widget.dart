@@ -43,7 +43,7 @@ class CustomButtonWidget extends StatelessWidget {
                     size: size / 2,
                     color: Colors.white,
                   ),
-                  Text(context.tr(LocaleKeys.man)),
+                Text(context.tr(LocaleKeys.man)),
               ],
             ),
           ),
