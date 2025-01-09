@@ -1,6 +1,71 @@
 import 'package:fluent_ui/fluent_ui.dart';
+/// ## [OnSurfacePallet] Class Documentation
+///
+/// The `OnSurfacePallet` class is a `ThemeExtension` that defines a palette of
+/// colors used for surface-related
+/// elements in both light and dark themes. It allows for dynamic theming and
+/// seamless transitions
+/// between themes using `lerp` for interpolation.
+///
+/// ### Usage:
+///
+/// The `OnSurfacePallet` class provides a structured way to define multiple
+/// color shades for on-surface elements,
+/// making it easy to customize and switch between light and dark themes.
+///
+/// ### Properties:
+///
+/// - **[onSurface4]** (Color?):
+///   - Represents the darkest shade of the on-surface palette.
+///   - Typically used for the most prominent text or UI elements.
+///
+/// - **[onSurface3]** (Color?):
+///   - A slightly lighter shade compared to `onSurface4`.
+///   - Suitable for secondary text or less prominent elements.
+///
+/// - **[onSurface2]** (Color?):
+///   - A mid-tone shade for on-surface elements.
+///   - Useful for borders, icons, or supporting text.
+///
+/// - **[onSurface1]** (Color?):
+///   - A lighter shade compared to `onSurface2`.
+///   - Commonly used for subtle UI elements or backgrounds.
+///
+/// - **[onSurface0]** (Color?):
+///   - The lightest shade of the palette.
+///   - Typically used for backgrounds or less emphasized elements.
+///
+/// ### Methods:
+///
+/// - **[copyWith]**:
+///   - Creates a new `OnSurfacePallet` instance with updated properties while
+///   preserving the existing values for non-specified fields.
+///
+/// - **[lerp]**:
+///   - Interpolates between two `OnSurfacePallet` instances.
+///   - Useful for animating theme transitions.
+///
+/// - **[getByIndex(int index)]**:
+///   - Retrieves a color from the palette based on its index.
+///   - Index range: 0 (lightest) to 4 (darkest).
+///   - Throws an exception if an invalid index is provided.
+///
+/// - **[toString]**:
+///   - Returns a string representation of the `OnSurfacePallet`
+///   instance for debugging purposes.
+///
+/// ### Static Properties:
+///
+/// - **[light]**:
+///   - Predefined `OnSurfacePallet` for the light theme.
+///   - Colors are configured based on Figma specifications,
+///   starting from black at 100% to 3% opacity.
+///
+/// - **[dark]**:
+///   - Predefined `OnSurfacePallet` for the dark theme.
+///   - Inverts the shades of the light theme to accommodate dark mode.
+///
 
-@immutable
 class OnSurfacePallet extends ThemeExtension<OnSurfacePallet> {
   const OnSurfacePallet({
     required this.onSurface4,
