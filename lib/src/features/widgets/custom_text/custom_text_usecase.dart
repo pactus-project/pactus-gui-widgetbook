@@ -3,7 +3,33 @@ import 'package:pactus_gui_widgetbook/src/core/text_styles/inter_text_styles.dar
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 import 'custom_text_widget.dart';
-
+/// ## [customTextWidgetUseCase] Function Documentation
+///
+/// The `customTextWidgetUseCase` function defines a Widgetbook
+/// use case for displaying a customizable `CustomTextWidget`.
+/// This function allows users to interactively change the text,
+/// text style, font weight, and font style of the widget.
+///
+/// ### Parameters:
+///
+/// - **[context]** (`BuildContext`):
+///   - The context of the widget that provides access to knobs for interaction.
+///
+/// ### Usage:
+///
+/// This function is designed to be used within Widgetbook to
+/// demonstrate the customization of the `CustomTextWidget`.
+/// Users can adjust the following options:
+///
+/// - **Text**: A string value that specifies the text to display
+/// in the widget.
+/// - **Text Style**: A list of predefined text styles, such as
+/// 'Caption', 'Body', 'Title', etc.
+/// - **Font Weight**: Allows the user to choose between normal
+/// and bold font weight.
+/// - **Font Style**: Allows the user to choose between normal
+/// and italic font style.
+///
 @UseCase(name: 'Custom Text with Knobs', type: CustomTextWidget)
 Widget customTextWidgetUseCase(BuildContext context) {
   final text = context.knobs.string(
