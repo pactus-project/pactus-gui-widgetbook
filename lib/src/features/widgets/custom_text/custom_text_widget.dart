@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 /// ## [CustomTextWidget] Class Documentation
 ///
 /// The `CustomTextWidget` class is a stateless widget that displays

@@ -3,6 +3,7 @@ import 'package:pactus_gui_widgetbook/src/core/text_styles/inter_text_styles.dar
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 import 'custom_text_widget.dart';
+
 /// ## [customTextWidgetUseCase] Function Documentation
 ///
 /// The `customTextWidgetUseCase` function defines a Widgetbook
@@ -79,7 +80,8 @@ Widget customTextWidgetUseCase(BuildContext context) {
     'Body Strong': InterTextStyles.bodyStrong,
   };
 
-  final selectedTextStyle = textStyleMap[selectedStyleName] ?? InterTextStyles.body;
+  final selectedTextStyle =
+      textStyleMap[selectedStyleName] ?? InterTextStyles.body;
 
   final textStyle = selectedTextStyle.copyWith(
     fontWeight: fontWeight == 'Bold' ? FontWeight.bold : FontWeight.normal,
