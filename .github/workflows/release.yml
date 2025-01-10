@@ -31,9 +31,6 @@ jobs:
         
       - name: Build Web
         run: flutter build web --release --base-href "/${{ github.repository }}" 
-
-      - name: Run Flutter App in Chrome
-        run: flutter run -d chrome
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
