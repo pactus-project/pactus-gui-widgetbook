@@ -36,9 +36,13 @@ class AppScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: AppTheme.of(context).scaffoldBackgroundColor,
-      child: child,
+    return SizedBox.expand(
+      child: DecoratedBox(
+          position: DecorationPosition.background,
+          decoration: BoxDecoration(
+            color: AppTheme.of(context).scaffoldBackgroundColor,
+          ),
+          child: Center(child: child)),
     );
   }
 }
