@@ -9,6 +9,8 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:pactus_gui_widgetbook/src/features/widgets/counter/counter_usecase.dart'
+    as _i2;
 import 'package:pactus_gui_widgetbook/src/features/widgets/custom_button/custom_button_usecase.dart'
     as _i2;
 import 'package:pactus_gui_widgetbook/src/features/widgets/custom_text/custom_text_usecase.dart'
@@ -30,6 +32,18 @@ final directories = <_i1.WidgetbookNode>[
                 useCase: _i1.WidgetbookUseCase(
                   name: 'Custom Button with Knobs',
                   builder: _i2.customButtonWidgetUseCase,
+                ),
+              )
+            ],
+          ),
+          _i1.WidgetbookFolder(
+            name: 'counter',
+            children: [
+              _i1.WidgetbookLeafComponent(
+                name: 'CounterWidget',
+                useCase: _i1.WidgetbookUseCase(
+                  name: 'Counter with Knobs',
+                  builder: _i2.counterWidgetUseCase,
                 ),
               )
             ],
