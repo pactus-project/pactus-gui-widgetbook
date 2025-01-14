@@ -1,3 +1,13 @@
+# 1.3.0+4
+
+- [Feature]: Add `CustomTextWidget` for localized text display and `Widgetbook` integration. [#12](https://github.com/pactus-project/pactus-gui-widgetbook/pull/12)
+  - Created `CustomTextWidget` to display localized text with customizable styles.
+  - Added `customTextWidgetUseCase` for testing Fluent UI text styles in Widgetbook.
+
+- [Fix]: Integrate `AppScaffold` and enhance screen layout. [#12](https://github.com/pactus-project/pactus-gui-widgetbook/pull/12)
+- [Fix]: Update `CustomTextWidget` to use `context.tr()` for handling localization. [#12](https://github.com/pactus-project/pactus-gui-widgetbook/pull/12)
+- [Fix]: Resolve material dependency warnings in `pubspec.yaml`. [#12](https://github.com/pactus-project/pactus-gui-widgetbook/pull/12)
+
 # 1.2.0+3
 
 - [Feature] : Add l10n localization support and configuration setup. [#8](https://github.com/pactus-project/pactus-gui-widgetbook/pull/8)
