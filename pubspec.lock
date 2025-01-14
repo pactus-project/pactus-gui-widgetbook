@@ -345,10 +345,10 @@ packages:
     dependency: transitive
     description:
       name: image_size_getter
-      sha256: "0511799498340b70993d2dfb34b55a2247b5b801d75a6cdd4543acfcafdb12b0"
+      sha256: c3900f04e31468a81aa23b09b1c7d09c3c952122bbe9ecdae336977b7be24c05
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.2.0"
+    version: "2.3.0+1"
   inspector:
     dependency: transitive
     description:
@@ -686,10 +686,10 @@ packages:
     dependency: transitive
     description:
       name: vector_graphics_codec
-      sha256: "2430b973a4ca3c4dbc9999b62b8c719a160100dcbae5c819bae0cacce32c9cdb"
+      sha256: "99fd9fbd34d9f9a32efd7b6a6aae14125d8237b10403b422a6a6dfeac2806146"
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.12"
+    version: "1.1.13"
   vector_graphics_compiler:
     dependency: transitive
     description:
@@ -750,10 +750,10 @@ packages:
     dependency: "direct main"
     description:
       name: widgetbook
-      sha256: f1aec6e13bc30a0b0fd1e1db1533b01caa0946fc6f0caf0412c3aba9de7ec4db
+      sha256: "8738bfa29cc314b68ac5068cb0d086a0ddf8db4e167d0e4d0f539e1ad1042949"
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "3.10.1"
+    version: "3.10.2"
   widgetbook_annotation:
     dependency: "direct main"
     description:
