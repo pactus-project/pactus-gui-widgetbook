@@ -4,12 +4,12 @@ import 'package:pactus_gui_widgetbook/src/features/main/language/core/localizati
 /// ## [CustomTextWidget] Class Documentation
 ///
 /// The `CustomTextWidget` class is a stateless widget that displays
-/// a text string with a customizable text style.
+/// a localized text string with a customizable text style.
 ///
 /// ### Properties:
 ///
 /// - **[text]** (`String`):
-///   - The text string to be displayed.
+///   - The key for the localized text string to be displayed.
 ///   - This property is required when constructing the widget.
 ///
 /// - **[textStyle]** (`TextStyle`):
@@ -20,7 +20,7 @@ import 'package:pactus_gui_widgetbook/src/features/main/language/core/localizati
 ///
 /// - **[build(BuildContext context)]**:
 ///   - Builds and returns a `Text` widget using the provided
-///   `text` and `textStyle`.
+///   `text` (localized) and `textStyle`.
 ///
 class CustomTextWidget extends StatelessWidget {
   final String text;
