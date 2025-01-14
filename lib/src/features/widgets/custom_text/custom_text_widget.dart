@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pactus_gui_widgetbook/src/features/main/language/core/localization_extension.dart';
 
 /// ## [CustomTextWidget] Class Documentation
 ///
@@ -34,7 +35,7 @@ class CustomTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      text,
+      context.tr(text),
       style: textStyle,
     );
   }

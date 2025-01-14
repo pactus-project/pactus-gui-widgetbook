@@ -40,7 +40,7 @@ final directories = <_i1.WidgetbookNode>[
               _i1.WidgetbookLeafComponent(
                 name: 'CustomTextWidget',
                 useCase: _i1.WidgetbookUseCase(
-                  name: 'Custom Text with Knobs',
+                  name: 'Select the text to display from the dropdown',
                   builder: _i3.customTextWidgetUseCase,
                 ),
               )
