@@ -15,7 +15,9 @@ import 'custom_text_widget.dart';
 /// - [initialOption] : LocaleKeys.app_name
 /// - [description] : "Select the text to display from the dropdown."
 ///
-@UseCase(name: 'Select the text to display from the dropdown', type: CustomTextWidget)
+@UseCase(
+    name: 'Select the text to display from the dropdown',
+    type: CustomTextWidget)
 Widget customTextWidgetUseCase(BuildContext context) {
   final selectedText = context.knobs.list<String>(
     label: 'Select Text',
