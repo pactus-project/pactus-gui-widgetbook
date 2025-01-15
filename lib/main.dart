@@ -1,11 +1,9 @@
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:flutter/material.dart';
 import 'package:pactus_gui_widgetbook/app_scaffold.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme_data.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
-import 'package:flutter/widgets.dart';
 import 'package:pactus_gui_widgetbook/src/core/utils/gen/localization/app_locales.dart';
 import 'package:pactus_gui_widgetbook/src/core/utils/gen/localization/customized_localization_addon.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -99,9 +97,14 @@ class WidgetBookApp extends StatelessWidget {
             )
           ],
           themeBuilder: (context, data, child) {
-            return AppTheme(
-              themeData: data,
-              child: AppScaffold(child: child),
+            return FluentApp(
+              debugShowCheckedModeBanner: false,
+              theme: data,
+              themeMode: ThemeMode.light,
+              home: AppTheme(
+                themeData: data,
+                child: AppScaffold(child: child),
+              ),
             );
           },
         ),
