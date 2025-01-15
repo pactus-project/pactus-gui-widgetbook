@@ -26,11 +26,41 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
         
+      - name: Generate Localization Files
+        id: gen_l10n
+        run: |
+          # Run the command to generate localization files and capture the output
+          output=$(flutter gen-l10n)
+          echo "$output"
+          
+          # Check if there are untranslated messages in the output
+          if echo "$output" | grep -q "untranslated message"; then
+            echo "::error file=lib/l10n/l10n.yaml::Error: Untranslated messages detected in your localization files."
+            echo "::error::There are untranslated messages in the following languages:"
+            echo "$output" | grep "untranslated message"
+            echo "::error::Please ensure that all translations are provided in the respective .arb files."
+            exit 1
+          fi
+
+      - name: Check Localization Files
+        run: |
+          git diff --exit-code lib/l10n/ || (
+            echo "Localization files are outdated. Run 'flutter gen-l10n' and commit changes.";
+            exit 1;
+          )
+
+      - name: Check if translations_utils.dart has changes
+        run: |
+          git diff --exit-code lib/src/core/utils/gen/localization/translations_utils.dart || (
+            echo "Error: Changes detected in translations_utils.dart. Please run the necessary custom translation utilities and commit changes.";
+            exit 1;
+          )
+        
       - name: Run build_runner
         run: dart run build_runner build --delete-conflicting-outputs
         
       - name: Build Web
-        run: flutter build web --release --base-href "/pactus_gui_widgetbook/"
+        run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
