@@ -12,8 +12,6 @@
 import 'package:pactus_gui_widgetbook/src/features/widgets/counter/counter_usecase.dart'
     as _i2;
 import 'package:pactus_gui_widgetbook/src/features/widgets/custom_button/custom_button_usecase.dart'
-    as _i2;
-import 'package:pactus_gui_widgetbook/src/features/widgets/custom_text/custom_text_usecase.dart'
     as _i3;
 import 'package:widgetbook/widgetbook.dart' as _i1;
 
@@ -31,7 +29,7 @@ final directories = <_i1.WidgetbookNode>[
                 name: 'CustomButtonWidget',
                 useCase: _i1.WidgetbookUseCase(
                   name: 'Custom Button with Knobs',
-                  builder: _i2.customButtonWidgetUseCase,
+                  builder: _i3.customButtonWidgetUseCase,
                 ),
               )
             ],
@@ -44,18 +42,6 @@ final directories = <_i1.WidgetbookNode>[
                 useCase: _i1.WidgetbookUseCase(
                   name: 'Counter with Knobs',
                   builder: _i2.counterWidgetUseCase,
-                ),
-              )
-            ],
-          ),
-          _i1.WidgetbookFolder(
-            name: 'custom_text',
-            children: [
-              _i1.WidgetbookLeafComponent(
-                name: 'CustomTextWidget',
-                useCase: _i1.WidgetbookUseCase(
-                  name: 'Select the text to display from the dropdown',
-                  builder: _i3.customTextWidgetUseCase,
                 ),
               )
             ],
