@@ -1,3 +1,7 @@
+# 1.3.2+5
+
+- [CI]: update ci-cd pipeline for github page deploy. [#7](https://github.com/pactus-project/pactus-gui-widgetbook/pull/7)
+
 # 1.3.0+4
 
 - [Feature]: Add `CustomTextWidget` for localized text display and `Widgetbook` integration. [#12](https://github.com/pactus-project/pactus-gui-widgetbook/pull/12)
