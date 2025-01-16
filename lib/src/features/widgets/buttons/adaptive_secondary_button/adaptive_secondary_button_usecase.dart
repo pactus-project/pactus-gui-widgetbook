@@ -1,12 +1,12 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
-import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/adaptive_primary_button/adaptive_primary_button.dart';
+import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/adaptive_secondary_button/adaptive_secondary_button.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
 @UseCase(
-    name: 'Adaptive Primary Button with Knobs', type: AdaptivePrimaryButton)
-Widget adaptivePrimaryButtonUseCase(BuildContext context) {
+    name: 'Adaptive Secondary Button with Knobs', type: AdaptiveSecondaryButton)
+Widget adaptiveSecondaryButtonUseCase(BuildContext context) {
   final requestState = context.knobs.list<RequestStateEnum>(
     label: 'Request State',
     options: RequestStateEnum.values,
@@ -27,13 +27,13 @@ Widget adaptivePrimaryButtonUseCase(BuildContext context) {
 
   return SizedBox(
     width: 200,
-    child: AdaptivePrimaryButton(
+    child: AdaptiveSecondaryButton(
       title: text,
       requestState: requestState,
       onPressed: isDisabled
           ? null
           : () {
-              debugPrint('Adaptive Primary Button Pressed');
+              debugPrint('Adaptive Secondary Button Pressed');
             },
     ),
   );
