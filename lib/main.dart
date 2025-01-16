@@ -14,48 +14,6 @@ void main() {
   runApp(const WidgetBookApp());
 }
 
-/// ## [WidgetBookApp] Class Documentation
-///
-/// The `WidgetBookApp` class is the main entry point for
-/// the Widgetbook application.
-/// It defines the Widgetbook configuration, including the devices,
-/// themes, and addons used for visualizing and testing widgets.
-///
-/// ### Usage:
-///
-/// The `WidgetBookApp` sets up a Widgetbook environment with
-/// predefined themes, devices, and alignment options.
-/// It enables developers to test their widgets in different
-/// contexts and layouts.
-///
-/// ### Addons:
-///
-/// - **[DeviceFrameAddon]**:
-///   - Includes a list of devices for testing widgets.
-///   - **Devices**:
-///     - `Devices.ios.iPhone13`: Simulates an iPhone 13 device.
-///     - `Devices.windows.laptop`: Simulates a standard laptop.
-///     - `Devices.windows.wideMonitor`: Simulates a widescreen monitor.
-///
-/// - **[AlignmentAddon]**:
-///   - Allows testing widget alignment within the parent container.
-///
-/// - **[ThemeAddon]**:
-///   - Provides two themes for testing:
-///     - **Light Theme**: Uses `AppThemeData.lightTheme()` for a
-///     bright interface.
-///     - **Dark Theme**: Uses `AppThemeData.darkTheme()` for a
-///     darker interface.
-///   - Includes a custom theme builder that wraps widgets with
-///   `AppTheme` and `AppScaffold`.
-///
-/// ### Properties:
-///
-/// - **[directories]**:
-///   - Dynamically generated list of widget directories.
-///   - Facilitates organizing and testing widgets within Widgetbook.
-///
-
 @widgetbook.App()
 class WidgetBookApp extends StatelessWidget {
   const WidgetBookApp({super.key});
@@ -89,28 +47,42 @@ class WidgetBookApp extends StatelessWidget {
           themes: [
             WidgetbookTheme(
               name: 'Light',
-              data: AppThemeData.lightTheme(),
+              data: AppThemeData.lightTheme(AppThemeData.lightAccentColors[0]),
             ),
             WidgetbookTheme(
               name: 'Dark',
-              data: AppThemeData.darkTheme(),
-            )
+              data: AppThemeData.darkTheme(AppThemeData.darkAccentColors[0]),
+            ),
           ],
           themeBuilder: (context, data, child) {
+            final isLightTheme = data.brightness == Brightness.light;
+
+            final selectedAccentColor = context.knobs.list<Color>(
+              label: 'Accent Color',
+              description: 'Select an accent color for the theme.',
+              options: isLightTheme
+                  ? AppThemeData.lightAccentColors
+                  : AppThemeData.darkAccentColors,
+              initialOption: isLightTheme
+                  ? AppThemeData.lightAccentColors[0]
+                  : AppThemeData.darkAccentColors[0],
+            );
+
+            final themeWithAccent = isLightTheme
+                ? AppThemeData.lightTheme(selectedAccentColor)
+                : AppThemeData.darkTheme(selectedAccentColor);
+
             return FluentApp(
               debugShowCheckedModeBanner: false,
-              theme: data,
-              themeMode: ThemeMode.light,
+              theme: themeWithAccent,
               home: AppTheme(
-                themeData: data,
+                themeData: themeWithAccent,
                 child: AppScaffold(child: child),
               ),
             );
           },
         ),
       ],
-      // The [directories] variable does not exist yet,
-      // it will be generated in the next step
       directories: directories,
     );
   }

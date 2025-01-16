@@ -1,47 +1,46 @@
 import 'package:fluent_ui/fluent_ui.dart';
+import 'package:pactus_gui_widgetbook/app_styles.dart';
+import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
+import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
 
 class AdaptivePrimaryButton extends StatelessWidget {
-  const AdaptivePrimaryButton(
-      {super.key, required this.text, this.onPressed, required this.disabled});
-  final String text;
+  const AdaptivePrimaryButton({
+    super.key,
+    required this.title,
+    this.onPressed,
+    required this.requestState,
+  });
+
+  final String title;
   final VoidCallback? onPressed;
-  final bool disabled;
+  final RequestStateEnum requestState;
+
   @override
   Widget build(BuildContext context) {
+    final theme = FluentTheme.of(context);
+
     return FilledButton(
-      onPressed: disabled ? null : onPressed,
+      onPressed: (requestState == RequestStateEnum.loading) ? null : onPressed,
       style: ButtonStyle(
         backgroundColor: WidgetStateProperty.resolveWith<Color?>((states) {
           if (states.contains(WidgetState.disabled)) {
-            return Colors.grey[100];
+            return AppTheme.of(context).extension<SurfacePallet>()!.surface1!;
           } else if (states.contains(WidgetState.pressed)) {
-            return Colors.blue.darker;
+            return theme.accentColor.darker;
           } else if (states.contains(WidgetState.hovered)) {
-            return Colors.blue.dark;
+            return theme.accentColor.darker;
           }
-          return Colors.blue;
-        }),
-        foregroundColor: WidgetStateProperty.resolveWith<Color?>((states) {
-          if (states.contains(WidgetState.disabled)) {
-            return Colors.grey[120];
-          }
-          return Colors.white;
+          return theme.accentColor;
         }),
         shape: WidgetStateProperty.resolveWith<OutlinedBorder?>((states) {
           return RoundedRectangleBorder(
-            side: BorderSide(
-              color: states.contains(WidgetState.disabled)
-                  ? Colors.grey[130]
-                  : Colors.blue.darker,
-              width: 2,
-            ),
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(4),
           );
         }),
       ),
-      child: Text(
-        text,
-        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+      child: AdaptiveButtonContentWidget(
+        title: title,
+        requestState: requestState,
       ),
     );
   }

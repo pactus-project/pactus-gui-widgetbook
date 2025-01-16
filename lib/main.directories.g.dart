@@ -36,7 +36,7 @@ final directories = <_i1.WidgetbookNode>[
                     name: 'AdaptivePrimaryButton',
                     useCase: _i1.WidgetbookUseCase(
                       name: 'Fluent Button with Knobs',
-                      builder: _i2.fluentButtonUseCase,
+                      builder: _i2.adaptivePrimaryButtonUseCase,
                     ),
                   )
                 ],

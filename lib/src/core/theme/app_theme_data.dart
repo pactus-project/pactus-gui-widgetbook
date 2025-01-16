@@ -55,16 +55,42 @@ class AppThemeData {
     OnSurfacePallet.dark,
   ];
 
-  static FluentThemeData lightTheme() => FluentThemeData(
+  static const List<Color> lightAccentColors = [
+    Color(0xFF0A4D7E),
+    Color(0xFFD4540A),
+    Color(0xFFA7101A),
+    Color(0xFF7F0080),
+    Color(0xFF5C3E83),
+    Color(0xFF008D7A),
+    Color(0xFF0C5C0C),
+    Color(0xFF0F0E32),
+  ];
+
+  static const List<Color> darkAccentColors = [
+    Color(0xFF0F6CBD),
+    Color(0xFFF7630C),
+    Color(0xFFE81123),
+    Color(0xFFB4009E),
+    Color(0xFF744DA9),
+    Color(0xFF00B294),
+    Color(0xFF107C10),
+    Color(0xFF131440),
+  ];
+
+  static FluentThemeData lightTheme(Color selectedAccentColor) =>
+      FluentThemeData(
         brightness: Brightness.light,
         typography: typography,
         extensions: lightExtensions,
+        accentColor: selectedAccentColor.toAccentColor(),
       );
 
-  static FluentThemeData darkTheme() => FluentThemeData(
+  static FluentThemeData darkTheme(Color selectedAccentColor) =>
+      FluentThemeData(
         brightness: Brightness.dark,
         typography: typography,
         extensions: darkExtensions,
+        accentColor: selectedAccentColor.toAccentColor(),
       );
 
   static Typography typography = const Typography.raw(
