@@ -2,47 +2,43 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/pallets/on_surface_pallet.dart';
 import 'package:pactus_gui_widgetbook/src/core/pallets/surface_pallet.dart';
 import 'package:pactus_gui_widgetbook/src/core/text_styles/inter_text_styles.dart';
-
 /// ## [AppThemeData] Class Documentation
 ///
-/// The `AppThemeData` class provides a centralized definition of
-/// the application's themes and typography.
-/// It is designed to support both light and dark modes and uses
-/// `FluentThemeData` for configuration.
+/// The `AppThemeData` class defines the theme settings for the application,
+/// including light and dark themes, color palettes, and typography.
 ///
 /// ### Usage:
 ///
-/// This class offers methods and properties to retrieve predefined
-/// themes and typography for the application.
-/// It also supports custom theme extensions through the use of
-/// `ThemeExtension`.
+/// This class provides methods to create `FluentThemeData` instances
+/// for light and dark themes, which can be customized with a
+/// selected accent color. It integrates Fluent UI theming capabilities
+/// with application-specific extensions and styles.
 ///
 /// ### Properties:
 ///
 /// - **[lightExtensions]**:
-///   - A collection of `ThemeExtension` objects for the light theme.
-///   - Includes `SurfacePallet.light` and `OnSurfacePallet.light`.
+///   - A collection of `ThemeExtension` objects used for the light theme.
+///   - Includes surface and on-surface palettes
+///   (`SurfacePallet.light` and `OnSurfacePallet.light`).
 ///
 /// - **[darkExtensions]**:
-///   - A collection of `ThemeExtension` objects for the dark theme.
-///   - Includes `SurfacePallet.dark` and `OnSurfacePallet.dark`.
+///   - A collection of `ThemeExtension` objects used for the dark theme.
+///   - Includes surface and on-surface palettes
+///   (`SurfacePallet.dark` and `OnSurfacePallet.dark`).
+///
+/// - **[lightAccentColors]**:
+///   - A predefined list of accent colors for the light theme.
+///   - Includes colors like `Color(0xFF0A4D7E)` and `Color(0xFFD4540A)`.
+///
+/// - **[darkAccentColors]**:
+///   - A predefined list of accent colors for the dark theme.
+///   - Includes colors like `Color(0xFF0F6CBD)` and `Color(0xFFF7630C)`.
 ///
 /// - **[typography]**:
-///   - An instance of `Typography` defining text styles for various use cases.
-///   - Includes properties like `subtitle`, `title`, `bodyStrong`,
-///   `caption`, `body`, and more.
-///   - Uses `InterTextStyles` for text style definitions.
+///   - A `Typography` object defining text styles used across the app.
+///   - Includes styles for subtitles, titles, captions, and body text.
 ///
-/// ### Methods:
-///
-/// - **[lightTheme()]**:
-///   - Returns a `FluentThemeData` instance configured for light mode.
-///   - Includes light extensions and typography.
-///
-/// - **[darkTheme()]**:
-///   - Returns a `FluentThemeData` instance configured for dark mode.
-///   - Includes dark extensions and typography.
-///
+
 class AppThemeData {
   AppThemeData._();
   static const Iterable<ThemeExtension<dynamic>> lightExtensions = [

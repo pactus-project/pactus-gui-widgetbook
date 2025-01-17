@@ -3,6 +3,38 @@ import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/adaptive_primary_button/adaptive_primary_button.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+/// ## [adaptivePrimaryButtonUseCase] Function Documentation
+///
+/// The `adaptivePrimaryButtonUseCase` function is a Widgetbook
+/// use case for demonstrating and testing
+/// the `AdaptivePrimaryButton` widget. It leverages Widgetbook
+/// knobs to provide dynamic control over the
+/// button's properties and state.
+///
+/// ### Usage:
+///
+/// This use case allows users to interactively customize and preview
+/// the `AdaptivePrimaryButton` widget's behavior and appearance by
+/// adjusting its properties using Widgetbook knobs.
+///
+/// ### Knobs:
+///
+/// - **[Request State]**:
+///   - Type: `RequestStateEnum`
+///   - Options: `loaded`, `loading`, etc. (all values from `RequestStateEnum`).
+///   - Controls the current state of the button (e.g., disabled when `loading`).
+///   - Default: `loaded`.
+///
+/// - **[Button Text]**:
+///   - Type: `String`
+///   - Allows customization of the text displayed on the button.
+///   - Default: `'Click Me'`.
+///
+/// - **[Disabled]**:
+///   - Type: `Boolean`
+///   - Toggles the enabled/disabled state of the button.
+///   - Default: `false`.
+///
 
 @UseCase(
     name: 'Adaptive Primary Button with Knobs', type: AdaptivePrimaryButton)

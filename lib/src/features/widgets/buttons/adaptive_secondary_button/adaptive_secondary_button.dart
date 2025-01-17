@@ -3,6 +3,30 @@ import 'package:pactus_gui_widgetbook/app_styles.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/pallets/colors/app_colors.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
+/// ## [AdaptiveSecondaryButton] Class Documentation
+///
+/// The `AdaptiveSecondaryButton` class is a customizable widget designed
+/// for secondary actions. It features dynamic styling and behavior
+/// based on its state and integrates with Fluent UI themes.
+///
+/// ### Usage:
+///
+/// This button provides a consistent secondary action style, allowing
+/// developers to customize its text, callback action,
+/// and state through its properties.
+///
+/// ### Properties:
+///
+/// - **[title]** (String):
+///   - The text label displayed on the button.
+///
+/// - **[onPressed]** (VoidCallback?):
+///   - The callback function triggered when the button is pressed.
+///   - Disabled if the `requestState` is `RequestStateEnum.loading`.
+///
+/// - **[requestState]** (RequestStateEnum):
+///   - Represents the current state of the button (e.g., loading, loaded).
+///
 
 class AdaptiveSecondaryButton extends StatelessWidget {
   const AdaptiveSecondaryButton({

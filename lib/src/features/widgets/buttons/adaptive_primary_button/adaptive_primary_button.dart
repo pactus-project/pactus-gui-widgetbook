@@ -2,6 +2,32 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/app_styles.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
+/// ## [AdaptivePrimaryButton] Class Documentation
+///
+/// The AdaptivePrimaryButton class is a reusable widget for creating
+/// a primary button with adaptive states and styles.
+/// It integrates seamlessly with Fluent UI themes and supports different
+/// request states for dynamic behavior.
+///
+/// ### Usage:
+///
+/// This button adapts its style and functionality based on
+/// its request state (e.g., loading, disabled). It uses
+/// Fluent UI's `FilledButton` and allows custom actions via
+/// the `onPressed` callback.
+///
+/// ### Properties:
+///
+/// - **[title]** (String):
+///   - The text label displayed on the button.
+///
+/// - **[onPressed]** (VoidCallback?):
+///   - The callback function triggered when the button is pressed.
+///   - Disabled if the request state is `RequestStateEnum.loading`.
+///
+/// - **[requestState]** (RequestStateEnum):
+///   - Represents the current state of the button (e.g., loading, idle).
+///
 
 class AdaptivePrimaryButton extends StatelessWidget {
   const AdaptivePrimaryButton({
