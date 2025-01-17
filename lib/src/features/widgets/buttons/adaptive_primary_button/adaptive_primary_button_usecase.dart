@@ -3,6 +3,7 @@ import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/adaptive_primary_button/adaptive_primary_button.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+
 /// ## [adaptivePrimaryButtonUseCase] Function Documentation
 ///
 /// The `adaptivePrimaryButtonUseCase` function is a Widgetbook

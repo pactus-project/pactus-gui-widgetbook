@@ -3,6 +3,7 @@ import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/adaptive_secondary_button/adaptive_secondary_button.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+
 /// ## [adaptiveSecondaryButtonUseCase] Function Documentation
 ///
 /// The `adaptiveSecondaryButtonUseCase` function demonstrates the
@@ -33,7 +34,6 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 ///   - Type: `Boolean`
 ///   - Toggles the enabled/disabled state of the button.
 ///   - Default: `false`.
-
 
 @UseCase(
     name: 'Adaptive Secondary Button with Knobs', type: AdaptiveSecondaryButton)

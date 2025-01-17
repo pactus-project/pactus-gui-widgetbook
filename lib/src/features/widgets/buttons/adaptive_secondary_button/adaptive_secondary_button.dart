@@ -3,6 +3,7 @@ import 'package:pactus_gui_widgetbook/app_styles.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/pallets/colors/app_colors.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
+
 /// ## [AdaptiveSecondaryButton] Class Documentation
 ///
 /// The `AdaptiveSecondaryButton` class is a customizable widget designed

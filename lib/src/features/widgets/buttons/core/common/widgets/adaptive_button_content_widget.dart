@@ -1,6 +1,7 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/app_styles.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
+
 /// ## [AdaptiveButtonContentWidget] Class Documentation
 ///
 /// The `AdaptiveButtonContentWidget` is a stateless widget responsible for

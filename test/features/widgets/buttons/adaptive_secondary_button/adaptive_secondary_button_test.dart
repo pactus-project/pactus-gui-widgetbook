@@ -36,7 +36,8 @@ void main() {
       );
     }
 
-    testWidgets('renders correctly and is clickable when loaded', (WidgetTester tester) async {
+    testWidgets('renders correctly and is clickable when loaded',
+        (WidgetTester tester) async {
       const testTitle = 'Test Button';
       final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
 
@@ -60,7 +61,8 @@ void main() {
       expect(wasPressed, isTrue);
     });
 
-    testWidgets('renders correctly and is disabled when loading', (WidgetTester tester) async {
+    testWidgets('renders correctly and is disabled when loading',
+        (WidgetTester tester) async {
       const testTitle = 'Loading Button';
       final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
 
@@ -85,7 +87,8 @@ void main() {
       expect(wasPressed, isFalse);
     });
 
-    testWidgets('renders correctly with dark theme', (WidgetTester tester) async {
+    testWidgets('renders correctly with dark theme',
+        (WidgetTester tester) async {
       const testTitle = 'Dark Theme Button';
       final themeWithAccent = AppThemeData.darkTheme(const Color(0xFF0F6CBD));
 

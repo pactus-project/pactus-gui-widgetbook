@@ -2,6 +2,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/pallets/on_surface_pallet.dart';
 import 'package:pactus_gui_widgetbook/src/core/pallets/surface_pallet.dart';
 import 'package:pactus_gui_widgetbook/src/core/text_styles/inter_text_styles.dart';
+
 /// ## [AppThemeData] Class Documentation
 ///
 /// The `AppThemeData` class defines the theme settings for the application,
