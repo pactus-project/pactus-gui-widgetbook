@@ -1,4 +1,84 @@
 import 'package:flutter/material.dart' show FontWeight, TextStyle;
+/// ## [InterTextStyles] Class Documentation
+///
+/// The `InterTextStyles` class defines a set of predefined text styles using the "Inter" font family.
+/// It provides various text styles that can be used throughout the application to ensure consistency in typography.
+///
+/// ### Usage:
+///
+/// This class contains multiple predefined text styles categorized by font weight and size.
+///
+/// ### Font Families:
+///
+/// - **[interThin]**: `"Inter-Thin"`
+/// - **[interExtraLight]**: `"Inter-ExtraLight"`
+/// - **[interLight]**: `"Inter-Light"`
+/// - **[interRegular]**: `"Inter-Regular"`
+/// - **[interMedium]**: `"Inter-Medium"`
+/// - **[interSemiBold]**: `"Inter-SemiBold"`
+/// - **[interBold]**: `"Inter-Bold"`
+/// - **[interExtraBold]**: `"Inter-ExtraBold"`
+///
+/// ### Predefined Text Styles:
+///
+/// - **[captionMedium]**:
+///   - Font: `Inter-Medium`
+///   - Font Size: `12px`
+///   - Font Weight: `Medium (500)`
+///   - Line Height: `22px`
+///
+/// - **[smallRegular]**:
+///   - Font: `Inter-Regular`
+///   - Font Size: `14px`
+///   - Font Weight: `Regular (400)`
+///   - Line Height: `22px`
+///
+/// - **[bodyBold]**:
+///   - Font: `Inter-Bold`
+///   - Font Size: `16px`
+///   - Font Weight: `Bold (700)`
+///   - Line Height: `24px`
+///
+/// - **[bodyRegular]**:
+///   - Font: `Inter-Regular`
+///   - Font Size: `16px`
+///   - Font Weight: `Regular (400)`
+///   - Line Height: `22px`
+///
+/// - **[subtitleRegular]**:
+///   - Font: `Inter-Regular`
+///   - Font Size: `20px`
+///   - Font Weight: `Regular (400)`
+///   - Line Height: `22px`
+///
+/// - **[titleMedium]**:
+///   - Font: `Inter-Medium`
+///   - Font Size: `24px`
+///   - Font Weight: `Medium (500)`
+///   - Line Height: `36px`
+///
+/// - **[titleBold]**:
+///   - Font: `Inter-Bold`
+///   - Font Size: `28px`
+///   - Font Weight: `Bold (700)`
+///   - Line Height: `28px`
+///
+/// - **[headerBold]**:
+///   - Font: `Inter-Bold`
+///   - Font Size: `42px`
+///   - Font Weight: `Bold (700)`
+///   - Line Height: `52px`
+///
+/// ### Example:
+///
+/// ```dart
+/// Text(
+///   'Hello, world!',
+///   style: InterTextStyles.bodyBold,
+/// );
+/// ```
+///
+/// This example demonstrates how to apply a predefined text style from `InterTextStyles` in a Flutter widget.
 
 class InterTextStyles {
   InterTextStyles._();
