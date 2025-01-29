@@ -29,17 +29,17 @@ import 'package:pactus_gui_widgetbook/src/core/text_styles/inter_text_styles.dar
 ///
 /// - **[typography]**:
 ///   - An instance of `Typography` defining text styles for various use cases.
-///   - Includes properties like `subtitle`, `title`, `bodyStrong`,
-///   `caption`, `body`, and more.
+///   - Includes properties like `headerBold`, `titleBold`, `bodyRegular`,
+///   `bodyBold`, `captionMedium`, and more.
 ///   - Uses `InterTextStyles` for text style definitions.
 ///
 /// ### Methods:
 ///
-/// - **[lightTheme()]**:
+/// - **[lightTheme]**:
 ///   - Returns a `FluentThemeData` instance configured for light mode.
 ///   - Includes light extensions and typography.
 ///
-/// - **[darkTheme()]**:
+/// - **[darkTheme]**:
 ///   - Returns a `FluentThemeData` instance configured for dark mode.
 ///   - Includes dark extensions and typography.
 ///
@@ -68,13 +68,13 @@ class AppThemeData {
       );
 
   static Typography typography = const Typography.raw(
-    subtitle: InterTextStyles.subtitle,
-    title: InterTextStyles.title,
-    bodyStrong: InterTextStyles.bodyStrong,
-    caption: InterTextStyles.caption,
-    body: InterTextStyles.body,
-    bodyLarge: InterTextStyles.bodyLarge,
-    display: InterTextStyles.display,
-    titleLarge: InterTextStyles.titleLarge,
+    caption: InterTextStyles.captionMedium,
+    body: InterTextStyles.smallRegular,
+    bodyStrong: InterTextStyles.bodyBold,
+    bodyLarge: InterTextStyles.bodyRegular,
+    subtitle: InterTextStyles.subtitleRegular,
+    title: InterTextStyles.titleMedium,
+    titleLarge: InterTextStyles.titleBold,
+    display: InterTextStyles.headerBold,
   );
 }
