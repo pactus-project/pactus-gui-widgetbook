@@ -68,13 +68,14 @@ class AppThemeData {
       );
 
   static Typography typography = const Typography.raw(
-    subtitle: InterTextStyles.subtitle,
-    title: InterTextStyles.title,
-    bodyStrong: InterTextStyles.bodyStrong,
-    caption: InterTextStyles.caption,
-    body: InterTextStyles.body,
-    bodyLarge: InterTextStyles.bodyLarge,
-    display: InterTextStyles.display,
-    titleLarge: InterTextStyles.titleLarge,
+    caption: InterTextStyles.captionMedium,
+    body: InterTextStyles.smallRegular,
+    bodyStrong: InterTextStyles.bodyBold,
+    bodyLarge: InterTextStyles.bodyRegular,
+    subtitle: InterTextStyles.subtitleRegular,
+    title: InterTextStyles.titleMedium,
+    titleLarge: InterTextStyles.titleBold,
+    display: InterTextStyles.headerBold,
   );
+
 }

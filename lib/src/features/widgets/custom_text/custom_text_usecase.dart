@@ -61,18 +61,19 @@ Widget customTextWidgetUseCase(BuildContext context) {
   );
 
   final textStyleMap = {
-    'Caption': InterTextStyles.caption,
-    'Body': InterTextStyles.body,
-    'Subtitle': InterTextStyles.subtitle,
-    'Title': InterTextStyles.title,
-    'Title Large': InterTextStyles.titleLarge,
-    'Display': InterTextStyles.display,
-    'Body Large': InterTextStyles.bodyLarge,
-    'Body Strong': InterTextStyles.bodyStrong,
+    'Caption': InterTextStyles.captionMedium,
+    'Body': InterTextStyles.smallRegular,
+    'Subtitle': InterTextStyles.subtitleRegular,
+    'Title': InterTextStyles.titleMedium,
+    'Title Large': InterTextStyles.titleBold,
+    'Display': InterTextStyles.headerBold,
+    'Body Large': InterTextStyles.bodyRegular,
+    'Body Strong': InterTextStyles.bodyBold,
   };
 
+
   final selectedTextStyle =
-      textStyleMap[selectedStyleName] ?? InterTextStyles.body;
+      textStyleMap[selectedStyleName] ?? InterTextStyles.bodyRegular;
 
   final textStyle = selectedTextStyle.copyWith(
     fontWeight: fontWeight == 'Bold' ? FontWeight.bold : FontWeight.normal,
