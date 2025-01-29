@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart' show FontWeight, TextStyle;
+
 /// ## [InterTextStyles] Class Documentation
 ///
 /// The `InterTextStyles` class defines a set of predefined text styles using the "Inter" font family.

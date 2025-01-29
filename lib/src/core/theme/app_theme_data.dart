@@ -77,5 +77,4 @@ class AppThemeData {
     titleLarge: InterTextStyles.titleBold,
     display: InterTextStyles.headerBold,
   );
-
 }

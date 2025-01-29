@@ -71,7 +71,6 @@ Widget customTextWidgetUseCase(BuildContext context) {
     'Body Strong': InterTextStyles.bodyBold,
   };
 
-
   final selectedTextStyle =
       textStyleMap[selectedStyleName] ?? InterTextStyles.bodyRegular;
 
