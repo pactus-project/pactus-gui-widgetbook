@@ -1,3 +1,10 @@
+# 1.4.0+6
+
+- [Refactor]: Update `InterTextStyles` and `AppThemeData` typography to reflect new Figma design updates. [#19](https://github.com/pactus-project/pactus-gui-widgetbook/pull/19)
+  - Refactored `InterTextStyles` to match the latest changes in the Figma design.
+  - Updated typography settings in `AppThemeData` to improve consistency and align with new design specifications.
+
+
 # 1.3.2+5
 
 - [CI]: update ci-cd pipeline for github page deploy. [#7](https://github.com/pactus-project/pactus-gui-widgetbook/pull/7)
