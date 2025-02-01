@@ -1,6 +1,84 @@
 
 import 'package:fluent_ui/fluent_ui.dart';
-
+/// ## [LightPallet] Class Documentation
+///
+/// The `LightPallet` class represents a custom color palette
+/// for light and dark themes in the Fluent UI framework.
+/// It provides a set of colors with various opacity levels that can
+/// be used for different UI elements in light and dark themes.
+///
+/// ### Properties:
+///
+/// - **[light900]** (`Color?`):
+///   - The darkest shade of the light theme color.
+///   - Defaults to `null` if not provided.
+///
+/// - **[light800]** (`Color?`):
+///   - The second darkest shade of the light theme color with a slight opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[light700]** (`Color?`):
+///   - The third shade of the light theme color with a medium opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[light600]** (`Color?`):
+///   - A lighter shade with more opacity in the light theme color.
+///   - Defaults to `null` if not provided.
+///
+/// - **[light500]** (`Color?`):
+///   - The medium-light shade with moderate opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[light400]** (`Color?`):
+///   - A light shade with a lower opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[light300]** (`Color?`):
+///   - A lighter color with reduced opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[light200]** (`Color?`):
+///   - A very light shade with minimal opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[light100]** (`Color?`):
+///   - The lightest shade with a very low opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[light50]** (`Color?`):
+///   - The lightest possible color with the lowest opacity.
+///   - Defaults to `null` if not provided.
+///
+/// ### Methods:
+///
+/// - **[copyWith()]**:
+///   - Allows creating a copy of the current `LightPallet` instance with
+///   some updated color values.
+///   - Used for customizing the theme dynamically.
+///
+/// - **[lerp(ThemeExtension<LightPallet>? other, double t)]**:
+///   - Linearly interpolates between two `LightPallet` instances based on
+///   the given interpolation factor (`t`).
+///   - Useful for transitioning between themes smoothly.
+///
+/// - **[toString()]**:
+///   - Returns a string representation of the `LightPallet` instance,
+///   displaying the values of the colors.
+///
+/// - **[getByIndex(int index)]**:
+///   - Returns the color based on the provided index value,
+///   which corresponds to the color shades (from `light900` to `light50`).
+///
+/// ### Static Constants:
+///
+/// - **[light]** (`LightPallet`):
+///   - A static constant representing the light theme color palette
+///   with full opacity.
+///
+/// - **[dark]** (`LightPallet`):
+///   - A static constant representing the dark theme color palette
+///   with full opacity.
+///
 @immutable
 class LightPallet extends ThemeExtension<LightPallet> {
   const LightPallet(

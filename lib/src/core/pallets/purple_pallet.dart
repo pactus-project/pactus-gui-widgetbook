@@ -1,4 +1,52 @@
 import 'package:fluent_ui/fluent_ui.dart';
+/// ## [PurplePallet] Class Documentation
+///
+/// The PurplePallet class represents a custom theme extension containing
+/// various shades of purple colors.
+/// It is used to provide a set of purple colors for both light and dark themes
+/// in a Flutter application.
+///
+/// ### Usage:
+///
+/// This model encapsulates a series of purple shades and provides methods for
+/// retrieving and manipulating
+/// these color values within the app’s theme. It can be used for both
+/// light and dark modes by accessing the
+/// predefined static instances.
+///
+/// ### Properties:
+///
+/// - **[purple900]** (Color?): The darkest shade of purple in the palette.
+/// - **[purple800]** (Color?): A lighter shade of purple.
+/// - **[purple700]** (Color?): A medium shade of purple.
+/// - **[purple600]** (Color?): A relatively light shade of purple.
+/// - **[purple500]** (Color?): The base purple shade.
+/// - **[purple400]** (Color?): A medium-light shade of purple.
+/// - **[purple300]** (Color?): A lighter shade of purple.
+/// - **[purple200]** (Color?): A very light shade of purple.
+/// - **[purple100]** (Color?): A pale shade of purple.
+/// - **[purple50]** (Color?): The lightest purple shade, nearly white.
+///
+/// ### Methods:
+///
+/// - **[copyWith]**:
+///   - Creates a new instance of PurplePallet by copying the current instance
+///   and replacing any provided values.
+///
+/// - **[lerp]**:
+///   - Linearly interpolates between two PurplePallet instances based on the
+///   provided factor (t).
+///   - Returns a new instance of PurplePallet with colors blended between the
+///   two instances.
+///
+/// - **[toString]**:
+///   - Provides a string representation of the PurplePallet instance,
+///   listing all its color properties.
+///
+/// - **[getByIndex]**:
+///   - Retrieves the color at the specified index from the palette (1–10).
+///   Throws an exception if the index is invalid.
+///
 
 @immutable
 class PurplePallet extends ThemeExtension<PurplePallet> {

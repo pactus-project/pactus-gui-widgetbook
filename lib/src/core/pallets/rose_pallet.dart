@@ -1,5 +1,51 @@
 import 'package:fluent_ui/fluent_ui.dart';
-
+/// ## [RosePallet] Class Documentation
+///
+/// The RosePallet class represents a custom theme extension containing various
+/// shades of rose colors.
+/// It is used to provide a set of rose colors for both light and dark themes
+/// in a Flutter application.
+///
+/// ### Usage:
+///
+/// This model encapsulates a series of rose shades and provides methods
+/// for retrieving and manipulating
+/// these color values within the app’s theme. It can be used for both
+/// light and dark modes by accessing the
+/// predefined static instances.
+///
+/// ### Properties:
+///
+/// - **[rose900]** (Color?): The darkest shade of rose in the palette.
+/// - **[rose800]** (Color?): A slightly lighter shade of rose.
+/// - **[rose700]** (Color?): A medium-dark shade of rose.
+/// - **[rose600]** (Color?): A lighter rose shade.
+/// - **[rose500]** (Color?): The base rose shade.
+/// - **[rose400]** (Color?): A medium-light shade of rose.
+/// - **[rose300]** (Color?): A light rose shade.
+/// - **[rose200]** (Color?): A very light rose shade.
+/// - **[rose100]** (Color?): A pale rose shade.
+/// - **[rose50]** (Color?): The lightest rose shade, nearly white.
+///
+/// ### Methods:
+///
+/// - **[copyWith]**:
+///   - Creates a new instance of RosePallet by copying the current instance
+///   and replacing any provided values.
+///
+/// - **[lerp]**:
+///   - Linearly interpolates between two RosePallet instances based
+///   on the provided factor (t).
+///   - Returns a new instance of RosePallet with colors blended between
+///   the two instances.
+///
+/// - **[toString]**:
+///   - Provides a string representation of the RosePallet instance,
+///   listing all its color properties.
+///
+/// - **[getByIndex]**:
+///   - Retrieves the color at the specified index from the palette (1–10).
+///   Throws an exception if the index is invalid.
 @immutable
 class RosePallet extends ThemeExtension<RosePallet> {
   const RosePallet(

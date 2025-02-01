@@ -1,5 +1,52 @@
 import 'package:fluent_ui/fluent_ui.dart';
-
+/// ## [RedPallet] Class Documentation
+///
+/// The RedPallet class represents a custom theme extension containing
+/// various shades of red colors.
+/// It is used to provide a set of red colors for both light and dark
+/// themes in a Flutter application.
+///
+/// ### Usage:
+///
+/// This model encapsulates a series of red shades and provides methods
+/// for retrieving and manipulating
+/// these color values within the app’s theme. It can be used for both
+/// light and dark modes by accessing the
+/// predefined static instances.
+///
+/// ### Properties:
+///
+/// - **[red900]** (Color?): The darkest shade of red in the palette.
+/// - **[red800]** (Color?): A slightly lighter shade of red.
+/// - **[red700]** (Color?): A medium-dark shade of red.
+/// - **[red600]** (Color?): A lighter red shade.
+/// - **[red500]** (Color?): The base red shade.
+/// - **[red400]** (Color?): A medium-light shade of red.
+/// - **[red300]** (Color?): A light red shade.
+/// - **[red200]** (Color?): A very light red shade.
+/// - **[red100]** (Color?): A pale red shade.
+/// - **[red50]** (Color?): The lightest red shade, nearly white.
+///
+/// ### Methods:
+///
+/// - **[copyWith]**:
+///   - Creates a new instance of RedPallet by copying the current
+///   instance and replacing any provided values.
+///
+/// - **[lerp]**:
+///   - Linearly interpolates between two RedPallet instances based on
+///   the provided factor (t).
+///   - Returns a new instance of RedPallet with colors blended between
+///   the two instances.
+///
+/// - **[toString]**:
+///   - Provides a string representation of the RedPallet instance,
+///   listing all its color properties.
+///
+/// - **[getByIndex]**:
+///   - Retrieves the color at the specified index from the palette (1–10).
+///   Throws an exception if the index is invalid.
+///
 @immutable
 class RedPallet extends ThemeExtension<RedPallet> {
   const RedPallet(

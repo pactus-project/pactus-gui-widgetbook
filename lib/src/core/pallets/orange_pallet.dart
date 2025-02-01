@@ -1,4 +1,84 @@
 import 'package:fluent_ui/fluent_ui.dart';
+/// ## [OrangePallet] Class Documentation
+///
+/// The `OrangePallet` class represents a custom color palette
+/// specifically designed with orange shades.
+/// It provides various shades of orange, each with different levels of opacity,
+/// intended for use in UI design in both light and dark themes.
+///
+/// ### Properties:
+///
+/// - **[orange900]** (`Color?`):
+///   - The darkest shade of the orange theme color.
+///   - Defaults to `null` if not provided.
+///
+/// - **[orange800]** (`Color?`):
+///   - The second darkest shade of orange with some opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[orange700]** (`Color?`):
+///   - A medium-dark shade of orange with opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[orange600]** (`Color?`):
+///   - A lighter orange shade with some opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[orange500]** (`Color?`):
+///   - A medium-light orange shade with moderate opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[orange400]** (`Color?`):
+///   - A lighter shade of orange with reduced opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[orange300]** (`Color?`):
+///   - A very light shade of orange with minimal opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[orange200]** (`Color?`):
+///   - A pale orange shade with low opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[orange100]** (`Color?`):
+///   - A very pale orange shade with very low opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[orange50]** (`Color?`):
+///   - The lightest orange shade with the least opacity.
+///   - Defaults to `null` if not provided.
+///
+/// ### Methods:
+///
+/// - **[copyWith()]**:
+///   - Creates a copy of the `OrangePallet` instance with
+///   optional modifications to color values.
+///   - Useful for customizing the theme dynamically.
+///
+/// - **[lerp(ThemeExtension<OrangePallet>? other, double t)]**:
+///   - Linearly interpolates between two
+///   `OrangePallet` instances based on the interpolation factor (`t`).
+///   - Useful for smooth transitions between theme states.
+///
+/// - **[toString()]**:
+///   - Returns a string representation of the `OrangePallet`
+///   instance, displaying the values of the colors.
+///
+/// - **[getByIndex(int index)]**:
+///   - Returns the color corresponding to
+///   the given index (from `orange900` to `orange50`).
+///   - Helps in retrieving specific shades by index.
+///
+/// ### Static Constants:
+///
+/// - **[light]** (`OrangePallet`):
+///   - A static constant representing the light theme color palette,
+///   providing a range of orange shades with various opacity levels.
+///
+/// - **[dark]** (`OrangePallet`):
+///   - A static constant representing the dark theme color palette,
+///   with deep orange shades and opacity variations.
+///
 
 @immutable
 class OrangePallet extends ThemeExtension<OrangePallet> {

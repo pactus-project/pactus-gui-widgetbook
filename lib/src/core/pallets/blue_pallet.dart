@@ -1,5 +1,87 @@
 
 import 'package:fluent_ui/fluent_ui.dart';
+/// ## [BluePallet] Class Documentation
+///
+/// The `BluePallet` class is a custom theme extension that
+/// defines a set of blue colors for use in theming an application.
+/// It allows the customization of UI components with various
+/// shades of blue, offering a unified color palette for
+/// both light and dark themes.
+///
+/// ### Properties:
+///
+/// - **[blue900]** (`Color?`):
+///   - Represents the darkest shade of the blue color palette.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blue800]** (`Color?`):
+///   - A dark shade of blue, slightly lighter than `blue900`.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blue700]** (`Color?`):
+///   - A medium-dark shade of blue.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blue600]** (`Color?`):
+///   - A medium blue shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blue500]** (`Color?`):
+///   - A balanced, neutral blue shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blue400]** (`Color?`):
+///   - A lighter blue shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blue300]** (`Color?`):
+///   - A light blue shade, lighter than `blue400`.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blue200]** (`Color?`):
+///   - A very light blue shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blue100]** (`Color?`):
+///   - A near-white shade of blue.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blue50]** (`Color?`):
+///   - The lightest shade of blue, close to white.
+///   - Defaults to `null` if not provided.
+///
+/// ### Methods:
+///
+/// - **[copyWith]**:
+///   - Allows creating a new instance of `BluePallet` by copying
+///   the current instance and overriding any of the color properties.
+///   - **Parameters**: Accepts optional `Color?` values
+///   for each of the 10 shades.
+///   - **Returns**: A new `BluePallet` with updated properties.
+///
+/// - **[lerp]**:
+///   - Interpolates between two `BluePallet` instances based on a given
+///   `t` factor (ranging from 0.0 to 1.0).
+///   - **Parameters**:
+///     - `other`: Another instance of `BluePallet` to interpolate with.
+///     - `t`: The interpolation factor (0.0 for the current instance,
+///     1.0 for the other instance).
+///   - **Returns**: A new `BluePallet` instance with interpolated color values.
+///
+/// - **[toString]**:
+///   - Returns a string representation of the `BluePallet`
+///   instance for easy logging and debugging.
+///   - **Returns**: A `String` detailing each color value in the `BluePallet`.
+///
+/// - **[getByIndex]**:
+///   - Retrieves a color from the palette based
+///   on the provided index.
+///   - **Parameters**: `index` (int) - An index
+///   representing a specific color in the palette.
+///   - **Returns**: The color at the specified index or
+///   throws an exception if the index is invalid.
+///   - **Throws**: `Exception` if the index is out of range.
+///
 
 @immutable
 class BluePallet extends ThemeExtension<BluePallet> {

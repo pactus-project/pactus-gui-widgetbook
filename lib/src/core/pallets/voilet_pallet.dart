@@ -1,6 +1,52 @@
 
 import 'package:fluent_ui/fluent_ui.dart';
-
+/// ## [VioletPallet] Class Documentation
+///
+/// The VioletPallet class represents a custom theme extension containing
+/// various shades of violet (pink) colors.
+/// It is designed to provide a gradient of violet hues for both light and dark
+/// themes in a Flutter application.
+///
+/// ### Usage:
+///
+/// This class encapsulates a range of violet shades, offering flexibility
+/// in how colors are applied throughout the app's UI.
+/// It supports theme switching by providing pre-defined color sets for
+/// both light and dark modes.
+///
+/// ### Properties:
+///
+/// - **[pink900]** (Color?): The darkest shade of violet in the palette.
+/// - **[pink800]** (Color?): A slightly lighter shade of violet.
+/// - **[pink700]** (Color?): A medium-dark shade of violet.
+/// - **[pink600]** (Color?): A light violet shade.
+/// - **[pink500]** (Color?): The base violet shade.
+/// - **[pink400]** (Color?): A lighter violet shade.
+/// - **[pink300]** (Color?): A soft violet hue.
+/// - **[pink200]** (Color?): A very light violet shade.
+/// - **[pink100]** (Color?): A pale violet shade.
+/// - **[pink50]** (Color?): The lightest violet shade, nearly white.
+///
+/// ### Methods:
+///
+/// - **[copyWith]**:
+///   - Creates a new instance of VioletPallet by copying the current
+///   instance and replacing any provided values.
+///
+/// - **[lerp]**:
+///   - Linearly interpolates between two VioletPallet instances based
+///   on the provided factor (t).
+///   - Returns a new instance of VioletPallet with colors blended between
+///   the two instances.
+///
+/// - **[toString]**:
+///   - Provides a string representation of the VioletPallet instance,
+///   listing all its color properties.
+///
+/// - **[getByIndex]**:
+///   - Retrieves the color at the specified index from the palette (1–10).
+///   Throws an exception if the index is invalid.
+///
 @immutable
 class VioletPallet extends ThemeExtension<VioletPallet> {
   const VioletPallet(

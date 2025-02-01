@@ -1,4 +1,87 @@
 import 'package:fluent_ui/fluent_ui.dart';
+/// ## [BlueGrayPallet] Class Documentation
+///
+/// The `BlueGrayPallet` class is a custom theme extension that defines
+/// a set of blue-gray colors for use in theming an application.
+/// It is used to customize the appearance of
+/// various UI elements with shades of blue-gray,
+/// offering a cohesive color palette for both light and dark themes.
+///
+/// ### Properties:
+///
+/// - **[blueGray900]** (`Color?`):
+///   - Represents the darkest shade of the blue-gray color palette.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blueGray800]** (`Color?`):
+///   - A dark shade of blue-gray, slightly lighter than `blueGray900`.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blueGray700]** (`Color?`):
+///   - A medium-dark shade of blue-gray.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blueGray600]** (`Color?`):
+///   - A medium blue-gray shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blueGray500]** (`Color?`):
+///   - A balanced, neutral blue-gray shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blueGray400]** (`Color?`):
+///   - A lighter blue-gray shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blueGray300]** (`Color?`):
+///   - A light blue-gray shade, lighter than `blueGray400`.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blueGray200]** (`Color?`):
+///   - A very light blue-gray shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blueGray100]** (`Color?`):
+///   - A near-white shade of blue-gray.
+///   - Defaults to `null` if not provided.
+///
+/// - **[blueGray50]** (`Color?`):
+///   - The lightest shade of blue-gray, close to white.
+///   - Defaults to `null` if not provided.
+///
+/// ### Methods:
+///
+/// - **[copyWith]**:
+///   - Allows creating a new instance of `BlueGrayPallet` by
+///   copying the current instance and overriding any of the color properties.
+///   - **Parameters**: Accepts optional `Color?` values for
+///   each of the 10 shades.
+///   - **Returns**: A new `BlueGrayPallet` with updated properties.
+///
+/// - **[lerp]**:
+///   - Interpolates between two `BlueGrayPallet` instances based on
+///   a given `t` factor (ranging from 0.0 to 1.0).
+///   - **Parameters**:
+///     - `other`: Another instance of `BlueGrayPallet` to interpolate with.
+///     - `t`: The interpolation factor (0.0 for the current instance,
+///     1.0 for the other instance).
+///   - **Returns**: A new `BlueGrayPallet` instance with interpolated
+///   color values.
+///
+/// - **[toString]**:
+///   - Returns a string representation of the `BlueGrayPallet`
+///   instance for easy logging and debugging.
+///   - **Returns**: A `String` detailing each color value in
+///   the `BlueGrayPallet`.
+///
+/// - **[getByIndex]**:
+///   - Retrieves a color from the palette based on the provided index.
+///   - **Parameters**: `index` (int) - An index representing a
+///   specific color in the palette.
+///   - **Returns**: The color at the specified index or throws
+///   an exception if the index is invalid.
+///   - **Throws**: `Exception` if the index is out of range.
+///
 
 @immutable
 class BlueGrayPallet extends ThemeExtension<BlueGrayPallet> {

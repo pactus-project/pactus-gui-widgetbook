@@ -1,6 +1,87 @@
 
 import 'package:fluent_ui/fluent_ui.dart';
-
+/// ## [GreenPallet] Class Documentation
+///
+/// The `GreenPallet` class is a custom theme extension that defines a set
+/// of green colors for use in theming an application.
+/// It provides various green shades ranging from dark green to light green
+/// that can be used for backgrounds, buttons, text, and other UI elements.
+///
+/// ### Properties:
+///
+/// - **[green900]** (`Color?`):
+///   - The darkest shade of green in the palette.
+///   - Defaults to `null` if not provided.
+///
+/// - **[green800]** (`Color?`):
+///   - A very dark green, slightly lighter than `green900`.
+///   - Defaults to `null` if not provided.
+///
+/// - **[green700]** (`Color?`):
+///   - A medium-dark green color.
+///   - Defaults to `null` if not provided.
+///
+/// - **[green600]** (`Color?`):
+///   - A medium green shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[green500]** (`Color?`):
+///   - A balanced green color, typically used for primary accents.
+///   - Defaults to `null` if not provided.
+///
+/// - **[green400]** (`Color?`):
+///   - A lighter green shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[green300]** (`Color?`):
+///   - A light green color, great for highlights or secondary elements.
+///   - Defaults to `null` if not provided.
+///
+/// - **[green200]** (`Color?`):
+///   - A very light green shade, ideal for subtle backgrounds or borders.
+///   - Defaults to `null` if not provided.
+///
+/// - **[green100]** (`Color?`):
+///   - A near-white green shade, perfect for light UI elements.
+///   - Defaults to `null` if not provided.
+///
+/// - **[green50]** (`Color?`):
+///   - The lightest green, almost white, often used for
+///   backgrounds or light highlights.
+///   - Defaults to `null` if not provided.
+///
+/// ### Methods:
+///
+/// - **[copyWith]**:
+///   - Creates a new instance of `GreenPallet` by
+///   copying the current instance and overriding any of the color properties.
+///   - **Parameters**: Accepts optional `Color?`
+///   values for each of the 10 green shades.
+///   - **Returns**: A new `GreenPallet` with updated properties.
+///
+/// - **[lerp]**:
+///   - Interpolates between two `GreenPallet`
+///   instances based on a given interpolation factor `t` (from 0.0 to 1.0).
+///   - **Parameters**:
+///     - `other`: Another `GreenPallet` instance to interpolate with.
+///     - `t`: The interpolation factor
+///     (0.0 for the current instance, 1.0 for the other instance).
+///   - **Returns**: A new `GreenPallet` instance with interpolated color values.
+///
+/// - **[toString]**:
+///   - Provides a string representation of the `GreenPallet`
+///   instance, useful for logging or debugging.
+///   - **Returns**: A `String` detailing each color value in the `GreenPallet`.
+///
+/// - **[getByIndex]**:
+///   - Retrieves a color from the
+///   palette based on the provided index.
+///   - **Parameters**: `index` (int) -
+///   The index representing a specific color in the palette.
+///   - **Returns**: The color at the specified index
+///   or throws an exception if the index is invalid.
+///   - **Throws**: `Exception` if the index is out of range.
+///
 @immutable
 class GreenPallet extends ThemeExtension<GreenPallet> {
   const GreenPallet(

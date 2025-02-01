@@ -1,6 +1,85 @@
 
 import 'package:fluent_ui/fluent_ui.dart';
-
+/// ## [PinkPallet] Class Documentation
+///
+/// The `PinkPallet` class represents a custom color palette designed around
+/// various shades of pink.
+/// It provides different opacity levels of pink hues intended for use in
+/// UI design, supporting both light and dark themes.
+///
+/// ### Properties:
+///
+/// - **[pink900]** (`Color?`):
+///   - The darkest shade of pink.
+///   - Defaults to `null` if not provided.
+///
+/// - **[pink800]** (`Color?`):
+///   - The second darkest shade of pink with some opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[pink700]** (`Color?`):
+///   - A medium-dark shade of pink with opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[pink600]** (`Color?`):
+///   - A lighter shade of pink with some opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[pink500]** (`Color?`):
+///   - A medium-light pink shade with moderate opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[pink400]** (`Color?`):
+///   - A lighter shade of pink with reduced opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[pink300]** (`Color?`):
+///   - A very light pink shade with minimal opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[pink200]** (`Color?`):
+///   - A pale pink shade with low opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[pink100]** (`Color?`):
+///   - A very pale pink shade with very low opacity.
+///   - Defaults to `null` if not provided.
+///
+/// - **[pink50]** (`Color?`):
+///   - The lightest pink shade with the least opacity.
+///   - Defaults to `null` if not provided.
+///
+/// ### Methods:
+///
+/// - **[copyWith()]**:
+///   - Creates a copy of the `PinkPallet` instance with optional
+///   modifications to color values.
+///   - Useful for customizing the theme dynamically.
+///
+/// - **[lerp(ThemeExtension<PinkPallet>? other, double t)]**:
+///   - Linearly interpolates between two `PinkPallet` instances based
+///   on the interpolation factor (`t`).
+///   - Useful for smooth transitions between theme states.
+///
+/// - **[toString()]**:
+///   - Returns a string representation of the `PinkPallet` instance,
+///   displaying the values of the colors.
+///
+/// - **[getByIndex(int index)]**:
+///   - Returns the color corresponding to the given index
+///   (from `pink900` to `pink50`).
+///   - Helps in retrieving specific shades by index.
+///
+/// ### Static Constants:
+///
+/// - **[light]** (`PinkPallet`):
+///   - A static constant representing the light theme color palette,
+///   providing a range of pink shades with various opacity levels.
+///
+/// - **[dark]** (`PinkPallet`):
+///   - A static constant representing the dark theme color palette,
+///   with rich pink shades and opacity variations.
+///
 @immutable
 class PinkPallet extends ThemeExtension<PinkPallet> {
   const PinkPallet(

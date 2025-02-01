@@ -1,6 +1,86 @@
 
 import 'package:fluent_ui/fluent_ui.dart';
-
+/// ## [GrayPallet] Class Documentation
+///
+/// The `GrayPallet` class is a custom theme extension that defines
+/// a set of gray colors for use in theming an application.
+/// It offers a range of grayscale shades that can be used
+/// for backgrounds, text, and other UI elements, from very light to dark gray.
+///
+/// ### Properties:
+///
+/// - **[gray900]** (`Color?`):
+///   - Represents the darkest shade in the gray color palette.
+///   - Defaults to `null` if not provided.
+///
+/// - **[gray800]** (`Color?`):
+///   - A very dark gray shade, slightly lighter than `gray900`.
+///   - Defaults to `null` if not provided.
+///
+/// - **[gray700]** (`Color?`):
+///   - A medium-dark gray color.
+///   - Defaults to `null` if not provided.
+///
+/// - **[gray600]** (`Color?`):
+///   - A medium gray shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[gray500]** (`Color?`):
+///   - A balanced gray color.
+///   - Defaults to `null` if not provided.
+///
+/// - **[gray400]** (`Color?`):
+///   - A lighter gray shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[gray300]** (`Color?`):
+///   - A light gray color.
+///   - Defaults to `null` if not provided.
+///
+/// - **[gray200]** (`Color?`):
+///   - A very light gray shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[gray100]** (`Color?`):
+///   - A near white gray shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[gray50]** (`Color?`):
+///   - The lightest gray shade, close to white.
+///   - Defaults to `null` if not provided.
+///
+/// ### Methods:
+///
+/// - **[copyWith]**:
+///   - Creates a new instance of `GrayPallet` by
+///   copying the current instance and overriding any of the color properties.
+///   - **Parameters**: Accepts optional `Color?`
+///   values for each of the 10 gray shades.
+///   - **Returns**: A new `GrayPallet` with updated properties.
+///
+/// - **[lerp]**:
+///   - Interpolates between two `GrayPallet`
+///   instances based on a given interpolation factor `t` (from 0.0 to 1.0).
+///   - **Parameters**:
+///     - `other`: Another `GrayPallet` instance to interpolate with.
+///     - `t`: The interpolation factor
+///     (0.0 for the current instance, 1.0 for the other instance).
+///   - **Returns**: A new `GrayPallet` instance with interpolated color values.
+///
+/// - **[toString]**:
+///   - Provides a string representation of the `GrayPallet`
+///   instance, useful for logging or debugging.
+///   - **Returns**: A `String` detailing each color value
+///   in the `GrayPallet`.
+///
+/// - **[getByIndex]**:
+///   - Retrieves a color from the palette based on the provided index.
+///   - **Parameters**: `index` (int) - The index representing
+///   a specific color in the palette.
+///   - **Returns**: The color at the specified
+///   index or throws an exception if the index is invalid.
+///   - **Throws**: `Exception` if the index is out of range.
+///
 @immutable
 class GrayPallet extends ThemeExtension<GrayPallet> {
   const GrayPallet(

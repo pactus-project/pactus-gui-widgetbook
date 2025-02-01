@@ -1,6 +1,87 @@
 
 import 'package:fluent_ui/fluent_ui.dart';
-
+/// ## [DarkPallet] Class Documentation
+///
+/// The `DarkPallet` class is a custom theme extension
+/// that defines a set of dark colors for use in theming an application.
+/// It allows the customization of UI components with
+/// various shades of dark colors, offering flexibility
+/// to create a dark mode or dark theme for your application.
+///
+/// ### Properties:
+///
+/// - **[dark900]** (`Color?`):
+///   - Represents the darkest shade in the dark color palette.
+///   - Defaults to `null` if not provided.
+///
+/// - **[dark800]** (`Color?`):
+///   - A very dark shade, slightly lighter than `dark900`.
+///   - Defaults to `null` if not provided.
+///
+/// - **[dark700]** (`Color?`):
+///   - A dark shade of color.
+///   - Defaults to `null` if not provided.
+///
+/// - **[dark600]** (`Color?`):
+///   - A medium-dark shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[dark500]** (`Color?`):
+///   - A balanced dark shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[dark400]** (`Color?`):
+///   - A lighter dark shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[dark300]** (`Color?`):
+///   - A very light dark shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[dark200]** (`Color?`):
+///   - An even lighter dark shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[dark100]** (`Color?`):
+///   - A near-white shade of dark color.
+///   - Defaults to `null` if not provided.
+///
+/// - **[dark50]** (`Color?`):
+///   - The lightest dark shade, closer to white.
+///   - Defaults to `null` if not provided.
+///
+/// ### Methods:
+///
+/// - **[copyWith]**:
+///   - Allows creating a new instance of `DarkPallet`
+///   by copying the current instance and
+///   overriding any of the color properties.
+///   - **Parameters**: Accepts optional `Color?`
+///   values for each of the 10 shades.
+///   - **Returns**: A new `DarkPallet` with updated properties.
+///
+/// - **[lerp]**:
+///   - Interpolates between two `DarkPallet`
+///   instances based on a given `t` factor (ranging from 0.0 to 1.0).
+///   - **Parameters**:
+///     - `other`: Another instance of `DarkPallet` to interpolate with.
+///     - `t`: The interpolation factor
+///     (0.0 for the current instance, 1.0 for the other instance).
+///   - **Returns**: A new `DarkPallet` instance with interpolated color values.
+///
+/// - **[toString]**:
+///   - Returns a string representation of
+///   the `DarkPallet` instance for easy logging and debugging.
+///   - **Returns**: A `String` detailing each color value in the `DarkPallet`.
+///
+/// - **[getByIndex]**:
+///   - Retrieves a color from the palette based on the provided index.
+///   - **Parameters**: `index` (int) -
+///   An index representing a specific color in the palette.
+///   - **Returns**: The color at the specified
+///   index or throws an exception if the index is invalid.
+///   - **Throws**: `Exception` if the index is out of range.
+///
 @immutable
 class DarkPallet extends ThemeExtension<DarkPallet> {
   const DarkPallet(

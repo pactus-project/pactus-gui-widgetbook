@@ -1,5 +1,51 @@
 import 'package:fluent_ui/fluent_ui.dart';
-
+/// ## [YellowPallet] Class Documentation
+///
+/// The YellowPallet class represents a custom theme extension containing
+/// various shades of yellow colors.
+/// It is designed to provide a gradient of yellow hues for both light and dark
+/// themes in a Flutter application.
+///
+/// ### Usage:
+///
+/// This class encapsulates a range of yellow shades, offering flexibility in
+/// how colors are applied throughout the app's UI.
+/// It supports theme switching by providing pre-defined color sets for both
+/// light and dark modes.
+///
+/// ### Properties:
+///
+/// - **[yellow900]** (Color?): The darkest shade of yellow in the palette.
+/// - **[yellow800]** (Color?): A slightly lighter shade of yellow.
+/// - **[yellow700]** (Color?): A medium-dark shade of yellow.
+/// - **[yellow600]** (Color?): A bright yellow shade.
+/// - **[yellow500]** (Color?): The base yellow shade.
+/// - **[yellow400]** (Color?): A lighter yellow shade.
+/// - **[yellow300]** (Color?): A soft yellow hue.
+/// - **[yellow200]** (Color?): A very light yellow shade.
+/// - **[yellow100]** (Color?): A pale yellow shade.
+/// - **[yellow50]** (Color?): The lightest yellow shade, nearly white.
+///
+/// ### Methods:
+///
+/// - **[copyWith]**:
+///   - Creates a new instance of YellowPallet by copying the current instance
+///   and replacing any provided values.
+///
+/// - **[lerp]**:
+///   - Linearly interpolates between two YellowPallet instances based
+///   on the provided factor (t).
+///   - Returns a new instance of YellowPallet with colors blended between
+///   the two instances.
+///
+/// - **[toString]**:
+///   - Provides a string representation of the YellowPallet instance,
+///   listing all its color properties.
+///
+/// - **[getByIndex]**:
+///   - Retrieves the color at the specified index from the palette (1–10).
+///   Throws an exception if the index is invalid.
+///
 @immutable
 class YellowPallet extends ThemeExtension<YellowPallet> {
   const YellowPallet(

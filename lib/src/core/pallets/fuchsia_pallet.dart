@@ -1,6 +1,87 @@
 
 import 'package:fluent_ui/fluent_ui.dart';
-
+/// ## [FuchsiaPallet] Class Documentation
+///
+/// The `FuchsiaPallet` class is a custom theme extension that defines
+/// a set of fuchsia (purple-pink) colors for use in theming an application.
+/// This allows the creation of a unique color palette with shades
+/// ranging from dark to light fuchsia, perfect for crafting vibrant,
+/// customized UIs.
+///
+/// ### Properties:
+///
+/// - **[fuchsia900]** (`Color?`):
+///   - Represents the darkest shade in the fuchsia color palette.
+///   - Defaults to `null` if not provided.
+///
+/// - **[fuchsia800]** (`Color?`):
+///   - A very dark shade, slightly lighter than `fuchsia900`.
+///   - Defaults to `null` if not provided.
+///
+/// - **[fuchsia700]** (`Color?`):
+///   - A dark shade of fuchsia color.
+///   - Defaults to `null` if not provided.
+///
+/// - **[fuchsia600]** (`Color?`):
+///   - A medium-dark shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[fuchsia500]** (`Color?`):
+///   - A balanced fuchsia shade.
+///   - Defaults to `null` if not provided.
+///
+/// - **[fuchsia400]** (`Color?`):
+///   - A lighter shade of fuchsia.
+///   - Defaults to `null` if not provided.
+///
+/// - **[fuchsia300]** (`Color?`):
+///   - A medium-light shade of fuchsia.
+///   - Defaults to `null` if not provided.
+///
+/// - **[fuchsia200]** (`Color?`):
+///   - A light shade of fuchsia.
+///   - Defaults to `null` if not provided.
+///
+/// - **[fuchsia100]** (`Color?`):
+///   - A very light shade of fuchsia, close to pastel.
+///   - Defaults to `null` if not provided.
+///
+/// - **[fuchsia50]** (`Color?`):
+///   - The lightest fuchsia shade, almost white.
+///   - Defaults to `null` if not provided.
+///
+/// ### Methods:
+///
+/// - **[copyWith]**:
+///   - Creates a new instance of `FuchsiaPallet` by
+///   copying the current instance and overriding any of the color properties.
+///   - **Parameters**: Accepts optional `Color?`
+///   values for each of the 10 fuchsia shades.
+///   - **Returns**: A new `FuchsiaPallet` with updated properties.
+///
+/// - **[lerp]**:
+///   - Interpolates between two `FuchsiaPallet`
+///   instances based on a given interpolation factor `t` (from 0.0 to 1.0).
+///   - **Parameters**:
+///     - `other`: Another `FuchsiaPallet` instance to interpolate with.
+///     - `t`: The interpolation factor
+///     (0.0 for the current instance, 1.0 for the other instance).
+///   - **Returns**: A new `FuchsiaPallet`
+///   instance with interpolated color values.
+///
+/// - **[toString]**:
+///   - Provides a string representation of the `FuchsiaPallet`
+///   instance, useful for logging or debugging.
+///   - **Returns**: A `String` detailing each color value
+///   in the `FuchsiaPallet`.
+///
+/// - **[getByIndex]**:
+///   - Retrieves a color from the palette based on the provided index.
+///   - **Parameters**: `index` (int) - The index representing
+///   a specific color in the palette.
+///   - **Returns**: The color at the specified index or
+///   throws an exception if the index is invalid.
+///   - **Throws**: `Exception` if the index is out of range.
 @immutable
 class FuchsiaPallet extends ThemeExtension<FuchsiaPallet> {
   const FuchsiaPallet(

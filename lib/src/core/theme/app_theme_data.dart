@@ -19,11 +19,11 @@ import 'package:pactus_gui_widgetbook/app_styles.dart';
 ///
 /// - **[lightExtensions]**:
 ///   - A collection of `ThemeExtension` objects for the light theme.
-///   - Includes `SurfacePallet.light` and `OnSurfacePallet.light`.
+///   - Includes `BlueGrayPallet.light` and `GrayPallet.light`.
 ///
 /// - **[darkExtensions]**:
 ///   - A collection of `ThemeExtension` objects for the dark theme.
-///   - Includes `SurfacePallet.dark` and `OnSurfacePallet.dark`.
+///   - Includes `BlueGrayPallet.dark` and `GrayPallet.dark`.
 ///
 /// - **[typography]**:
 ///   - An instance of `Typography` defining text styles for various use cases.
