@@ -1,5 +1,5 @@
-
 import 'package:fluent_ui/fluent_ui.dart';
+
 /// ## [BluePallet] Class Documentation
 ///
 /// The `BluePallet` class is a custom theme extension that

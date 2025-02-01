@@ -1,5 +1,5 @@
-
 import 'package:fluent_ui/fluent_ui.dart';
+
 /// ## [GreenPallet] Class Documentation
 ///
 /// The `GreenPallet` class is a custom theme extension that defines a set
@@ -86,15 +86,15 @@ import 'package:fluent_ui/fluent_ui.dart';
 class GreenPallet extends ThemeExtension<GreenPallet> {
   const GreenPallet(
       {required this.green900,
-        required this.green800,
-        required this.green700,
-        required this.green600,
-        required this.green500,
-        required this.green400,
-        required this.green300,
-        required this.green200,
-        required this.green100,
-        required this.green50});
+      required this.green800,
+      required this.green700,
+      required this.green600,
+      required this.green500,
+      required this.green400,
+      required this.green300,
+      required this.green200,
+      required this.green100,
+      required this.green50});
 
   final Color? green900;
   final Color? green800;
@@ -110,15 +110,15 @@ class GreenPallet extends ThemeExtension<GreenPallet> {
   @override
   GreenPallet copyWith(
       {Color? green900,
-        Color? green800,
-        Color? green700,
-        Color? green600,
-        Color? green500,
-        Color? green400,
-        Color? green300,
-        Color? green200,
-        Color? green100,
-        Color? green50}) {
+      Color? green800,
+      Color? green700,
+      Color? green600,
+      Color? green500,
+      Color? green400,
+      Color? green300,
+      Color? green200,
+      Color? green100,
+      Color? green50}) {
     return GreenPallet(
       green900: green900 ?? this.green900,
       green800: green800 ?? this.green800,

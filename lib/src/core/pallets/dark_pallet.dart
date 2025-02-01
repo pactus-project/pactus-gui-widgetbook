@@ -1,5 +1,5 @@
-
 import 'package:fluent_ui/fluent_ui.dart';
+
 /// ## [DarkPallet] Class Documentation
 ///
 /// The `DarkPallet` class is a custom theme extension
@@ -86,15 +86,15 @@ import 'package:fluent_ui/fluent_ui.dart';
 class DarkPallet extends ThemeExtension<DarkPallet> {
   const DarkPallet(
       {required this.dark900,
-        required this.dark800,
-        required this.dark700,
-        required this.dark600,
-        required this.dark500,
-        required this.dark400,
-        required this.dark300,
-        required this.dark200,
-        required this.dark100,
-        required this.dark50});
+      required this.dark800,
+      required this.dark700,
+      required this.dark600,
+      required this.dark500,
+      required this.dark400,
+      required this.dark300,
+      required this.dark200,
+      required this.dark100,
+      required this.dark50});
 
   final Color? dark900;
   final Color? dark800;
@@ -110,15 +110,15 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
   @override
   DarkPallet copyWith(
       {Color? dark900,
-        Color? dark800,
-        Color? dark700,
-        Color? dark600,
-        Color? dark500,
-        Color? dark400,
-        Color? dark300,
-        Color? dark200,
-        Color? dark100,
-        Color? dark50}) {
+      Color? dark800,
+      Color? dark700,
+      Color? dark600,
+      Color? dark500,
+      Color? dark400,
+      Color? dark300,
+      Color? dark200,
+      Color? dark100,
+      Color? dark50}) {
     return DarkPallet(
       dark900: dark900 ?? this.dark900,
       dark800: dark800 ?? this.dark800,
@@ -195,8 +195,9 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
         throw Exception('Invalid DarkPallet color index');
     }
   }
+
 // dark theme with opacity
-  static const light =  DarkPallet(
+  static const light = DarkPallet(
     dark900: Color(0xFF1A1A1A),
     dark800: Color.fromRGBO(26, 26, 26, 0.8),
     dark700: Color.fromRGBO(26, 26, 26, 0.7),
@@ -208,7 +209,6 @@ class DarkPallet extends ThemeExtension<DarkPallet> {
     dark100: Color.fromRGBO(26, 26, 26, 0.12),
     dark50: Color.fromRGBO(26, 26, 26, 0.08),
   );
-
 
   // the dark theme
   static const dark = DarkPallet(

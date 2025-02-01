@@ -1,5 +1,5 @@
-
 import 'package:fluent_ui/fluent_ui.dart';
+
 /// ## [VioletPallet] Class Documentation
 ///
 /// The VioletPallet class represents a custom theme extension containing
@@ -51,15 +51,15 @@ import 'package:fluent_ui/fluent_ui.dart';
 class VioletPallet extends ThemeExtension<VioletPallet> {
   const VioletPallet(
       {required this.pink900,
-        required this.pink800,
-        required this.pink700,
-        required this.pink600,
-        required this.pink500,
-        required this.pink400,
-        required this.pink300,
-        required this.pink200,
-        required this.pink100,
-        required this.pink50});
+      required this.pink800,
+      required this.pink700,
+      required this.pink600,
+      required this.pink500,
+      required this.pink400,
+      required this.pink300,
+      required this.pink200,
+      required this.pink100,
+      required this.pink50});
 
   final Color? pink900;
   final Color? pink800;
@@ -75,15 +75,15 @@ class VioletPallet extends ThemeExtension<VioletPallet> {
   @override
   VioletPallet copyWith(
       {Color? pink900,
-        Color? pink800,
-        Color? pink700,
-        Color? pink600,
-        Color? pink500,
-        Color? pink400,
-        Color? pink300,
-        Color? pink200,
-        Color? pink100,
-        Color? pink50}) {
+      Color? pink800,
+      Color? pink700,
+      Color? pink600,
+      Color? pink500,
+      Color? pink400,
+      Color? pink300,
+      Color? pink200,
+      Color? pink100,
+      Color? pink50}) {
     return VioletPallet(
       pink900: pink900 ?? this.pink900,
       pink800: pink800 ?? this.pink800,

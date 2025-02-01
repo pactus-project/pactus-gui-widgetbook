@@ -1,4 +1,5 @@
 import 'package:fluent_ui/fluent_ui.dart';
+
 /// ## [RedPallet] Class Documentation
 ///
 /// The RedPallet class represents a custom theme extension containing
@@ -51,15 +52,15 @@ import 'package:fluent_ui/fluent_ui.dart';
 class RedPallet extends ThemeExtension<RedPallet> {
   const RedPallet(
       {required this.red900,
-        required this.red800,
-        required this.red700,
-        required this.red600,
-        required this.red500,
-        required this.red400,
-        required this.red300,
-        required this.red200,
-        required this.red100,
-        required this.red50});
+      required this.red800,
+      required this.red700,
+      required this.red600,
+      required this.red500,
+      required this.red400,
+      required this.red300,
+      required this.red200,
+      required this.red100,
+      required this.red50});
 
   final Color? red900;
   final Color? red800;
@@ -75,15 +76,15 @@ class RedPallet extends ThemeExtension<RedPallet> {
   @override
   RedPallet copyWith(
       {Color? red900,
-        Color? red800,
-        Color? red700,
-        Color? red600,
-        Color? red500,
-        Color? red400,
-        Color? red300,
-        Color? red200,
-        Color? red100,
-        Color? red50}) {
+      Color? red800,
+      Color? red700,
+      Color? red600,
+      Color? red500,
+      Color? red400,
+      Color? red300,
+      Color? red200,
+      Color? red100,
+      Color? red50}) {
     return RedPallet(
       red900: red900 ?? this.red900,
       red800: red800 ?? this.red800,

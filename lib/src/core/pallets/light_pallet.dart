@@ -1,5 +1,5 @@
-
 import 'package:fluent_ui/fluent_ui.dart';
+
 /// ## [LightPallet] Class Documentation
 ///
 /// The `LightPallet` class represents a custom color palette
@@ -83,15 +83,15 @@ import 'package:fluent_ui/fluent_ui.dart';
 class LightPallet extends ThemeExtension<LightPallet> {
   const LightPallet(
       {required this.light900,
-        required this.light800,
-        required this.light700,
-        required this.light600,
-        required this.light500,
-        required this.light400,
-        required this.light300,
-        required this.light200,
-        required this.light100,
-        required this.light50});
+      required this.light800,
+      required this.light700,
+      required this.light600,
+      required this.light500,
+      required this.light400,
+      required this.light300,
+      required this.light200,
+      required this.light100,
+      required this.light50});
 
   final Color? light900;
   final Color? light800;
@@ -107,15 +107,15 @@ class LightPallet extends ThemeExtension<LightPallet> {
   @override
   LightPallet copyWith(
       {Color? light900,
-        Color? light800,
-        Color? light700,
-        Color? light600,
-        Color? light500,
-        Color? light400,
-        Color? light300,
-        Color? light200,
-        Color? light100,
-        Color? light50}) {
+      Color? light800,
+      Color? light700,
+      Color? light600,
+      Color? light500,
+      Color? light400,
+      Color? light300,
+      Color? light200,
+      Color? light100,
+      Color? light50}) {
     return LightPallet(
       light900: light900 ?? this.light900,
       light800: light800 ?? this.light800,
@@ -192,32 +192,32 @@ class LightPallet extends ThemeExtension<LightPallet> {
         throw Exception('Invalid LightPallet color index');
     }
   }
-// Light theme with opacity
-  static const light =  LightPallet(
-  light900: Color(0xFFFFFFFF),
-  light800: Color.fromRGBO(255, 255, 255, 0.8),
-  light700: Color.fromRGBO(255, 255, 255, 0.7),
-  light600: Color.fromRGBO(255, 255, 255, 0.6),
-  light500: Color.fromRGBO(255, 255, 255, 0.48),
-  light400: Color.fromRGBO(255, 255, 255, 0.36),
-  light300: Color.fromRGBO(255, 255, 255, 0.26),
-  light200: Color.fromRGBO(255, 255, 255, 0.18),
-  light100: Color.fromRGBO(255, 255, 255, 0.12),
-  light50: Color.fromRGBO(255, 255, 255, 0.08),
-  );
 
+// Light theme with opacity
+  static const light = LightPallet(
+    light900: Color(0xFFFFFFFF),
+    light800: Color.fromRGBO(255, 255, 255, 0.8),
+    light700: Color.fromRGBO(255, 255, 255, 0.7),
+    light600: Color.fromRGBO(255, 255, 255, 0.6),
+    light500: Color.fromRGBO(255, 255, 255, 0.48),
+    light400: Color.fromRGBO(255, 255, 255, 0.36),
+    light300: Color.fromRGBO(255, 255, 255, 0.26),
+    light200: Color.fromRGBO(255, 255, 255, 0.18),
+    light100: Color.fromRGBO(255, 255, 255, 0.12),
+    light50: Color.fromRGBO(255, 255, 255, 0.08),
+  );
 
   // the dark theme
   static const dark = LightPallet(
-  light900: Color(0xFF141414),
-  light800: Color.fromRGBO(20, 20, 20, 0.8),
-  light700: Color.fromRGBO(20, 20, 20, 0.7),
-  light600: Color.fromRGBO(20, 20, 20, 0.6),
-  light500: Color.fromRGBO(20, 20, 20, 0.48),
-  light400: Color.fromRGBO(20, 20, 20, 0.36),
-  light300: Color.fromRGBO(20, 20, 20, 0.26),
-  light200: Color.fromRGBO(20, 20, 20, 0.18),
-  light100: Color.fromRGBO(20, 20, 20, 0.12),
-  light50: Color.fromRGBO(20, 20, 20, 0.08),
+    light900: Color(0xFF141414),
+    light800: Color.fromRGBO(20, 20, 20, 0.8),
+    light700: Color.fromRGBO(20, 20, 20, 0.7),
+    light600: Color.fromRGBO(20, 20, 20, 0.6),
+    light500: Color.fromRGBO(20, 20, 20, 0.48),
+    light400: Color.fromRGBO(20, 20, 20, 0.36),
+    light300: Color.fromRGBO(20, 20, 20, 0.26),
+    light200: Color.fromRGBO(20, 20, 20, 0.18),
+    light100: Color.fromRGBO(20, 20, 20, 0.12),
+    light50: Color.fromRGBO(20, 20, 20, 0.08),
   );
 }

@@ -1,5 +1,5 @@
-
 import 'package:fluent_ui/fluent_ui.dart';
+
 /// ## [PinkPallet] Class Documentation
 ///
 /// The `PinkPallet` class represents a custom color palette designed around
@@ -84,15 +84,15 @@ import 'package:fluent_ui/fluent_ui.dart';
 class PinkPallet extends ThemeExtension<PinkPallet> {
   const PinkPallet(
       {required this.pink900,
-        required this.pink800,
-        required this.pink700,
-        required this.pink600,
-        required this.pink500,
-        required this.pink400,
-        required this.pink300,
-        required this.pink200,
-        required this.pink100,
-        required this.pink50});
+      required this.pink800,
+      required this.pink700,
+      required this.pink600,
+      required this.pink500,
+      required this.pink400,
+      required this.pink300,
+      required this.pink200,
+      required this.pink100,
+      required this.pink50});
 
   final Color? pink900;
   final Color? pink800;
@@ -108,15 +108,15 @@ class PinkPallet extends ThemeExtension<PinkPallet> {
   @override
   PinkPallet copyWith(
       {Color? pink900,
-        Color? pink800,
-        Color? pink700,
-        Color? pink600,
-        Color? pink500,
-        Color? pink400,
-        Color? pink300,
-        Color? pink200,
-        Color? pink100,
-        Color? pink50}) {
+      Color? pink800,
+      Color? pink700,
+      Color? pink600,
+      Color? pink500,
+      Color? pink400,
+      Color? pink300,
+      Color? pink200,
+      Color? pink100,
+      Color? pink50}) {
     return PinkPallet(
       pink900: pink900 ?? this.pink900,
       pink800: pink800 ?? this.pink800,

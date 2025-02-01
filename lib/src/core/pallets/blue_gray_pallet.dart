@@ -1,4 +1,5 @@
 import 'package:fluent_ui/fluent_ui.dart';
+
 /// ## [BlueGrayPallet] Class Documentation
 ///
 /// The `BlueGrayPallet` class is a custom theme extension that defines
@@ -87,15 +88,15 @@ import 'package:fluent_ui/fluent_ui.dart';
 class BlueGrayPallet extends ThemeExtension<BlueGrayPallet> {
   const BlueGrayPallet(
       {required this.blueGray900,
-        required this.blueGray800,
-        required this.blueGray700,
-        required this.blueGray600,
-        required this.blueGray500,
-        required this.blueGray400,
-        required this.blueGray300,
-        required this.blueGray200,
-        required this.blueGray100,
-        required this.blueGray50});
+      required this.blueGray800,
+      required this.blueGray700,
+      required this.blueGray600,
+      required this.blueGray500,
+      required this.blueGray400,
+      required this.blueGray300,
+      required this.blueGray200,
+      required this.blueGray100,
+      required this.blueGray50});
 
   final Color? blueGray900;
   final Color? blueGray800;
@@ -111,15 +112,15 @@ class BlueGrayPallet extends ThemeExtension<BlueGrayPallet> {
   @override
   BlueGrayPallet copyWith(
       {Color? blueGray900,
-        Color? blueGray800,
-        Color? blueGray700,
-        Color? blueGray600,
-        Color? blueGray500,
-        Color? blueGray400,
-        Color? blueGray300,
-        Color? blueGray200,
-        Color? blueGray100,
-        Color? blueGray50}) {
+      Color? blueGray800,
+      Color? blueGray700,
+      Color? blueGray600,
+      Color? blueGray500,
+      Color? blueGray400,
+      Color? blueGray300,
+      Color? blueGray200,
+      Color? blueGray100,
+      Color? blueGray50}) {
     return BlueGrayPallet(
       blueGray900: blueGray900 ?? this.blueGray900,
       blueGray800: blueGray800 ?? this.blueGray800,

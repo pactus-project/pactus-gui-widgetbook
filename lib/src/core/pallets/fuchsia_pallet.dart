@@ -1,5 +1,5 @@
-
 import 'package:fluent_ui/fluent_ui.dart';
+
 /// ## [FuchsiaPallet] Class Documentation
 ///
 /// The `FuchsiaPallet` class is a custom theme extension that defines
@@ -86,15 +86,15 @@ import 'package:fluent_ui/fluent_ui.dart';
 class FuchsiaPallet extends ThemeExtension<FuchsiaPallet> {
   const FuchsiaPallet(
       {required this.fuchsia900,
-        required this.fuchsia800,
-        required this.fuchsia700,
-        required this.fuchsia600,
-        required this.fuchsia500,
-        required this.fuchsia400,
-        required this.fuchsia300,
-        required this.fuchsia200,
-        required this.fuchsia100,
-        required this.fuchsia50});
+      required this.fuchsia800,
+      required this.fuchsia700,
+      required this.fuchsia600,
+      required this.fuchsia500,
+      required this.fuchsia400,
+      required this.fuchsia300,
+      required this.fuchsia200,
+      required this.fuchsia100,
+      required this.fuchsia50});
 
   final Color? fuchsia900;
   final Color? fuchsia800;
@@ -110,15 +110,15 @@ class FuchsiaPallet extends ThemeExtension<FuchsiaPallet> {
   @override
   FuchsiaPallet copyWith(
       {Color? fuchsia900,
-        Color? fuchsia800,
-        Color? fuchsia700,
-        Color? fuchsia600,
-        Color? fuchsia500,
-        Color? fuchsia400,
-        Color? fuchsia300,
-        Color? fuchsia200,
-        Color? fuchsia100,
-        Color? fuchsia50}) {
+      Color? fuchsia800,
+      Color? fuchsia700,
+      Color? fuchsia600,
+      Color? fuchsia500,
+      Color? fuchsia400,
+      Color? fuchsia300,
+      Color? fuchsia200,
+      Color? fuchsia100,
+      Color? fuchsia50}) {
     return FuchsiaPallet(
       fuchsia900: fuchsia900 ?? this.fuchsia900,
       fuchsia800: fuchsia800 ?? this.fuchsia800,

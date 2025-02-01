@@ -1,4 +1,5 @@
 import 'package:fluent_ui/fluent_ui.dart';
+
 /// ## [RosePallet] Class Documentation
 ///
 /// The RosePallet class represents a custom theme extension containing various
@@ -50,15 +51,15 @@ import 'package:fluent_ui/fluent_ui.dart';
 class RosePallet extends ThemeExtension<RosePallet> {
   const RosePallet(
       {required this.rose900,
-        required this.rose800,
-        required this.rose700,
-        required this.rose600,
-        required this.rose500,
-        required this.rose400,
-        required this.rose300,
-        required this.rose200,
-        required this.rose100,
-        required this.rose50});
+      required this.rose800,
+      required this.rose700,
+      required this.rose600,
+      required this.rose500,
+      required this.rose400,
+      required this.rose300,
+      required this.rose200,
+      required this.rose100,
+      required this.rose50});
 
   final Color? rose900;
   final Color? rose800;
@@ -74,15 +75,15 @@ class RosePallet extends ThemeExtension<RosePallet> {
   @override
   RosePallet copyWith(
       {Color? rose900,
-        Color? rose800,
-        Color? rose700,
-        Color? rose600,
-        Color? rose500,
-        Color? rose400,
-        Color? rose300,
-        Color? rose200,
-        Color? rose100,
-        Color? rose50}) {
+      Color? rose800,
+      Color? rose700,
+      Color? rose600,
+      Color? rose500,
+      Color? rose400,
+      Color? rose300,
+      Color? rose200,
+      Color? rose100,
+      Color? rose50}) {
     return RosePallet(
       rose900: rose900 ?? this.rose900,
       rose800: rose800 ?? this.rose800,

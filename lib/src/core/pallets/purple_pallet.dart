@@ -1,4 +1,5 @@
 import 'package:fluent_ui/fluent_ui.dart';
+
 /// ## [PurplePallet] Class Documentation
 ///
 /// The PurplePallet class represents a custom theme extension containing
@@ -52,15 +53,15 @@ import 'package:fluent_ui/fluent_ui.dart';
 class PurplePallet extends ThemeExtension<PurplePallet> {
   const PurplePallet(
       {required this.purple900,
-        required this.purple800,
-        required this.purple700,
-        required this.purple600,
-        required this.purple500,
-        required this.purple400,
-        required this.purple300,
-        required this.purple200,
-        required this.purple100,
-        required this.purple50});
+      required this.purple800,
+      required this.purple700,
+      required this.purple600,
+      required this.purple500,
+      required this.purple400,
+      required this.purple300,
+      required this.purple200,
+      required this.purple100,
+      required this.purple50});
 
   final Color? purple900;
   final Color? purple800;
@@ -76,15 +77,15 @@ class PurplePallet extends ThemeExtension<PurplePallet> {
   @override
   PurplePallet copyWith(
       {Color? purple900,
-        Color? purple800,
-        Color? purple700,
-        Color? purple600,
-        Color? purple500,
-        Color? purple400,
-        Color? purple300,
-        Color? purple200,
-        Color? purple100,
-        Color? purple50}) {
+      Color? purple800,
+      Color? purple700,
+      Color? purple600,
+      Color? purple500,
+      Color? purple400,
+      Color? purple300,
+      Color? purple200,
+      Color? purple100,
+      Color? purple50}) {
     return PurplePallet(
       purple900: purple900 ?? this.purple900,
       purple800: purple800 ?? this.purple800,
