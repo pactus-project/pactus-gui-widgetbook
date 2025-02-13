@@ -52,6 +52,8 @@ class AppThemeData {
     OnSurfacePallet.dark,
   ];
 
+  /// to-do : add a proper name for each accent color after identifying
+  /// by Ui team to how and which color palette to use
   static const List<Color> lightAccentColors = [
     Color(0xFF0A4D7E),
     Color(0xFFD4540A),
