@@ -51,7 +51,7 @@ class AdaptivePrimaryButton extends StatelessWidget {
       style: ButtonStyle(
         backgroundColor: WidgetStateProperty.resolveWith<Color?>((states) {
           if (states.contains(WidgetState.disabled)) {
-            return AppTheme.of(context).extension<SurfacePallet>()!.surface1!;
+            return AppTheme.of(context).extension<BluePallet>()!.blue100!;
           } else if (states.contains(WidgetState.pressed)) {
             return theme.accentColor.darker;
           } else if (states.contains(WidgetState.hovered)) {

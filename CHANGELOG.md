@@ -1,3 +1,33 @@
+# 1.5.0+7
+- [Feat] : Impl `color palettes` to project [#21](https://github.com/pactus-project/pactus-gui-widgetbook/pull/21)
+  - add/create `BlueGrayPallet`
+  - add/create `BluePallet`
+  - add/create `LightPallet`
+  - add/create `FuchsiaPallet`
+  - add/create `GrayPallet`
+  - add/create `GreenPallet`
+  - add/create `LightPallet`
+  - add/create `OrangePallet`
+  - add/create `PinkPallet`
+  - add/create `PurplePallet`
+  - add/create `RedPallet`
+  - add/create `RosePallet`
+  - add/create `VioletPallet`
+  - add/create `YellowPallet`
+
+- [Update] : Remove old color palettes [#21](https://github.com/pactus-project/pactus-gui-widgetbook/pull/21)
+  - remove `SurfacePallet`
+  - remove `OnSurfacePallet`
+  - update `AppThemeData` & color palettes to it
+  - update `app_styles.dart`
+
+# 1.4.0+6
+
+- [Refactor]: Update `InterTextStyles` and `AppThemeData` typography to reflect new Figma design updates. [#19](https://github.com/pactus-project/pactus-gui-widgetbook/pull/19)
+  - Refactored `InterTextStyles` to match the latest changes in the Figma design.
+  - Updated typography settings in `AppThemeData` to improve consistency and align with new design specifications.
+
+
 # 1.3.2+5
 
 - [CI]: update ci-cd pipeline for github page deploy. [#7](https://github.com/pactus-project/pactus-gui-widgetbook/pull/7)

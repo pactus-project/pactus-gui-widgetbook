@@ -1,7 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
+import 'package:pactus_gui_widgetbook/app_styles.dart';
 import 'package:pactus_gui_widgetbook/src/core/pallets/colors/app_colors.dart';
-import 'package:pactus_gui_widgetbook/src/core/pallets/surface_pallet.dart';
-import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
 
 class AdaptiveButtonStyle {
   static ButtonStyle getStyle(BuildContext context) {
@@ -13,7 +12,7 @@ class AdaptiveButtonStyle {
         ),
       ),
       foregroundColor: WidgetStateProperty.resolveWith<Color?>(
-            (states) => AppTheme.of(context).extension<SurfacePallet>()!.surface1,
+        (states) => AppTheme.of(context).extension<DarkPallet>()!.dark900,
       ),
     );
   }

@@ -50,9 +50,8 @@ class AdaptiveButtonContentWidget extends StatelessWidget {
           child: Center(
             child: Text(
               title,
-              style: InterTextStyles.body.copyWith(
-                color:
-                    AppTheme.of(context).extension<SurfacePallet>()!.surface3!,
+              style: InterTextStyles.bodyRegular.copyWith(
+                color: AppTheme.of(context).extension<DarkPallet>()!.dark900!,
               ),
             ),
           ),
