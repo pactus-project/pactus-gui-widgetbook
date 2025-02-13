@@ -1,7 +1,5 @@
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:pactus_gui_widgetbook/src/core/pallets/on_surface_pallet.dart';
-import 'package:pactus_gui_widgetbook/src/core/pallets/surface_pallet.dart';
-import 'package:pactus_gui_widgetbook/src/core/text_styles/inter_text_styles.dart';
+import 'package:pactus_gui_widgetbook/app_styles.dart';
 
 /// ## [AppThemeData] Class Documentation
 ///
@@ -21,11 +19,11 @@ import 'package:pactus_gui_widgetbook/src/core/text_styles/inter_text_styles.dar
 ///
 /// - **[lightExtensions]**:
 ///   - A collection of `ThemeExtension` objects for the light theme.
-///   - Includes `SurfacePallet.light` and `OnSurfacePallet.light`.
+///   - Includes `BlueGrayPallet.light` and `GrayPallet.light`.
 ///
 /// - **[darkExtensions]**:
 ///   - A collection of `ThemeExtension` objects for the dark theme.
-///   - Includes `SurfacePallet.dark` and `OnSurfacePallet.dark`.
+///   - Includes `BlueGrayPallet.dark` and `GrayPallet.dark`.
 ///
 /// - **[typography]**:
 ///   - An instance of `Typography` defining text styles for various use cases.
@@ -46,13 +44,37 @@ import 'package:pactus_gui_widgetbook/src/core/text_styles/inter_text_styles.dar
 class AppThemeData {
   AppThemeData._();
   static const Iterable<ThemeExtension<dynamic>> lightExtensions = [
-    SurfacePallet.light,
-    OnSurfacePallet.light,
+    BlueGrayPallet.light,
+    BluePallet.light,
+    DarkPallet.light,
+    FuchsiaPallet.light,
+    GrayPallet.light,
+    GreenPallet.light,
+    LightPallet.light,
+    OrangePallet.light,
+    PinkPallet.light,
+    PurplePallet.light,
+    RedPallet.light,
+    RosePallet.light,
+    VioletPallet.light,
+    YellowPallet.light,
   ];
 
   static const Iterable<ThemeExtension<dynamic>> darkExtensions = [
-    SurfacePallet.dark,
-    OnSurfacePallet.dark,
+    BlueGrayPallet.dark,
+    BluePallet.dark,
+    DarkPallet.dark,
+    FuchsiaPallet.dark,
+    GrayPallet.dark,
+    GreenPallet.dark,
+    LightPallet.dark,
+    OrangePallet.dark,
+    PinkPallet.dark,
+    PurplePallet.dark,
+    RedPallet.dark,
+    RosePallet.dark,
+    VioletPallet.dark,
+    YellowPallet.dark,
   ];
 
   static FluentThemeData lightTheme() => FluentThemeData(
