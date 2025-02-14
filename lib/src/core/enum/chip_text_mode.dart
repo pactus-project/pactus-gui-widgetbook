@@ -10,4 +10,3 @@ enum ChipTextMode {
   final PalletColors background;
   final PalletColors textColor;
 }
-
