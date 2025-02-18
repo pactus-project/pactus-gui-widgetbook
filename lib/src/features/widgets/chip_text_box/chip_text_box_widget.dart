@@ -74,11 +74,13 @@ class ChipTextBox extends StatelessWidget {
               TextStyle(color: context.fromPalletColor(chipTextMode.textColor)),
           placeholderStyle:
               TextStyle(color: context.fromPalletColor(chipTextMode.textColor)),
-          decoration: WidgetStateProperty.all(
-            BoxDecoration(
-              borderRadius: BorderRadius.circular(64),
-              color: context.fromPalletColor(chipTextMode.background),
-            ),
+          decoration: WidgetStateProperty.resolveWith<BoxDecoration>(
+            (Set<WidgetState> states) {
+              return BoxDecoration(
+                borderRadius: BorderRadius.circular(64),
+                color: context.fromPalletColor(chipTextMode.background),
+              );
+            },
           ),
           onChanged: onChanged,
         ),
