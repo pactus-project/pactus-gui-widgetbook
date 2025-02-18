@@ -66,7 +66,7 @@ Widget chipTextBoxUseCase(BuildContext context) {
         prefixText: prefixText,
         placeholder: placeholder,
         onChanged: (value) {
-          print("ChipTextBox Input: $value");
+          // print("ChipTextBox Input: $value");
         },
       ),
     ),
