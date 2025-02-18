@@ -1,3 +1,22 @@
+# 1.6.0+8
+- [Feature] : Implement `PalletColors` enum and `fromPalletColor` extension for centralized color management.[#22](https://github.com/pactus-project/pactus-gui-widgetbook/pull/23)
+  - Introduced `PalletColors` to standardize color usage across the project.
+  - Added `fromPalletColor` extension for easy color conversion and consistency.
+
+- [Refactor] : Rename and refine `VioletPallet` property names for better consistency.[#22](https://github.com/pactus-project/pactus-gui-widgetbook/pull/23)
+
+- [Update] : Improve UI design of `ChipTextBox` and create a Widgetbook use-case.[#22](https://github.com/pactus-project/pactus-gui-widgetbook/pull/23)
+  - Updated `ChipTextBox` styling for better UX and Fluent UI alignment.
+  - Added a dedicated Widgetbook use-case for `ChipTextBox` to test its customization options.
+
+- [Fix] : Fix decoration of `ChipTextBox`.[#22](https://github.com/pactus-project/pactus-gui-widgetbook/pull/23)
+  - Resolved an issue where the decoration property was incorrectly assigned.
+  - Remove print statement usage.
+
+- [Test] : Write tests for `ChipTextBox`.[#22](https://github.com/pactus-project/pactus-gui-widgetbook/pull/23)
+
+- [ci] : Fix pipeline issues on flutter version.[#22](https://github.com/pactus-project/pactus-gui-widgetbook/pull/23)
+
 # 1.5.0+7
 - [Feat] : Impl `color palettes` to project [#21](https://github.com/pactus-project/pactus-gui-widgetbook/pull/21)
   - add/create `BlueGrayPallet`

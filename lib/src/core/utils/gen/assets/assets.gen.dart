@@ -52,7 +52,7 @@ class $AssetsFontsGen {
 }
 
 class Assets {
-  Assets._();
+  const Assets._();
 
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
 }

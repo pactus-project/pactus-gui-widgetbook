@@ -3,7 +3,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 /// ## [VioletPallet] Class Documentation
 ///
 /// The VioletPallet class represents a custom theme extension containing
-/// various shades of violet (pink) colors.
+/// various shades of violet (violet) colors.
 /// It is designed to provide a gradient of violet hues for both light and dark
 /// themes in a Flutter application.
 ///
@@ -16,16 +16,16 @@ import 'package:fluent_ui/fluent_ui.dart';
 ///
 /// ### Properties:
 ///
-/// - **[pink900]** (Color?): The darkest shade of violet in the palette.
-/// - **[pink800]** (Color?): A slightly lighter shade of violet.
-/// - **[pink700]** (Color?): A medium-dark shade of violet.
-/// - **[pink600]** (Color?): A light violet shade.
-/// - **[pink500]** (Color?): The base violet shade.
-/// - **[pink400]** (Color?): A lighter violet shade.
-/// - **[pink300]** (Color?): A soft violet hue.
-/// - **[pink200]** (Color?): A very light violet shade.
-/// - **[pink100]** (Color?): A pale violet shade.
-/// - **[pink50]** (Color?): The lightest violet shade, nearly white.
+/// - **[violet900]** (Color?): The darkest shade of violet in the palette.
+/// - **[violet800]** (Color?): A slightly lighter shade of violet.
+/// - **[violet700]** (Color?): A medium-dark shade of violet.
+/// - **[violet600]** (Color?): A light violet shade.
+/// - **[violet500]** (Color?): The base violet shade.
+/// - **[violet400]** (Color?): A lighter violet shade.
+/// - **[violet300]** (Color?): A soft violet hue.
+/// - **[violet200]** (Color?): A very light violet shade.
+/// - **[violet100]** (Color?): A pale violet shade.
+/// - **[violet50]** (Color?): The lightest violet shade, nearly white.
 ///
 /// ### Methods:
 ///
@@ -50,51 +50,51 @@ import 'package:fluent_ui/fluent_ui.dart';
 @immutable
 class VioletPallet extends ThemeExtension<VioletPallet> {
   const VioletPallet(
-      {required this.pink900,
-      required this.pink800,
-      required this.pink700,
-      required this.pink600,
-      required this.pink500,
-      required this.pink400,
-      required this.pink300,
-      required this.pink200,
-      required this.pink100,
-      required this.pink50});
+      {required this.violet900,
+      required this.violet800,
+      required this.violet700,
+      required this.violet600,
+      required this.violet500,
+      required this.violet400,
+      required this.violet300,
+      required this.violet200,
+      required this.violet100,
+      required this.violet50});
 
-  final Color? pink900;
-  final Color? pink800;
-  final Color? pink700;
-  final Color? pink600;
-  final Color? pink500;
-  final Color? pink400;
-  final Color? pink300;
-  final Color? pink200;
-  final Color? pink100;
-  final Color? pink50;
+  final Color? violet900;
+  final Color? violet800;
+  final Color? violet700;
+  final Color? violet600;
+  final Color? violet500;
+  final Color? violet400;
+  final Color? violet300;
+  final Color? violet200;
+  final Color? violet100;
+  final Color? violet50;
 
   @override
   VioletPallet copyWith(
-      {Color? pink900,
-      Color? pink800,
-      Color? pink700,
-      Color? pink600,
-      Color? pink500,
-      Color? pink400,
-      Color? pink300,
-      Color? pink200,
-      Color? pink100,
-      Color? pink50}) {
+      {Color? violet900,
+      Color? violet800,
+      Color? violet700,
+      Color? violet600,
+      Color? violet500,
+      Color? violet400,
+      Color? violet300,
+      Color? violet200,
+      Color? violet100,
+      Color? violet50}) {
     return VioletPallet(
-      pink900: pink900 ?? this.pink900,
-      pink800: pink800 ?? this.pink800,
-      pink700: pink700 ?? this.pink700,
-      pink600: pink600 ?? this.pink600,
-      pink500: pink500 ?? this.pink500,
-      pink400: pink400 ?? this.pink400,
-      pink300: pink300 ?? this.pink300,
-      pink200: pink200 ?? this.pink200,
-      pink100: pink100 ?? this.pink100,
-      pink50: pink50 ?? this.pink50,
+      violet900: violet900 ?? this.violet900,
+      violet800: violet800 ?? this.violet800,
+      violet700: violet700 ?? this.violet700,
+      violet600: violet600 ?? this.violet600,
+      violet500: violet500 ?? this.violet500,
+      violet400: violet400 ?? this.violet400,
+      violet300: violet300 ?? this.violet300,
+      violet200: violet200 ?? this.violet200,
+      violet100: violet100 ?? this.violet100,
+      violet50: violet50 ?? this.violet50,
     );
   }
 
@@ -105,16 +105,16 @@ class VioletPallet extends ThemeExtension<VioletPallet> {
       return this;
     }
     return VioletPallet(
-      pink900: Color.lerp(pink900, other.pink900, t),
-      pink800: Color.lerp(pink800, other.pink800, t),
-      pink700: Color.lerp(pink700, other.pink700, t),
-      pink600: Color.lerp(pink600, other.pink600, t),
-      pink500: Color.lerp(pink500, other.pink500, t),
-      pink400: Color.lerp(pink400, other.pink400, t),
-      pink300: Color.lerp(pink300, other.pink300, t),
-      pink200: Color.lerp(pink200, other.pink200, t),
-      pink100: Color.lerp(pink100, other.pink100, t),
-      pink50: Color.lerp(pink50, other.pink50, t),
+      violet900: Color.lerp(violet900, other.violet900, t),
+      violet800: Color.lerp(violet800, other.violet800, t),
+      violet700: Color.lerp(violet700, other.violet700, t),
+      violet600: Color.lerp(violet600, other.violet600, t),
+      violet500: Color.lerp(violet500, other.violet500, t),
+      violet400: Color.lerp(violet400, other.violet400, t),
+      violet300: Color.lerp(violet300, other.violet300, t),
+      violet200: Color.lerp(violet200, other.violet200, t),
+      violet100: Color.lerp(violet100, other.violet100, t),
+      violet50: Color.lerp(violet50, other.violet50, t),
     );
   }
 
@@ -122,40 +122,40 @@ class VioletPallet extends ThemeExtension<VioletPallet> {
   // to the `print()` method.
   @override
   String toString() => 'VioletPallet('
-      'pink900:$pink900, '
-      'pink800: $pink800, '
-      'pink700: $pink700, '
-      'pink600: $pink600, '
-      'pink500: $pink500, '
-      'pink400: $pink400, '
-      'pink300: $pink300, '
-      'pink200: $pink200, '
-      'pink100: $pink100, '
-      'pink50: $pink50, '
+      'violet900:$violet900, '
+      'violet800: $violet800, '
+      'violet700: $violet700, '
+      'violet600: $violet600, '
+      'violet500: $violet500, '
+      'violet400: $violet400, '
+      'violet300: $violet300, '
+      'violet200: $violet200, '
+      'violet100: $violet100, '
+      'violet50: $violet50, '
       ')';
 
   Color? getByIndex(int index) {
     switch (index) {
       case 10:
-        return pink900;
+        return violet900;
       case 9:
-        return pink800;
+        return violet800;
       case 8:
-        return pink700;
+        return violet700;
       case 7:
-        return pink600;
+        return violet600;
       case 6:
-        return pink500;
+        return violet500;
       case 5:
-        return pink400;
+        return violet400;
       case 4:
-        return pink300;
+        return violet300;
       case 3:
-        return pink200;
+        return violet200;
       case 2:
-        return pink100;
+        return violet100;
       case 1:
-        return pink50;
+        return violet50;
       default:
         throw Exception('Invalid VioletPallet color index');
     }
@@ -163,29 +163,29 @@ class VioletPallet extends ThemeExtension<VioletPallet> {
 
   // the light theme
   static const light = VioletPallet(
-    pink900: Color(0xFF230D44),
-    pink800: Color(0xFF36146C),
-    pink700: Color(0xFF6022C3),
-    pink600: Color(0xFF7127F1),
-    pink500: Color(0xFF8E4DFF),
-    pink400: Color(0xFF9876F9),
-    pink300: Color(0xFFB7A6FD),
-    pink200: Color(0xFFDAD2FE),
-    pink100: Color(0xFFE2DDFE),
-    pink50: Color(0xFFF7F6FF),
+    violet900: Color(0xFF230D44),
+    violet800: Color(0xFF36146C),
+    violet700: Color(0xFF6022C3),
+    violet600: Color(0xFF7127F1),
+    violet500: Color(0xFF8E4DFF),
+    violet400: Color(0xFF9876F9),
+    violet300: Color(0xFFB7A6FD),
+    violet200: Color(0xFFDAD2FE),
+    violet100: Color(0xFFE2DDFE),
+    violet50: Color(0xFFF7F6FF),
   );
 
   // the dark theme
   static const dark = VioletPallet(
-    pink900: Color(0xFFF6F5FF),
-    pink800: Color(0xFFEBE7FE),
-    pink700: Color(0xFFDED7FE),
-    pink600: Color(0xFFC3B4FD),
-    pink500: Color(0xFFA689FA),
-    pink400: Color(0xFF895AF6),
-    pink300: Color(0xFF7C3BED),
-    pink200: Color(0xFF473493),
-    pink100: Color(0xFF331362),
-    pink50: Color(0xFF171330),
+    violet900: Color(0xFFF6F5FF),
+    violet800: Color(0xFFEBE7FE),
+    violet700: Color(0xFFDED7FE),
+    violet600: Color(0xFFC3B4FD),
+    violet500: Color(0xFFA689FA),
+    violet400: Color(0xFF895AF6),
+    violet300: Color(0xFF7C3BED),
+    violet200: Color(0xFF473493),
+    violet100: Color(0xFF331362),
+    violet50: Color(0xFF171330),
   );
 }
