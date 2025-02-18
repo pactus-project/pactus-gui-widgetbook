@@ -9,11 +9,13 @@
   - Updated `ChipTextBox` styling for better UX and Fluent UI alignment.
   - Added a dedicated Widgetbook use-case for `ChipTextBox` to test its customization options.
 
-- [Fix] : Fix decoration of `ChipTextBox`.
+- [Fix] : Fix decoration of `ChipTextBox`.[#22](https://github.com/pactus-project/pactus-gui-widgetbook/pull/23)
   - Resolved an issue where the decoration property was incorrectly assigned.
   - Remove print statement usage.
 
-- [Test] : Write tests for `ChipTextBox`.
+- [Test] : Write tests for `ChipTextBox`.[#22](https://github.com/pactus-project/pactus-gui-widgetbook/pull/23)
+
+- [ci] : Fix pipeline issues on flutter version.[#22](https://github.com/pactus-project/pactus-gui-widgetbook/pull/23)
 
 # 1.5.0+7
 - [Feat] : Impl `color palettes` to project [#21](https://github.com/pactus-project/pactus-gui-widgetbook/pull/21)
