@@ -9,6 +9,12 @@
   - Updated `ChipTextBox` styling for better UX and Fluent UI alignment.
   - Added a dedicated Widgetbook use-case for `ChipTextBox` to test its customization options.
 
+- [Fix] : Fix decoration of `ChipTextBox`.
+  - Resolved an issue where the decoration property was incorrectly assigned.
+  - Remove print statement usage.
+
+- [Test] : Write tests for `ChipTextBox`.
+
 # 1.5.0+7
 - [Feat] : Impl `color palettes` to project [#21](https://github.com/pactus-project/pactus-gui-widgetbook/pull/21)
   - add/create `BlueGrayPallet`
