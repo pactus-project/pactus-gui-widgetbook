@@ -1,3 +1,7 @@
+# 1.7.0+9
+- [Feature] : Define `PaneNavigationPalette` as a color palette extension for Fluent UI in Flutter. [#24](https://github.com/pactus-project/pactus-gui-widgetbook/pull/25)
+  - Implemented `PaneNavigationPalette` to manage text colors in the `PaneNavigation` slide.
+
 # 1.6.0+8
 - [Feature] : Implement `PalletColors` enum and `fromPalletColor` extension for centralized color management.[#22](https://github.com/pactus-project/pactus-gui-widgetbook/pull/23)
   - Introduced `PalletColors` to standardize color usage across the project.

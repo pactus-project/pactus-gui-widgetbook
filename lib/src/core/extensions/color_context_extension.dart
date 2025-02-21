@@ -1,6 +1,7 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/app_styles.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/pallet_colors_enum.dart';
+import 'package:pactus_gui_widgetbook/src/core/enum/pane_text_mode_enum.dart';
 
 extension ComponentsModeExtension on BuildContext {
   /// ### [fromPalletColor]
@@ -309,5 +310,29 @@ extension ComponentsModeExtension on BuildContext {
       PalletColors.blue900 =>
         AppTheme.of(this).extension<BluePallet>()!.blue900!,
     });
+  }
+}
+
+/// ### [fromPaneTextMode] Documentation
+///
+/// #### **Description**
+/// This extension method provides a simple way to retrieve the appropriate
+/// text color for `PaneNavigation` based on the given `PaneTextMode`.
+///
+/// #### **Parameters**
+/// - **paneTextMode**: An instance of `PaneTextMode` that determines whether
+///   the pane text should be in enabled or disabled mode.
+///
+/// #### **Returns**
+/// A `Color` instance corresponding to the requested pane text mode color.
+///
+extension PaneNavigationModeExtension on BuildContext {
+  Color fromPaneTextMode(PaneTextMode paneTextMode) {
+    return switch (paneTextMode) {
+      PaneTextMode.enabled =>
+        AppTheme.of(this).extension<PanePallet>()!.enableColor!,
+      PaneTextMode.disabled =>
+        AppTheme.of(this).extension<PanePallet>()!.disableColor!,
+    };
   }
 }

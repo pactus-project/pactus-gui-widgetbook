@@ -8,6 +8,7 @@ export 'package:pactus_gui_widgetbook/src/core/pallets/light_pallet.dart';
 export 'package:pactus_gui_widgetbook/src/core/pallets/orange_pallet.dart';
 export 'package:pactus_gui_widgetbook/src/core/pallets/pink_pallet.dart';
 export 'package:pactus_gui_widgetbook/src/core/pallets/purple_pallet.dart';
+export 'package:pactus_gui_widgetbook/src/core/pallets/pane_pallet.dart';
 export 'package:pactus_gui_widgetbook/src/core/pallets/red_pallet.dart';
 export 'package:pactus_gui_widgetbook/src/core/pallets/rose_pallet.dart';
 export 'package:pactus_gui_widgetbook/src/core/pallets/voilet_pallet.dart';
