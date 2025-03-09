@@ -1,5 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/app_scaffold.dart';
+import 'package:pactus_gui_widgetbook/src/core/pallets/accent_pallet.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme_data.dart';
 import 'package:widgetbook/widgetbook.dart';
@@ -46,37 +47,68 @@ class WidgetBookApp extends StatelessWidget {
         ThemeAddon(
           themes: [
             WidgetbookTheme(
-              name: 'Light',
-              data: AppThemeData.lightTheme(AppThemeData.lightAccentColors[0]),
+              name: 'Light (blue)',
+              data: AppThemeData.lightTheme(AccentPallet.light.blue),
             ),
             WidgetbookTheme(
-              name: 'Dark',
-              data: AppThemeData.darkTheme(AppThemeData.darkAccentColors[0]),
+              name: 'Light (darkBlue)',
+              data: AppThemeData.lightTheme(AccentPallet.light.darkBlue),
+            ),
+            WidgetbookTheme(
+              name: 'Light (purple)',
+              data: AppThemeData.lightTheme(AccentPallet.light.purple),
+            ),
+            WidgetbookTheme(
+              name: 'Light (orange)',
+              data: AppThemeData.lightTheme(AccentPallet.light.orange),
+            ),
+            WidgetbookTheme(
+              name: 'Light (red)',
+              data: AppThemeData.lightTheme(AccentPallet.light.red),
+            ),
+            WidgetbookTheme(
+              name: 'Light (teal)',
+              data: AppThemeData.lightTheme(AccentPallet.light.teal),
+            ),
+            WidgetbookTheme(
+              name: 'Light (lightGreen)',
+              data: AppThemeData.lightTheme(AccentPallet.light.lightGreen),
+            ),
+            WidgetbookTheme(
+              name: 'Dark (blue)',
+              data: AppThemeData.darkTheme(AccentPallet.dark.blue),
+            ),
+            WidgetbookTheme(
+              name: 'Dark (darkBlue)',
+              data: AppThemeData.darkTheme(AccentPallet.dark.darkBlue),
+            ),
+            WidgetbookTheme(
+              name: 'Dark (purple)',
+              data: AppThemeData.darkTheme(AccentPallet.dark.purple),
+            ),
+            WidgetbookTheme(
+              name: 'Dark (orange)',
+              data: AppThemeData.darkTheme(AccentPallet.dark.orange),
+            ),
+            WidgetbookTheme(
+              name: 'Dark (red)',
+              data: AppThemeData.darkTheme(AccentPallet.dark.red),
+            ),
+            WidgetbookTheme(
+              name: 'Dark (teal)',
+              data: AppThemeData.darkTheme(AccentPallet.dark.teal),
+            ),
+            WidgetbookTheme(
+              name: 'Dark (lightGreen)',
+              data: AppThemeData.darkTheme(AccentPallet.dark.lightGreen),
             ),
           ],
           themeBuilder: (context, data, child) {
-            final isLightTheme = data.brightness == Brightness.light;
-
-            final selectedAccentColor = context.knobs.list<Color>(
-              label: 'Accent Color',
-              description: 'Select an accent color for the theme.',
-              options: isLightTheme
-                  ? AppThemeData.lightAccentColors
-                  : AppThemeData.darkAccentColors,
-              initialOption: isLightTheme
-                  ? AppThemeData.lightAccentColors[0]
-                  : AppThemeData.darkAccentColors[0],
-            );
-
-            final themeWithAccent = isLightTheme
-                ? AppThemeData.lightTheme(selectedAccentColor)
-                : AppThemeData.darkTheme(selectedAccentColor);
-
             return FluentApp(
               debugShowCheckedModeBanner: false,
-              theme: themeWithAccent,
+              theme: data,
               home: AppTheme(
-                themeData: themeWithAccent,
+                themeData: data,
                 child: AppScaffold(child: child),
               ),
             );
