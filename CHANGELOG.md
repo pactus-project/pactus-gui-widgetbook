@@ -1,3 +1,9 @@
+# 1.8.0+10
+- [Feature] : Add support for accent color in the project. [#26](https://github.com/pactus-project/pactus-gui-widgetbook/pull/27)
+  - Introduced an extension for managing accent colors.
+  - Added an extension for foreground color, used on accent color.
+  - Updated addons to showcase new themes by combining theme mode and accent color.
+
 # 1.7.0+9
 - [Feature] : Define `PaneNavigationPalette` as a color palette extension for Fluent UI in Flutter. [#24](https://github.com/pactus-project/pactus-gui-widgetbook/pull/25)
   - Implemented `PaneNavigationPalette` to manage text colors in the `PaneNavigation` slide.

@@ -59,6 +59,8 @@ class AppThemeData {
     VioletPallet.light,
     YellowPallet.light,
     PanePallet.light,
+    AccentPallet.light,
+    OnAccentPallet.light,
   ];
 
   static const Iterable<ThemeExtension<dynamic>> darkExtensions = [
@@ -77,37 +79,40 @@ class AppThemeData {
     VioletPallet.dark,
     YellowPallet.dark,
     PanePallet.dark,
+    AccentPallet.dark,
+    OnAccentPallet.dark,
   ];
 
   /// to-do : add a proper name for each accent color after identifying
   /// by Ui team to how and which color palette to use
-  static const List<Color> lightAccentColors = [
-    Color(0xFF0A4D7E),
-    Color(0xFFD4540A),
-    Color(0xFFA7101A),
-    Color(0xFF7F0080),
-    Color(0xFF5C3E83),
-    Color(0xFF008D7A),
-    Color(0xFF0C5C0C),
-    Color(0xFF0F0E32),
+  static final List<Color> lightAccentColors = [
+    AccentPallet.light.blue,
+    AccentPallet.light.orange,
+    AccentPallet.light.red,
+    AccentPallet.light.purple,
+    AccentPallet.light.teal,
+    AccentPallet.light.lightGreen,
+    AccentPallet.light.darkBlue,
   ];
 
-  static const List<Color> darkAccentColors = [
-    Color(0xFF0F6CBD),
-    Color(0xFFF7630C),
-    Color(0xFFE81123),
-    Color(0xFFB4009E),
-    Color(0xFF744DA9),
-    Color(0xFF00B294),
-    Color(0xFF107C10),
-    Color(0xFF131440),
+  static final List<Color> darkAccentColors = [
+    AccentPallet.dark.blue,
+    AccentPallet.dark.orange,
+    AccentPallet.dark.red,
+    AccentPallet.dark.purple,
+    AccentPallet.dark.teal,
+    AccentPallet.dark.lightGreen,
+    AccentPallet.dark.darkBlue,
   ];
 
   static FluentThemeData lightTheme(Color selectedAccentColor) =>
       FluentThemeData(
         brightness: Brightness.light,
         typography: typography,
-        extensions: lightExtensions,
+        extensions: [
+          ...lightExtensions.where((ext) => ext is! OnAccentPallet),
+          OnAccentPallet.lightPallet(selectedAccentColor),
+        ],
         accentColor: selectedAccentColor.toAccentColor(),
       );
 
@@ -115,7 +120,10 @@ class AppThemeData {
       FluentThemeData(
         brightness: Brightness.dark,
         typography: typography,
-        extensions: darkExtensions,
+        extensions: [
+          ...darkExtensions.where((ext) => ext is! OnAccentPallet),
+          OnAccentPallet.darkPallet(selectedAccentColor),
+        ],
         accentColor: selectedAccentColor.toAccentColor(),
       );
 
