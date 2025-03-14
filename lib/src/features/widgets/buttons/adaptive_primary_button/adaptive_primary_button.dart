@@ -1,73 +1,150 @@
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:pactus_gui_widgetbook/app_styles.dart';
+import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
-
-/// ## [AdaptivePrimaryButton] Class Documentation
-///
-/// The AdaptivePrimaryButton class is a reusable widget for creating
-/// a primary button with adaptive states and styles.
-/// It integrates seamlessly with Fluent UI themes and supports different
-/// request states for dynamic behavior.
-///
-/// ### Usage:
-///
-/// This button adapts its style and functionality based on
-/// its request state (e.g., loading, disabled). It uses
-/// Fluent UI's `FilledButton` and allows custom actions via
-/// the `onPressed` callback.
-///
-/// ### Properties:
-///
-/// - **[title]** (String):
-///   - The text label displayed on the button.
-///
-/// - **[onPressed]** (VoidCallback?):
-///   - The callback function triggered when the button is pressed.
-///   - Disabled if the request state is `RequestStateEnum.loading`.
-///
-/// - **[requestState]** (RequestStateEnum):
-///   - Represents the current state of the button (e.g., loading, idle).
-///
+import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
+import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/methods/get_fluent_button_style_method.dart';
 
 class AdaptivePrimaryButton extends StatelessWidget {
   const AdaptivePrimaryButton({
     super.key,
-    required this.title,
-    this.onPressed,
     required this.requestState,
+    this.onPressed,
+    this.suffixIcon,
+    this.prefixIcon,
+    this.title,
+    required this.buttonType,
+    this.baseIcon,
+    required this.paddingSize,
+    this.isOutlined = false,
   });
 
-  final String title;
-  final VoidCallback? onPressed;
   final RequestStateEnum requestState;
+  final Function()? onPressed;
+  final IconData? suffixIcon;
+  final IconData? prefixIcon;
+  final String? title;
+  final ButtonTypeEnum buttonType;
+  final IconData? baseIcon;
+  final PaddingSizeEnum paddingSize;
+  final bool isOutlined;
+
+  // Factory methods to create buttons with specific button types
+  factory AdaptivePrimaryButton.createTitleOnly({
+    required RequestStateEnum requestState,
+    Function()? onPressed,
+    String? title,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    bool isOutlined = false,
+  }) {
+    return AdaptivePrimaryButton(
+      requestState: requestState,
+      onPressed: onPressed,
+      title: title,
+      paddingSize: paddingSize,
+      isOutlined: isOutlined,
+      buttonType: ButtonTypeEnum.titleOnly,
+    );
+  }
+
+  factory AdaptivePrimaryButton.createIconAndTitle({
+    required RequestStateEnum requestState,
+    Function()? onPressed,
+    String? title,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    bool isOutlined = false,
+    IconData? prefixIcon,
+  }) {
+    return AdaptivePrimaryButton(
+      requestState: requestState,
+      onPressed: onPressed,
+      title: title,
+      paddingSize: paddingSize,
+      isOutlined: isOutlined,
+      buttonType: ButtonTypeEnum.iconAndTitle,
+      prefixIcon: prefixIcon,
+    );
+  }
+
+  factory AdaptivePrimaryButton.createTitleAndIcon({
+    required RequestStateEnum requestState,
+    Function()? onPressed,
+    String? title,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    bool isOutlined = false,
+    IconData? suffixIcon,
+  }) {
+    return AdaptivePrimaryButton(
+      requestState: requestState,
+      onPressed: onPressed,
+      title: title,
+      paddingSize: paddingSize,
+      isOutlined: isOutlined,
+      buttonType: ButtonTypeEnum.titleAndIcon,
+      suffixIcon: suffixIcon,
+    );
+  }
+
+  factory AdaptivePrimaryButton.createIconTitleAndIcon({
+    required RequestStateEnum requestState,
+    Function()? onPressed,
+    String? title,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    bool isOutlined = false,
+    IconData? prefixIcon,
+    IconData? suffixIcon,
+  }) {
+    return AdaptivePrimaryButton(
+      requestState: requestState,
+      onPressed: onPressed,
+      title: title,
+      paddingSize: paddingSize,
+      isOutlined: isOutlined,
+      buttonType: ButtonTypeEnum.iconTitleAndIcon,
+      prefixIcon: prefixIcon,
+      suffixIcon: suffixIcon,
+    );
+  }
+
+  factory AdaptivePrimaryButton.createIconOnly({
+    required RequestStateEnum requestState,
+    Function()? onPressed,
+    PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    bool isOutlined = false,
+    IconData? baseIcon,
+  }) {
+    return AdaptivePrimaryButton(
+      requestState: requestState,
+      onPressed: onPressed,
+      paddingSize: paddingSize,
+      isOutlined: isOutlined,
+      buttonType: ButtonTypeEnum.iconOnly,
+      baseIcon: baseIcon,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    final theme = FluentTheme.of(context);
-
-    return FilledButton(
-      onPressed: (requestState == RequestStateEnum.loading) ? null : onPressed,
-      style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.resolveWith<Color?>((states) {
-          if (states.contains(WidgetState.disabled)) {
-            return AppTheme.of(context).extension<BluePallet>()!.blue100!;
-          } else if (states.contains(WidgetState.pressed)) {
-            return theme.accentColor.darker;
-          } else if (states.contains(WidgetState.hovered)) {
-            return theme.accentColor.darker;
-          }
-          return theme.accentColor;
-        }),
-        shape: WidgetStateProperty.resolveWith<OutlinedBorder?>((states) {
-          return RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4),
-          );
-        }),
-      ),
-      child: AdaptiveButtonContentWidget(
-        title: title,
-        requestState: requestState,
+    return IntrinsicWidth(
+      child: Button(
+        style: getFluentButtonStyleMethod(
+          context: context,
+          paddingSize: paddingSize,
+          isOutlined: isOutlined,
+        ),
+        onPressed: (requestState == RequestStateEnum.loading) ? null : onPressed,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
+          child: AdaptiveButtonContent(
+            requestState: requestState,
+            suffixIcon: suffixIcon,
+            prefixIcon: prefixIcon,
+            title: title,
+            loadingDotColor: FluentTheme.of(context).accentColor.lightest,
+            buttonType: buttonType,
+            icon: baseIcon,
+          ),
+        ),
       ),
     );
   }
