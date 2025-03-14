@@ -1,63 +1,101 @@
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:pactus_gui_widgetbook/app_styles.dart';
+import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
+import 'package:pactus_gui_widgetbook/src/core/text_styles/inter_text_styles.dart';
+import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 
-/// ## [AdaptiveButtonContentWidget] Class Documentation
-///
-/// The `AdaptiveButtonContentWidget` is a stateless widget responsible for
-/// rendering the content of adaptive buttons. It adjusts its display based
-/// on the provided `requestState`.
-///
-/// ### Usage:
-///
-/// This widget is typically used inside adaptive button components
-/// (`AdaptivePrimaryButton`, `AdaptiveSecondaryButton`) to dynamically
-/// render the button's content depending on its state.
-///
-/// ### Properties:
-///
-/// - **[title]** (String):
-///   - The text to display on the button when the state is
-///   `RequestStateEnum.loaded` or `RequestStateEnum.initial`.
-///
-/// - **[requestState]** (RequestStateEnum):
-///   - Determines the content of the button:
-///     - `loading`: Displays an empty widget (placeholder for future loading UI).
-///     - `initial`/`loaded`: Displays the button title centered inside the button.
-///     - `error`: Displays an empty widget (placeholder for future error UI).
-///
-
-class AdaptiveButtonContentWidget extends StatelessWidget {
-  const AdaptiveButtonContentWidget({
+class AdaptiveButtonContent extends StatelessWidget {
+  const AdaptiveButtonContent({
     super.key,
-    required this.title,
     required this.requestState,
+    required this.suffixIcon,
+    required this.prefixIcon,
+    this.title,
+    this.loadingDotColor,
+    required this.buttonType,
+    this.icon,
+    this.paddingSize = PaddingSizeEnum.medium,
   });
 
-  final String title;
   final RequestStateEnum requestState;
+  final IconData? suffixIcon;
+  final IconData? prefixIcon;
+  final String? title;
+  final Color? loadingDotColor;
+  final ButtonTypeEnum buttonType;
+  final IconData? icon;
+  final PaddingSizeEnum paddingSize;
 
   @override
   Widget build(BuildContext context) {
-    switch (requestState) {
-      /// TODO (by Pouria): add loading & error state after defining by UI team
-      case RequestStateEnum.loading:
-        return const SizedBox();
-      case RequestStateEnum.initial:
-      case RequestStateEnum.loaded:
-        return SizedBox(
-          height: 32,
-          child: Center(
-            child: Text(
-              title,
-              style: InterTextStyles.bodyRegular.copyWith(
-                color: AppTheme.of(context).extension<DarkPallet>()!.dark900!,
-              ),
-            ),
+    final theme = FluentTheme.of(context);
+
+    final TextStyle buttonInformation = _getTextStyleBasedOnPadding(paddingSize);
+
+    return Center(
+      child: switch (requestState) {
+        RequestStateEnum.loading => ProgressRing(
+          activeColor: loadingDotColor ?? theme.accentColor.lightest,
+          strokeWidth: 1,
+        ),
+        RequestStateEnum.initial || RequestStateEnum.loaded => switch (buttonType) {
+          ButtonTypeEnum.titleOnly => Text(
+            title!,
+            style: buttonInformation,
           ),
-        );
-      case RequestStateEnum.error:
-        return const SizedBox();
+          ButtonTypeEnum.iconAndTitle => Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(prefixIcon),
+              const SizedBox(width: 8),
+              Text(
+                title!,
+                style: buttonInformation,
+              ),
+            ],
+          ),
+          ButtonTypeEnum.titleAndIcon => Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                title!,
+                style: buttonInformation,
+              ),
+              const SizedBox(width: 8),
+              Icon(suffixIcon),
+            ],
+          ),
+          ButtonTypeEnum.iconTitleAndIcon => Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(prefixIcon),
+              const SizedBox(width: 8),
+              Text(
+                title!,
+                style: buttonInformation,
+              ),
+              const SizedBox(width: 8),
+              Icon(suffixIcon),
+            ],
+          ),
+          ButtonTypeEnum.iconOnly => Icon(icon),
+        },
+        RequestStateEnum.error => const Icon(FluentIcons.sync),
+      },
+    );
+  }
+
+  TextStyle _getTextStyleBasedOnPadding(PaddingSizeEnum paddingSize) {
+    switch (paddingSize) {
+      case PaddingSizeEnum.min:
+        return InterTextStyles.smallRegular;
+      case PaddingSizeEnum.medium:
+        return InterTextStyles.bodyRegular;
+      case PaddingSizeEnum.large:
+        return InterTextStyles.bodyBold;
     }
   }
 }

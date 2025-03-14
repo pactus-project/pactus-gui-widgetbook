@@ -11,16 +11,14 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/adaptive_primary_button/adaptive_primary_button_usecase.dart'
     as _i2;
-import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/adaptive_secondary_button/adaptive_secondary_button_usecase.dart'
-    as _i3;
 import 'package:pactus_gui_widgetbook/src/features/widgets/chip_text_box/chip_text_box_use_case.dart'
-    as _i4;
+    as _i3;
 import 'package:pactus_gui_widgetbook/src/features/widgets/counter/counter_usecase.dart'
-    as _i5;
+    as _i4;
 import 'package:pactus_gui_widgetbook/src/features/widgets/custom_button/custom_button_usecase.dart'
-    as _i6;
+    as _i5;
 import 'package:pactus_gui_widgetbook/src/features/widgets/custom_text/custom_text_usecase.dart'
-    as _i7;
+    as _i6;
 import 'package:widgetbook/widgetbook.dart' as _i1;
 
 final directories = <_i1.WidgetbookNode>[
@@ -44,19 +42,7 @@ final directories = <_i1.WidgetbookNode>[
                     ),
                   )
                 ],
-              ),
-              _i1.WidgetbookFolder(
-                name: 'adaptive_secondary_button',
-                children: [
-                  _i1.WidgetbookLeafComponent(
-                    name: 'AdaptiveSecondaryButton',
-                    useCase: _i1.WidgetbookUseCase(
-                      name: 'Adaptive Secondary Button with Knobs',
-                      builder: _i3.adaptiveSecondaryButtonUseCase,
-                    ),
-                  )
-                ],
-              ),
+              )
             ],
           ),
           _i1.WidgetbookFolder(
@@ -66,7 +52,7 @@ final directories = <_i1.WidgetbookNode>[
                 name: 'ChipTextBox',
                 useCase: _i1.WidgetbookUseCase(
                   name: 'ChipTextBox Customization',
-                  builder: _i4.chipTextBoxUseCase,
+                  builder: _i3.chipTextBoxUseCase,
                 ),
               )
             ],
@@ -78,7 +64,7 @@ final directories = <_i1.WidgetbookNode>[
                 name: 'CounterWidget',
                 useCase: _i1.WidgetbookUseCase(
                   name: 'Counter with Knobs',
-                  builder: _i5.counterWidgetUseCase,
+                  builder: _i4.counterWidgetUseCase,
                 ),
               )
             ],
@@ -90,7 +76,7 @@ final directories = <_i1.WidgetbookNode>[
                 name: 'CustomButtonWidget',
                 useCase: _i1.WidgetbookUseCase(
                   name: 'Custom Button with Knobs',
-                  builder: _i6.customButtonWidgetUseCase,
+                  builder: _i5.customButtonWidgetUseCase,
                 ),
               )
             ],
@@ -102,7 +88,7 @@ final directories = <_i1.WidgetbookNode>[
                 name: 'CustomTextWidget',
                 useCase: _i1.WidgetbookUseCase(
                   name: 'Select the text to display from the dropdown',
-                  builder: _i7.customTextWidgetUseCase,
+                  builder: _i6.customTextWidgetUseCase,
                 ),
               )
             ],
