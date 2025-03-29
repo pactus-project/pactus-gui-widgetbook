@@ -1,63 +1,129 @@
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:pactus_gui_widgetbook/app_styles.dart';
+import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
+import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
+import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
+import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/methods/get_text_style_based_on_padding_method.dart';
 
-/// ## [AdaptiveButtonContentWidget] Class Documentation
+/// ## [AdaptiveButtonContent] Widget Documentation
 ///
-/// The `AdaptiveButtonContentWidget` is a stateless widget responsible for
-/// rendering the content of adaptive buttons. It adjusts its display based
-/// on the provided `requestState`.
+/// The `AdaptiveButtonContent` widget is designed to display the content of a button in an adaptive way based on the button's state (`requestState`) and the selected button layout (`buttonType`). This widget supports various configurations such as displaying just text, text with icons, or a loading state, and dynamically adapts based on the provided input.
 ///
-/// ### Usage:
+/// ### Purpose:
+/// This widget provides the actual content to be displayed inside an adaptive button. It takes care of different button states, including loading and error states, and supports multiple button layouts (e.g., with icons, just text, or a combination of both). It also handles dynamic text styling based on padding and state.
 ///
-/// This widget is typically used inside adaptive button components
-/// (`AdaptivePrimaryButton`, `AdaptiveSecondaryButton`) to dynamically
-/// render the button's content depending on its state.
+/// ### Parameters:
+/// - **[requestState] (`requestState`)**: Determines the current state of the request (e.g., `loading`, `initial`, `loaded`, `error`). It controls the content displayed, like showing a loading indicator or a default button with text and icons.
+/// - **[suffixIcon] (`suffixIcon`)**: The icon displayed after the button text (applicable for certain button types).
+/// - **[prefixIcon] (`prefixIcon`)**: The icon displayed before the button text (applicable for certain button types).
+/// - **[title] (`title`)**: The text to be displayed on the button (applicable for button types that include text).
+/// - **[loadingDotColor] (`loadingDotColor`)**: The color of the loading dot in the `loading` state.
+/// - **[buttonType] (`buttonType`)**: Specifies the button's layout (e.g., just text, text and icon, icon only).
+/// - **[icon] (`icon`)**: The base icon to be displayed for icon-only buttons.
+/// - **[paddingSize] (`paddingSize`)**: Defines the padding around the button content, which affects the text styling.
 ///
-/// ### Properties:
+/// ### Layouts Supported (via `buttonType`):
+/// - **[titleOnly]**: Displays only the title text.
+/// - **[iconAndTitle]**: Displays an icon followed by the title text.
+/// - **[titleAndIcon]**: Displays the title text followed by an icon.
+/// - **[iconTitleAndIcon]**: Displays an icon, title text, and a suffix icon.
+/// - **[iconOnly]**: Displays only an icon.
 ///
-/// - **[title]** (String):
-///   - The text to display on the button when the state is
-///   `RequestStateEnum.loaded` or `RequestStateEnum.initial`.
+/// ### States Supported (via `requestState`):
+/// - **[loading]**: Displays a loading indicator (ProgressRing).
+/// - **[initial]** or **loaded**: Displays the button content (title, icons).
+/// - **[error]**: Displays an error icon (e.g., a sync icon).
 ///
-/// - **[requestState]** (RequestStateEnum):
-///   - Determines the content of the button:
-///     - `loading`: Displays an empty widget (placeholder for future loading UI).
-///     - `initial`/`loaded`: Displays the button title centered inside the button.
-///     - `error`: Displays an empty widget (placeholder for future error UI).
+/// ### Behavior Based on `requestState`:
+/// - **RequestStateEnum.loading**: Displays a loading indicator (ProgressRing).
+/// - **RequestStateEnum.initial or RequestStateEnum.loaded**: Displays the button content based on the `buttonType`. For example, it might display just text, text with an icon, or only an icon.
+/// - **RequestStateEnum.error**: Displays an error icon (`sync` icon in this case).
 ///
-
-class AdaptiveButtonContentWidget extends StatelessWidget {
-  const AdaptiveButtonContentWidget({
+class AdaptiveButtonContent extends StatelessWidget {
+  const AdaptiveButtonContent({
     super.key,
-    required this.title,
     required this.requestState,
+    required this.suffixIcon,
+    required this.prefixIcon,
+    this.title,
+    this.loadingDotColor,
+    required this.buttonType,
+    this.icon,
+    this.paddingSize = PaddingSizeEnum.medium,
   });
 
-  final String title;
   final RequestStateEnum requestState;
+  final IconData? suffixIcon;
+  final IconData? prefixIcon;
+  final String? title;
+  final Color? loadingDotColor;
+  final ButtonTypeEnum buttonType;
+  final IconData? icon;
+  final PaddingSizeEnum paddingSize;
 
   @override
   Widget build(BuildContext context) {
-    switch (requestState) {
-      /// TODO (by Pouria): add loading & error state after defining by UI team
-      case RequestStateEnum.loading:
-        return const SizedBox();
-      case RequestStateEnum.initial:
-      case RequestStateEnum.loaded:
-        return SizedBox(
-          height: 32,
-          child: Center(
-            child: Text(
-              title,
-              style: InterTextStyles.bodyRegular.copyWith(
-                color: AppTheme.of(context).extension<DarkPallet>()!.dark900!,
-              ),
+    final theme = AppTheme.of(context);
+    final TextStyle buttonInformation = getTextStyleBasedOnPadding(paddingSize);
+
+    return Center(
+      child: switch (requestState) {
+        RequestStateEnum.loading => SizedBox(
+            height: 16,
+            width: 16,
+            child: ProgressRing(
+              activeColor: loadingDotColor ?? theme.accentColor.lightest,
+              strokeWidth: 1,
             ),
           ),
-        );
-      case RequestStateEnum.error:
-        return const SizedBox();
-    }
+        RequestStateEnum.initial || RequestStateEnum.loaded => switch (
+              buttonType) {
+            ButtonTypeEnum.titleOnly => Text(
+                title!,
+                style: buttonInformation,
+              ),
+            ButtonTypeEnum.iconAndTitle => Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(prefixIcon),
+                  const SizedBox(width: 8),
+                  Text(
+                    title!,
+                    style: buttonInformation,
+                  ),
+                ],
+              ),
+            ButtonTypeEnum.titleAndIcon => Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    title!,
+                    style: buttonInformation,
+                  ),
+                  const SizedBox(width: 8),
+                  Icon(suffixIcon),
+                ],
+              ),
+            ButtonTypeEnum.iconTitleAndIcon => Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(prefixIcon),
+                  const SizedBox(width: 8),
+                  Text(
+                    title!,
+                    style: buttonInformation,
+                  ),
+                  const SizedBox(width: 8),
+                  Icon(suffixIcon),
+                ],
+              ),
+            ButtonTypeEnum.iconOnly => Icon(icon),
+          },
+        RequestStateEnum.error => const Icon(FluentIcons.sync),
+      },
+    );
   }
 }
