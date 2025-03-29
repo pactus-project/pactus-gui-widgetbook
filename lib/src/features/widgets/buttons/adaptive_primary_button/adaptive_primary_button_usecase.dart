@@ -72,33 +72,35 @@ Widget adaptivePrimaryButtonUseCase(BuildContext context) {
     initialOption: FluentIcons.search,
   );
 
-  return SizedBox(
-    height: 40,
-    child: AdaptivePrimaryButton(
-      isOutlined: isOutlined,
-      title: buttonType == ButtonTypeEnum.titleOnly ||
-              buttonType == ButtonTypeEnum.iconAndTitle ||
-              buttonType == ButtonTypeEnum.titleAndIcon ||
-              buttonType == ButtonTypeEnum.iconTitleAndIcon
-          ? text
-          : null,
-      requestState: requestState,
-      buttonType: buttonType,
-      prefixIcon: buttonType == ButtonTypeEnum.iconAndTitle ||
-              buttonType == ButtonTypeEnum.iconTitleAndIcon
-          ? prefixIcon
-          : null,
-      suffixIcon: buttonType == ButtonTypeEnum.titleAndIcon ||
-              buttonType == ButtonTypeEnum.iconTitleAndIcon
-          ? suffixIcon
-          : null,
-      baseIcon: buttonType == ButtonTypeEnum.iconOnly ? baseIcon : null,
-      onPressed: requestState == RequestStateEnum.loading
-          ? null
-          : () {
-              debugPrint('Adaptive Primary Button Pressed');
-            },
-      paddingSize: paddingSize,
+  return IntrinsicWidth(
+    child: SizedBox(
+      height: 40,
+      child: AdaptivePrimaryButton(
+        isOutlined: isOutlined,
+        title: buttonType == ButtonTypeEnum.titleOnly ||
+                buttonType == ButtonTypeEnum.iconAndTitle ||
+                buttonType == ButtonTypeEnum.titleAndIcon ||
+                buttonType == ButtonTypeEnum.iconTitleAndIcon
+            ? text
+            : null,
+        requestState: requestState,
+        buttonType: buttonType,
+        prefixIcon: buttonType == ButtonTypeEnum.iconAndTitle ||
+                buttonType == ButtonTypeEnum.iconTitleAndIcon
+            ? prefixIcon
+            : null,
+        suffixIcon: buttonType == ButtonTypeEnum.titleAndIcon ||
+                buttonType == ButtonTypeEnum.iconTitleAndIcon
+            ? suffixIcon
+            : null,
+        baseIcon: buttonType == ButtonTypeEnum.iconOnly ? baseIcon : null,
+        onPressed: requestState == RequestStateEnum.loading
+            ? null
+            : () {
+                debugPrint('Adaptive Primary Button Pressed');
+              },
+        paddingSize: paddingSize,
+      ),
     ),
   );
 }

@@ -1,5 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
+import 'package:pactus_gui_widgetbook/src/core/pallets/on_accent_pallet.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
 
 /// ## [getFluentButtonStyleMethod] Function Documentation
@@ -35,8 +36,8 @@ ButtonStyle getFluentButtonStyleMethod({
 
   return ButtonStyle(
     padding: WidgetStateProperty.all<EdgeInsetsDirectional?>(
-      EdgeInsetsDirectional.symmetric(horizontal: paddingSize.horizontalSize),
-    ),
+        EdgeInsetsDirectional.symmetric(
+            horizontal: paddingSize.horizontalSize)),
     backgroundColor: WidgetStateProperty.resolveWith<Color?>((states) {
       if (isOutlined) {
         return Colors.transparent;
@@ -59,7 +60,13 @@ ButtonStyle getFluentButtonStyleMethod({
       if (states.isDisabled) {
         return theme.inactiveColor;
       }
-      return Colors.white;
+      if (states.isHovered) {
+        return theme.accentColor.lightest;
+      }
+      if (states.isPressed) {
+        return theme.accentColor.darkest;
+      }
+      return AppTheme.of(context).extension<OnAccentPallet>()!.onAccentColor;
     }),
     elevation: WidgetStateProperty.resolveWith<double>((states) {
       if (states.isPressed) {

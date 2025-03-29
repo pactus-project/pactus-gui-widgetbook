@@ -149,26 +149,23 @@ class AdaptivePrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IntrinsicWidth(
-      child: Button(
-        style: getFluentButtonStyleMethod(
-          context: context,
-          paddingSize: paddingSize,
-          isOutlined: isOutlined,
-        ),
-        onPressed:
-            (requestState == RequestStateEnum.loading) ? null : onPressed,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
-          child: AdaptiveButtonContent(
-            requestState: requestState,
-            suffixIcon: suffixIcon,
-            prefixIcon: prefixIcon,
-            title: title,
-            loadingDotColor: FluentTheme.of(context).accentColor.lightest,
-            buttonType: buttonType,
-            icon: baseIcon,
-          ),
+    return Button(
+      style: getFluentButtonStyleMethod(
+        context: context,
+        paddingSize: paddingSize,
+        isOutlined: isOutlined,
+      ),
+      onPressed: (requestState == RequestStateEnum.loading) ? null : onPressed,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
+        child: AdaptiveButtonContent(
+          requestState: requestState,
+          suffixIcon: suffixIcon,
+          prefixIcon: prefixIcon,
+          title: title,
+          loadingDotColor: FluentTheme.of(context).accentColor.lightest,
+          buttonType: buttonType,
+          icon: baseIcon,
         ),
       ),
     );
