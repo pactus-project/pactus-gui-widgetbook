@@ -1,3 +1,20 @@
+# 1.9.0+11
+- [Refactor] : Update `AdaptivePrimaryButton` & its use case. [#28](https://github.com/pactus-project/pactus-gui-widgetbook/pull/29)
+  - Removed `AdaptiveSecondaryButton` & `adaptiveSecondaryButtonUseCase`.
+  - Removed `AdaptiveSecondaryButton` tests.
+  - Removed `AdaptiveButtonStyle`.
+  - Added/created `PaddingSizeEnum`.
+  - Added/created `getFluentButtonStyleMethod`.
+  - Added/created `ButtonTypeEnum`.
+  - Added/created `getTextStyleBasedOnPadding`.
+  - Updated `adaptivePrimaryButtonUseCase`.
+  - Updated `adaptivePrimaryButton` tests.
+  - Updated `AdaptivePrimaryButton`.
+  - Updated `AdaptiveButtonContent`.
+
+- [Tests] : Updated `AdaptivePrimaryButton` tests in different states of button. [#28](https://github.com/pactus-project/pactus-gui-widgetbook/pull/29)
+
+
 # 1.8.0+10
 - [Feature] : Add support for accent color in the project. [#26](https://github.com/pactus-project/pactus-gui-widgetbook/pull/27)
   - Introduced an extension for managing accent colors.
