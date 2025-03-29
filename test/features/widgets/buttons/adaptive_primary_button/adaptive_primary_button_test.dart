@@ -44,89 +44,90 @@ void main() {
     }
 
     testWidgets('renders correctly and is clickable when loaded',
-            (WidgetTester tester) async {
-          const testTitle = 'Test Button';
-          final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
+        (WidgetTester tester) async {
+      const testTitle = 'Test Button';
+      final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
 
-          await tester.pumpWidget(createTestableWidget(
-            title: testTitle,
-            requestState: RequestStateEnum.loaded,
-            onPressed: () {
-              wasPressed = true;
-            },
-            themeWithAccent: themeWithAccent,
-            isSmall: false,
-            buttonType: ButtonTypeEnum.iconAndTitle, // Example button type
-            paddingSize: PaddingSizeEnum.medium, // تنظیم paddingSize به medium
-          ));
+      await tester.pumpWidget(createTestableWidget(
+        title: testTitle,
+        requestState: RequestStateEnum.loaded,
+        onPressed: () {
+          wasPressed = true;
+        },
+        themeWithAccent: themeWithAccent,
+        isSmall: false,
+        buttonType: ButtonTypeEnum.iconAndTitle, // Example button type
+        paddingSize: PaddingSizeEnum.medium, // تنظیم paddingSize به medium
+      ));
 
-          expect(find.text(testTitle), findsOneWidget);
+      expect(find.text(testTitle), findsOneWidget);
 
-          final button = find.byType(Button);
-          expect(tester.widget<Button>(button).onPressed, isNotNull);
+      final button = find.byType(Button);
+      expect(tester.widget<Button>(button).onPressed, isNotNull);
 
-          await tester.tap(button);
-          await tester.pumpAndSettle();
+      await tester.tap(button);
+      await tester.pumpAndSettle();
 
-          expect(wasPressed, isTrue);
-        });
+      expect(wasPressed, isTrue);
+    });
 
     testWidgets('renders correctly with titleAndIcon button type',
-            (WidgetTester tester) async {
-          const testTitle = 'Title and Icon Button';
-          final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
+        (WidgetTester tester) async {
+      const testTitle = 'Title and Icon Button';
+      final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
 
-          await tester.pumpWidget(createTestableWidget(
-            title: testTitle,
-            requestState: RequestStateEnum.loaded,
-            onPressed: () {
-              wasPressed = true;
-            },
-            themeWithAccent: themeWithAccent,
-            isSmall: false,
-            buttonType: ButtonTypeEnum.titleAndIcon, // Testing titleAndIcon type
-            paddingSize: PaddingSizeEnum.large, // تنظیم paddingSize به large
-          ));
+      await tester.pumpWidget(createTestableWidget(
+        title: testTitle,
+        requestState: RequestStateEnum.loaded,
+        onPressed: () {
+          wasPressed = true;
+        },
+        themeWithAccent: themeWithAccent,
+        isSmall: false,
+        buttonType: ButtonTypeEnum.titleAndIcon, // Testing titleAndIcon type
+        paddingSize: PaddingSizeEnum.large, // تنظیم paddingSize به large
+      ));
 
-          // Ensure that the correct Text widget is rendered with the expected title
-          expect(find.text(testTitle), findsOneWidget);
+      // Ensure that the correct Text widget is rendered with the expected title
+      expect(find.text(testTitle), findsOneWidget);
 
-          final button = find.byType(Button);
-          expect(tester.widget<Button>(button).onPressed, isNotNull);
+      final button = find.byType(Button);
+      expect(tester.widget<Button>(button).onPressed, isNotNull);
 
-          await tester.tap(button);
-          await tester.pumpAndSettle();
+      await tester.tap(button);
+      await tester.pumpAndSettle();
 
-          expect(wasPressed, isTrue);
-        });
+      expect(wasPressed, isTrue);
+    });
 
     testWidgets('renders correctly with iconTitleAndIcon button type',
-            (WidgetTester tester) async {
-          const testTitle = 'Icon Title and Icon Button';
-          final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
+        (WidgetTester tester) async {
+      const testTitle = 'Icon Title and Icon Button';
+      final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
 
-          await tester.pumpWidget(createTestableWidget(
-            title: testTitle,
-            requestState: RequestStateEnum.loaded,
-            onPressed: () {
-              wasPressed = true;
-            },
-            themeWithAccent: themeWithAccent,
-            isSmall: true,
-            buttonType: ButtonTypeEnum.iconTitleAndIcon, // Testing iconTitleAndIcon type
-            paddingSize: PaddingSizeEnum.min, // تنظیم paddingSize به min
-          ));
+      await tester.pumpWidget(createTestableWidget(
+        title: testTitle,
+        requestState: RequestStateEnum.loaded,
+        onPressed: () {
+          wasPressed = true;
+        },
+        themeWithAccent: themeWithAccent,
+        isSmall: true,
+        buttonType:
+            ButtonTypeEnum.iconTitleAndIcon, // Testing iconTitleAndIcon type
+        paddingSize: PaddingSizeEnum.min, // تنظیم paddingSize به min
+      ));
 
-          // Ensure that the correct Text widget is rendered with the expected title
-          expect(find.text(testTitle), findsOneWidget);
+      // Ensure that the correct Text widget is rendered with the expected title
+      expect(find.text(testTitle), findsOneWidget);
 
-          final button = find.byType(Button);
-          expect(tester.widget<Button>(button).onPressed, isNotNull);
+      final button = find.byType(Button);
+      expect(tester.widget<Button>(button).onPressed, isNotNull);
 
-          await tester.tap(button);
-          await tester.pumpAndSettle();
+      await tester.tap(button);
+      await tester.pumpAndSettle();
 
-          expect(wasPressed, isTrue);
-        });
+      expect(wasPressed, isTrue);
+    });
   });
 }

@@ -5,6 +5,7 @@ import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/adaptive_prim
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+
 /// ## adaptivePrimaryButtonUseCase Widget Documentation
 ///
 /// The `adaptivePrimaryButtonUseCase` is a dynamic widget designed for testing and previewing different variations of the `AdaptivePrimaryButton` widget using the **Widgetbook** framework with "knobs." It allows users to experiment with different properties such as `requestState`, `isOutlined`, `buttonType`, and more, to visualize how the button behaves with different configurations.
@@ -71,33 +72,32 @@ Widget adaptivePrimaryButtonUseCase(BuildContext context) {
     initialOption: FluentIcons.search,
   );
 
-
   return SizedBox(
     height: 40,
     child: AdaptivePrimaryButton(
       isOutlined: isOutlined,
       title: buttonType == ButtonTypeEnum.titleOnly ||
-          buttonType == ButtonTypeEnum.iconAndTitle ||
-          buttonType == ButtonTypeEnum.titleAndIcon ||
-          buttonType == ButtonTypeEnum.iconTitleAndIcon
+              buttonType == ButtonTypeEnum.iconAndTitle ||
+              buttonType == ButtonTypeEnum.titleAndIcon ||
+              buttonType == ButtonTypeEnum.iconTitleAndIcon
           ? text
           : null,
       requestState: requestState,
       buttonType: buttonType,
       prefixIcon: buttonType == ButtonTypeEnum.iconAndTitle ||
-          buttonType == ButtonTypeEnum.iconTitleAndIcon
+              buttonType == ButtonTypeEnum.iconTitleAndIcon
           ? prefixIcon
           : null,
       suffixIcon: buttonType == ButtonTypeEnum.titleAndIcon ||
-          buttonType == ButtonTypeEnum.iconTitleAndIcon
+              buttonType == ButtonTypeEnum.iconTitleAndIcon
           ? suffixIcon
           : null,
       baseIcon: buttonType == ButtonTypeEnum.iconOnly ? baseIcon : null,
       onPressed: requestState == RequestStateEnum.loading
           ? null
           : () {
-        debugPrint('Adaptive Primary Button Pressed');
-      },
+              debugPrint('Adaptive Primary Button Pressed');
+            },
       paddingSize: paddingSize,
     ),
   );

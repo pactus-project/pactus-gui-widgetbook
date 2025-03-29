@@ -10,10 +10,12 @@
 /// ### Attributes:
 /// - `horizontalSize`: A `double` value representing the size of the padding.
 library;
+
 enum PaddingSizeEnum {
   min(8),
   medium(12),
   large(16);
+
   const PaddingSizeEnum(this.horizontalSize);
   final double horizontalSize;
 }

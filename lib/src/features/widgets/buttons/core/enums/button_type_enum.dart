@@ -10,6 +10,7 @@
 /// - **[iconOnly]**: Represents a button that contains only an icon, without any accompanying text. Typically used for buttons that rely on visual cues from the icon alone (e.g., a trash can icon for delete action).
 ///
 library;
+
 enum ButtonTypeEnum {
   titleOnly,
   iconAndTitle,

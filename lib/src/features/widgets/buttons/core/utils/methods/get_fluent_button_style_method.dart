@@ -1,6 +1,7 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
+
 /// ## [getFluentButtonStyleMethod] Function Documentation
 ///
 /// The `getFluentButtonStyleMethod` function is used to generate a `ButtonStyle` for a Fluent UI button. The style adapts to various states and properties, such as padding size, outlined state, and button state (pressed, hovered, disabled). This function enables easy and dynamic customization of button styles based on the button's state and configuration.

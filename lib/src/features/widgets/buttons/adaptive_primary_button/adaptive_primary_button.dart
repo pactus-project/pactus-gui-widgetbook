@@ -4,6 +4,7 @@ import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/methods/get_fluent_button_style_method.dart';
+
 /// ## [AdaptivePrimaryButton] Widget Documentation
 ///
 /// The `AdaptivePrimaryButton` is a customizable button widget designed to handle various button types based on the content (text, icons, or both). It adapts its layout and style based on different states such as loading, success, or failure. This button is particularly useful for situations where the button needs to display dynamic content, including text and icons, with adaptive behavior for different states and interactions.
@@ -155,7 +156,8 @@ class AdaptivePrimaryButton extends StatelessWidget {
           paddingSize: paddingSize,
           isOutlined: isOutlined,
         ),
-        onPressed: (requestState == RequestStateEnum.loading) ? null : onPressed,
+        onPressed:
+            (requestState == RequestStateEnum.loading) ? null : onPressed,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
           child: AdaptiveButtonContent(
