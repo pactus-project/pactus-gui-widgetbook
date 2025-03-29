@@ -5,7 +5,23 @@ import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/adaptive_prim
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
-
+/// ## adaptivePrimaryButtonUseCase Widget Documentation
+///
+/// The `adaptivePrimaryButtonUseCase` is a dynamic widget designed for testing and previewing different variations of the `AdaptivePrimaryButton` widget using the **Widgetbook** framework with "knobs." It allows users to experiment with different properties such as `requestState`, `isOutlined`, `buttonType`, and more, to visualize how the button behaves with different configurations.
+///
+/// ### Purpose:
+/// This widget provides a customizable UI to visualize various configurations of the `AdaptivePrimaryButton` and is useful for documentation and testing purposes in a Widgetbook environment. It leverages the `Widgetbook` framework's `knobs` feature, allowing users to change parameters interactively during runtime.
+///
+/// ### Parameters (from knobs):
+/// - **Request State (`requestState`)**: A list of options (e.g., `loaded`, `loading`, etc.) representing the current state of the request. It controls whether the button shows as loading or in its normal state.
+/// - **Is Outlined (`isOutlined`)**: A boolean knob that determines if the button will be outlined or solid.
+/// - **Button Text (`text`)**: A string for the text displayed on the button.
+/// - **Padding Size (`paddingSize`)**: A list of predefined padding options (e.g., `min`, `medium`, `large`) to control the horizontal padding inside the button.
+/// - **Button Type (`buttonType`)**: A list of button types (e.g., `titleOnly`, `iconAndTitle`, `iconTitleAndIcon`, etc.) to adjust the button's layout (text and/or icon).
+/// - **Prefix Icon (`prefixIcon`)**: An optional knob to choose an icon that will be displayed before the button's text (only applicable for certain button types).
+/// - **Suffix Icon (`suffixIcon`)**: An optional knob to choose an icon that will be displayed after the button's text (only applicable for certain button types).
+/// - **Base Icon (`baseIcon`)**: An optional knob for an icon when the button displays only an icon (for `iconOnly` button type).
+///
 @UseCase(
   name: 'Adaptive Primary Button with Knobs',
   type: AdaptivePrimaryButton,
