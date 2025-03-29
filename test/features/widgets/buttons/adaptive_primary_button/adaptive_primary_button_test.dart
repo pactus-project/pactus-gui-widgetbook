@@ -19,9 +19,9 @@ void main() {
       required RequestStateEnum requestState,
       required VoidCallback? onPressed,
       required FluentThemeData themeWithAccent,
-      required bool isSmall,
       required ButtonTypeEnum buttonType,
       required PaddingSizeEnum paddingSize,
+      bool isOutlined = false,
     }) {
       return FluentApp(
         debugShowCheckedModeBanner: false,
@@ -35,7 +35,8 @@ void main() {
                 requestState: requestState,
                 onPressed: onPressed,
                 buttonType: buttonType,
-                paddingSize: paddingSize, // پاس دادن paddingSize به ویجت
+                paddingSize: paddingSize,
+                isOutlined: isOutlined,
               ),
             ),
           ),
@@ -55,9 +56,8 @@ void main() {
           wasPressed = true;
         },
         themeWithAccent: themeWithAccent,
-        isSmall: false,
-        buttonType: ButtonTypeEnum.iconAndTitle, // Example button type
-        paddingSize: PaddingSizeEnum.medium, // تنظیم paddingSize به medium
+        buttonType: ButtonTypeEnum.iconAndTitle,
+        paddingSize: PaddingSizeEnum.medium,
       ));
 
       expect(find.text(testTitle), findsOneWidget);
@@ -83,12 +83,10 @@ void main() {
           wasPressed = true;
         },
         themeWithAccent: themeWithAccent,
-        isSmall: false,
-        buttonType: ButtonTypeEnum.titleAndIcon, // Testing titleAndIcon type
-        paddingSize: PaddingSizeEnum.large, // تنظیم paddingSize به large
+        buttonType: ButtonTypeEnum.titleAndIcon,
+        paddingSize: PaddingSizeEnum.large,
       ));
 
-      // Ensure that the correct Text widget is rendered with the expected title
       expect(find.text(testTitle), findsOneWidget);
 
       final button = find.byType(Button);
@@ -112,13 +110,10 @@ void main() {
           wasPressed = true;
         },
         themeWithAccent: themeWithAccent,
-        isSmall: true,
-        buttonType:
-            ButtonTypeEnum.iconTitleAndIcon, // Testing iconTitleAndIcon type
-        paddingSize: PaddingSizeEnum.min, // تنظیم paddingSize به min
+        buttonType: ButtonTypeEnum.iconTitleAndIcon,
+        paddingSize: PaddingSizeEnum.min,
       ));
 
-      // Ensure that the correct Text widget is rendered with the expected title
       expect(find.text(testTitle), findsOneWidget);
 
       final button = find.byType(Button);
@@ -128,6 +123,68 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(wasPressed, isTrue);
+    });
+
+    testWidgets('renders outlined button correctly',
+        (WidgetTester tester) async {
+      const testTitle = 'Outlined Button';
+      final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
+
+      await tester.pumpWidget(createTestableWidget(
+        title: testTitle,
+        requestState: RequestStateEnum.loaded,
+        onPressed: () {
+          wasPressed = true;
+        },
+        themeWithAccent: themeWithAccent,
+        buttonType: ButtonTypeEnum.titleOnly,
+        paddingSize: PaddingSizeEnum.medium,
+        isOutlined: true,
+      ));
+
+      expect(find.text(testTitle), findsOneWidget);
+
+      final button = find.byType(Button);
+      expect(tester.widget<Button>(button).onPressed, isNotNull);
+
+      await tester.tap(button);
+      await tester.pumpAndSettle();
+
+      expect(wasPressed, isTrue);
+    });
+
+    testWidgets('renders loading state with ProgressRing',
+        (WidgetTester tester) async {
+      const testTitle = 'Loading Button';
+      final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
+
+      await tester.pumpWidget(createTestableWidget(
+        title: testTitle,
+        requestState: RequestStateEnum.loading,
+        onPressed: () {},
+        themeWithAccent: themeWithAccent,
+        buttonType: ButtonTypeEnum.titleOnly,
+        paddingSize: PaddingSizeEnum.medium,
+      ));
+
+      expect(find.byType(ProgressRing), findsOneWidget);
+    });
+
+    testWidgets('renders error state with error icon',
+        (WidgetTester tester) async {
+      const testTitle = 'Error Button';
+      final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
+
+      await tester.pumpWidget(createTestableWidget(
+        title: testTitle,
+        requestState: RequestStateEnum.error,
+        onPressed: () {},
+        themeWithAccent: themeWithAccent,
+        buttonType: ButtonTypeEnum.titleOnly,
+        paddingSize: PaddingSizeEnum.medium,
+      ));
+
+      expect(find.byIcon(FluentIcons.sync), findsOneWidget);
     });
   });
 }
