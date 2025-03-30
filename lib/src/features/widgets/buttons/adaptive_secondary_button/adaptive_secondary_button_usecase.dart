@@ -5,6 +5,7 @@ import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/adaptive_seco
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+
 /// ## [adaptiveSecondaryButtonUseCase] Use Case Documentation
 ///
 /// This use case demonstrates the `AdaptiveSecondaryButton` with various configurable knobs using `Widgetbook`.
@@ -103,27 +104,27 @@ Widget adaptiveSecondaryButtonUseCase(BuildContext context) {
       height: 40,
       child: AdaptiveSecondaryButton(
         title: buttonType == ButtonTypeEnum.titleOnly ||
-            buttonType == ButtonTypeEnum.iconAndTitle ||
-            buttonType == ButtonTypeEnum.titleAndIcon ||
-            buttonType == ButtonTypeEnum.iconTitleAndIcon
+                buttonType == ButtonTypeEnum.iconAndTitle ||
+                buttonType == ButtonTypeEnum.titleAndIcon ||
+                buttonType == ButtonTypeEnum.iconTitleAndIcon
             ? text
             : null,
         requestState: requestState,
         buttonType: buttonType,
         prefixIcon: buttonType == ButtonTypeEnum.iconAndTitle ||
-            buttonType == ButtonTypeEnum.iconTitleAndIcon
+                buttonType == ButtonTypeEnum.iconTitleAndIcon
             ? prefixIcon
             : null,
         suffixIcon: buttonType == ButtonTypeEnum.titleAndIcon ||
-            buttonType == ButtonTypeEnum.iconTitleAndIcon
+                buttonType == ButtonTypeEnum.iconTitleAndIcon
             ? suffixIcon
             : null,
         baseIcon: buttonType == ButtonTypeEnum.iconOnly ? baseIcon : null,
         onPressed: (requestState == RequestStateEnum.loading || isDisabled)
             ? null
             : () {
-          debugPrint('Adaptive Primary Button Pressed');
-        },
+                debugPrint('Adaptive Primary Button Pressed');
+              },
         paddingSize: paddingSize,
         isDefaultOutlinedButton: isDefaultOutlinedButton,
       ),

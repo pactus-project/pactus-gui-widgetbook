@@ -2,6 +2,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/pallets/colors/app_colors.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
+
 /// ## [getFluentOutlinedButtonStyleMethod] Documentation
 ///
 /// This method generates a `ButtonStyle` for an outlined button in Fluent UI.
@@ -47,8 +48,10 @@ ButtonStyle getFluentOutlinedButtonStyleMethod({
   required bool isDefaultOutlinedButton,
 }) {
   final theme = AppTheme.of(context);
-  final borderColor = isDefaultOutlinedButton ? AppColors.borderColor : theme.accentColor;
-  final foregroundColor = isDefaultOutlinedButton ? AppColors.primaryBlackColor : theme.accentColor;
+  final borderColor =
+      isDefaultOutlinedButton ? AppColors.borderColor : theme.accentColor;
+  final foregroundColor =
+      isDefaultOutlinedButton ? AppColors.primaryBlackColor : theme.accentColor;
 
   return ButtonStyle(
     padding: WidgetStateProperty.all<EdgeInsetsDirectional?>(

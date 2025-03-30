@@ -45,7 +45,8 @@ void main() {
       );
     }
 
-    testWidgets('renders correctly and is clickable when loaded', (WidgetTester tester) async {
+    testWidgets('renders correctly and is clickable when loaded',
+        (WidgetTester tester) async {
       const testTitle = 'Test Button';
       final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
 
@@ -71,7 +72,8 @@ void main() {
       expect(wasPressed, isTrue);
     });
 
-    testWidgets('renders correctly with titleAndIcon button type', (WidgetTester tester) async {
+    testWidgets('renders correctly with titleAndIcon button type',
+        (WidgetTester tester) async {
       const testTitle = 'Title and Icon Button';
       final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
 
@@ -97,7 +99,8 @@ void main() {
       expect(wasPressed, isTrue);
     });
 
-    testWidgets('renders correctly with iconTitleAndIcon button type', (WidgetTester tester) async {
+    testWidgets('renders correctly with iconTitleAndIcon button type',
+        (WidgetTester tester) async {
       const testTitle = 'Icon Title and Icon Button';
       final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
 
@@ -123,7 +126,8 @@ void main() {
       expect(wasPressed, isTrue);
     });
 
-    testWidgets('renders correctly with iconAndTitle button type', (WidgetTester tester) async {
+    testWidgets('renders correctly with iconAndTitle button type',
+        (WidgetTester tester) async {
       const testTitle = 'Icon and Title Button';
       final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
 
@@ -149,7 +153,8 @@ void main() {
       expect(wasPressed, isTrue);
     });
 
-    testWidgets('renders correctly with iconOnly button type', (WidgetTester tester) async {
+    testWidgets('renders correctly with iconOnly button type',
+        (WidgetTester tester) async {
       final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
 
       await tester.pumpWidget(
@@ -186,7 +191,8 @@ void main() {
       expect(wasPressed, isTrue);
     });
 
-    testWidgets('renders loading state with ProgressRing', (WidgetTester tester) async {
+    testWidgets('renders loading state with ProgressRing',
+        (WidgetTester tester) async {
       const testTitle = 'Loading Button';
       final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
 
@@ -202,7 +208,8 @@ void main() {
       expect(find.byType(ProgressRing), findsOneWidget);
     });
 
-    testWidgets('renders error state with error icon', (WidgetTester tester) async {
+    testWidgets('renders error state with error icon',
+        (WidgetTester tester) async {
       const testTitle = 'Error Button';
       final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
 
@@ -218,7 +225,8 @@ void main() {
       expect(find.byIcon(FluentIcons.sync), findsOneWidget);
     });
 
-    testWidgets('renders outlined button with onPressed null when loading', (WidgetTester tester) async {
+    testWidgets('renders outlined button with onPressed null when loading',
+        (WidgetTester tester) async {
       const testTitle = 'Disabled Button';
       final themeWithAccent = AppThemeData.lightTheme(const Color(0xFF0A4D7E));
 

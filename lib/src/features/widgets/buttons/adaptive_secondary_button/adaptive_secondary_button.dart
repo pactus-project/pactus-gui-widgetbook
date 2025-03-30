@@ -4,6 +4,7 @@ import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/methods/get_fluent_outlined_button_style_method.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
+
 /// ## [AdaptiveSecondaryButton] Class Documentation
 ///
 /// The `AdaptiveSecondaryButton` class is a customizable secondary button designed for various UI configurations.
@@ -187,7 +188,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
           isDefaultOutlinedButton: isDefaultOutlinedButton,
         ),
         onPressed:
-        (requestState == RequestStateEnum.loading) ? null : onPressed,
+            (requestState == RequestStateEnum.loading) ? null : onPressed,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
           child: AdaptiveButtonContent(
