@@ -5,6 +5,36 @@ import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/adaptive_text
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
+/// ## [adaptiveTextButtonUseCase] Function Documentation
+///
+/// The `adaptiveTextButtonUseCase` function demonstrates the use of the `AdaptiveTextButton` widget in a Widgetbook use case.
+/// It allows customization of the button's appearance, behavior, and state through the use of knobs.
+///
+/// ### Properties:
+///
+/// - **[requestState]** (RequestStateEnum):
+///   - The state of the button, which can be loaded, loading, or error.
+///
+/// - **[isDisabled]** (bool):
+///   - A boolean value that determines whether the button is disabled.
+///
+/// - **[text]** (String):
+///   - The text label to display on the button.
+///
+/// - **[paddingSize]** (PaddingSizeEnum):
+///   - The padding size to apply around the button content.
+///
+/// - **[buttonType]** (ButtonTypeEnum):
+///   - Specifies the layout of the button, including whether it includes text, icons, or both.
+///
+/// - **[prefixIcon]** (IconData?):
+///   - The icon to display before the button text, used when the button type includes an icon at the start.
+///
+/// - **[suffixIcon]** (IconData?):
+///   - The icon to display after the button text, used when the button type includes an icon at the end.
+///
+/// - **[baseIcon]** (IconData?):
+///   - The icon to display on the button when only an icon is shown (icon-only button).
 
 @UseCase(
   name: 'Adaptive Text Button with Knobs',

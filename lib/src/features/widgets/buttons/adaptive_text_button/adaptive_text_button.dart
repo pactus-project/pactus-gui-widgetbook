@@ -4,7 +4,54 @@ import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
-
+/// ## [AdaptiveTextButton] Class Documentation
+///
+/// The `AdaptiveTextButton` class is a customizable button widget that adapts its appearance based on different states and configurations.
+/// It allows you to create buttons with different combinations of text, icons, and states.
+///
+/// ### Properties:
+///
+/// - **[requestState]** (RequestStateEnum):
+///   - Defines the current state of the button (e.g., loading, normal).
+///
+/// - **[onPressed]** (Function()?):
+///   - A callback function that gets triggered when the button is pressed.
+///
+/// - **[suffixIcon]** (IconData?):
+///   - The icon to be displayed at the end of the button, if any.
+///
+/// - **[prefixIcon]** (IconData?):
+///   - The icon to be displayed at the beginning of the button, if any.
+///
+/// - **[title]** (String?):
+///   - The text to be displayed on the button.
+///
+/// - **[buttonType]** (ButtonTypeEnum):
+///   - Specifies the type of button, influencing the layout of the button content (e.g., title only, icon and title, etc.).
+///
+/// - **[baseIcon]** (IconData?):
+///   - The icon to be used if the button is an icon-only button.
+///
+/// - **[paddingSize]** (PaddingSizeEnum):
+///   - Specifies the padding size to be applied around the button content.
+///
+/// ### Factory Methods:
+///
+/// - **[AdaptiveTextButton.createTitleOnly]**:
+///   - Creates a button with only a title and no icons.
+///
+/// - **[AdaptiveTextButton.createIconAndTitle]**:
+///   - Creates a button with a prefix icon and a title.
+///
+/// - **[AdaptiveTextButton.createTitleAndIcon]**:
+///   - Creates a button with a title and a suffix icon.
+///
+/// - **[AdaptiveTextButton.createIconTitleAndIcon]**:
+///   - Creates a button with both a prefix icon, a title, and a suffix icon.
+///
+/// - **[AdaptiveTextButton.createIconOnly]**:
+///   - Creates a button with only an icon and no text.
+///
 class AdaptiveTextButton extends StatelessWidget {
   const AdaptiveTextButton({
     super.key,
