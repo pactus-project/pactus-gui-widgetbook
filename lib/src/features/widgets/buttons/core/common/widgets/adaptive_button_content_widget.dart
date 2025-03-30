@@ -2,6 +2,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
+import 'package:pactus_gui_widgetbook/src/features/main/language/core/localization_extension.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/methods/get_text_style_based_on_padding_method.dart';
 
@@ -79,7 +80,7 @@ class AdaptiveButtonContent extends StatelessWidget {
         RequestStateEnum.initial || RequestStateEnum.loaded => switch (
               buttonType) {
             ButtonTypeEnum.titleOnly => Text(
-                title!,
+              context.tr(title!),
                 style: buttonInformation,
               ),
             ButtonTypeEnum.iconAndTitle => Row(
@@ -89,7 +90,7 @@ class AdaptiveButtonContent extends StatelessWidget {
                   Icon(prefixIcon),
                   const SizedBox(width: 8),
                   Text(
-                    title!,
+                    context.tr(title!),
                     style: buttonInformation,
                   ),
                 ],
@@ -99,7 +100,7 @@ class AdaptiveButtonContent extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    title!,
+                    context.tr(title!),
                     style: buttonInformation,
                   ),
                   const SizedBox(width: 8),
@@ -113,7 +114,7 @@ class AdaptiveButtonContent extends StatelessWidget {
                   Icon(prefixIcon),
                   const SizedBox(width: 8),
                   Text(
-                    title!,
+                    context.tr(title!),
                     style: buttonInformation,
                   ),
                   const SizedBox(width: 8),
