@@ -78,30 +78,29 @@ Widget adaptivePrimaryButtonUseCase(BuildContext context) {
       height: 40,
       child: AdaptivePrimaryButton(
         title: buttonType == ButtonTypeEnum.titleOnly ||
-            buttonType == ButtonTypeEnum.iconAndTitle ||
-            buttonType == ButtonTypeEnum.titleAndIcon ||
-            buttonType == ButtonTypeEnum.iconTitleAndIcon
+                buttonType == ButtonTypeEnum.iconAndTitle ||
+                buttonType == ButtonTypeEnum.titleAndIcon ||
+                buttonType == ButtonTypeEnum.iconTitleAndIcon
             ? text
             : null,
         requestState: requestState,
         buttonType: buttonType,
         prefixIcon: buttonType == ButtonTypeEnum.iconAndTitle ||
-            buttonType == ButtonTypeEnum.iconTitleAndIcon
+                buttonType == ButtonTypeEnum.iconTitleAndIcon
             ? prefixIcon
             : null,
         suffixIcon: buttonType == ButtonTypeEnum.titleAndIcon ||
-            buttonType == ButtonTypeEnum.iconTitleAndIcon
+                buttonType == ButtonTypeEnum.iconTitleAndIcon
             ? suffixIcon
             : null,
         baseIcon: buttonType == ButtonTypeEnum.iconOnly ? baseIcon : null,
         onPressed: (requestState == RequestStateEnum.loading || isDisabled)
             ? null
             : () {
-          debugPrint('Adaptive Primary Button Pressed');
-        },
+                debugPrint('Adaptive Primary Button Pressed');
+              },
         paddingSize: paddingSize,
       ),
     ),
   );
 }
-

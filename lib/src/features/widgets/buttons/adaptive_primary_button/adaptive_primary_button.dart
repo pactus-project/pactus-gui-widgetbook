@@ -4,6 +4,7 @@ import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/methods/get_fluent_button_style_method.dart';
+
 /// ## [AdaptivePrimaryButton] Class Documentation
 ///
 /// The `AdaptivePrimaryButton` class is a customizable primary button designed to adapt to different UI requirements.
