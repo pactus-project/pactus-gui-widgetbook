@@ -4,29 +4,56 @@ import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/methods/get_fluent_button_style_method.dart';
-
-/// ## [AdaptivePrimaryButton] Widget Documentation
+/// ## [AdaptivePrimaryButton] Class Documentation
 ///
-/// The `AdaptivePrimaryButton` is a customizable button widget designed to handle various button types based on the content (text, icons, or both). It adapts its layout and style based on different states such as loading, success, or failure. This button is particularly useful for situations where the button needs to display dynamic content, including text and icons, with adaptive behavior for different states and interactions.
+/// The `AdaptivePrimaryButton` class is a customizable primary button designed to adapt to different UI requirements.
+/// It supports various configurations, including text-only, icon-only, and combinations of text and icons.
 ///
-/// ### Constructor Parameters:
-/// - **[requestState]** (`RequestStateEnum`): Represents the current state of the request. It controls the button's loading state and whether the button can be pressed.
-/// - **[onPressed]** (`Function()?`): The callback function to be invoked when the button is pressed.
-/// - **[suffixIcon]** (`IconData?`): The icon to be displayed at the end of the button (after the title).
-/// - **[prefixIcon]** (`IconData?`): The icon to be displayed at the beginning of the button (before the title).
-/// - **[title]** (`String?`): The text displayed on the button.
-/// - **[buttonType]** (`ButtonTypeEnum`): Specifies the type of button layout, including options like title-only, icon-and-title, and others.
-/// - **[baseIcon]** (`IconData?`): The main icon to be displayed when only the icon is needed (used in the `iconOnly` button type).
-/// - **[paddingSize]** (`PaddingSizeEnum`): Defines the horizontal padding size for the button content. It determines the spacing inside the button around the text and icons.
-/// - **[isOutlined]** (`bool`): If `true`, the button will have an outline, otherwise, it will have a solid fill.
+/// ### Properties:
 ///
-/// ### Factory Constructors:
-/// These factory methods create `AdaptivePrimaryButton` instances with different button types:
-/// - **[createTitleOnly]**: A button with only text (title).
-/// - **[createIconAndTitle]**: A button with an icon before the text.
-/// - **[createTitleAndIcon]**: A button with the text followed by an icon.
-/// - **[createIconTitleAndIcon]**: A button with an icon before and after the text.
-/// - **[createIconOnly]**: A button that only shows an icon.
+/// - **[requestState]** (`RequestStateEnum`):
+///   - Defines the state of the button (e.g., loading, success, failure).
+///   - Determines if the button should be disabled.
+///
+/// - **[onPressed]** (`Function()?`):
+///   - Callback function triggered when the button is pressed.
+///   - Disabled if `requestState` is `loading`.
+///
+/// - **[suffixIcon]** (`IconData?`):
+///   - An optional suffix icon displayed at the end of the button.
+///
+/// - **[prefixIcon]** (`IconData?`):
+///   - An optional prefix icon displayed at the start of the button.
+///
+/// - **[title]** (`String?`):
+///   - The text label of the button.
+///   - Optional and used in applicable button configurations.
+///
+/// - **[buttonType]** (`ButtonTypeEnum`):
+///   - Specifies the type of button (e.g., title-only, icon-only, both).
+///
+/// - **[baseIcon]** (`IconData?`):
+///   - The primary icon used when the button is of type `iconOnly`.
+///
+/// - **[paddingSize]** (`PaddingSizeEnum`):
+///   - Determines the padding size of the button.
+///
+/// ### Factory Methods:
+///
+/// - **[AdaptivePrimaryButton.createTitleOnly]**:
+///   - Creates a button with only a title.
+///
+/// - **[AdaptivePrimaryButton.createIconAndTitle]**:
+///   - Creates a button with a title and a leading icon.
+///
+/// - **[AdaptivePrimaryButton.createTitleAndIcon]**:
+///   - Creates a button with a title and a trailing icon.
+///
+/// - **[AdaptivePrimaryButton.createIconTitleAndIcon]**:
+///   - Creates a button with both leading and trailing icons along with a title.
+///
+/// - **[AdaptivePrimaryButton.createIconOnly]**:
+///   - Creates a button that contains only an icon.
 ///
 
 class AdaptivePrimaryButton extends StatelessWidget {
@@ -40,7 +67,6 @@ class AdaptivePrimaryButton extends StatelessWidget {
     required this.buttonType,
     this.baseIcon,
     required this.paddingSize,
-    this.isOutlined = false,
   });
 
   final RequestStateEnum requestState;
@@ -51,7 +77,6 @@ class AdaptivePrimaryButton extends StatelessWidget {
   final ButtonTypeEnum buttonType;
   final IconData? baseIcon;
   final PaddingSizeEnum paddingSize;
-  final bool isOutlined;
 
   // Factory methods to create buttons with specific button types
   factory AdaptivePrimaryButton.createTitleOnly({
@@ -59,14 +84,12 @@ class AdaptivePrimaryButton extends StatelessWidget {
     Function()? onPressed,
     String? title,
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
-    bool isOutlined = false,
   }) {
     return AdaptivePrimaryButton(
       requestState: requestState,
       onPressed: onPressed,
       title: title,
       paddingSize: paddingSize,
-      isOutlined: isOutlined,
       buttonType: ButtonTypeEnum.titleOnly,
     );
   }
@@ -76,7 +99,6 @@ class AdaptivePrimaryButton extends StatelessWidget {
     Function()? onPressed,
     String? title,
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
-    bool isOutlined = false,
     IconData? prefixIcon,
   }) {
     return AdaptivePrimaryButton(
@@ -84,7 +106,6 @@ class AdaptivePrimaryButton extends StatelessWidget {
       onPressed: onPressed,
       title: title,
       paddingSize: paddingSize,
-      isOutlined: isOutlined,
       buttonType: ButtonTypeEnum.iconAndTitle,
       prefixIcon: prefixIcon,
     );
@@ -95,7 +116,6 @@ class AdaptivePrimaryButton extends StatelessWidget {
     Function()? onPressed,
     String? title,
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
-    bool isOutlined = false,
     IconData? suffixIcon,
   }) {
     return AdaptivePrimaryButton(
@@ -103,7 +123,6 @@ class AdaptivePrimaryButton extends StatelessWidget {
       onPressed: onPressed,
       title: title,
       paddingSize: paddingSize,
-      isOutlined: isOutlined,
       buttonType: ButtonTypeEnum.titleAndIcon,
       suffixIcon: suffixIcon,
     );
@@ -114,7 +133,6 @@ class AdaptivePrimaryButton extends StatelessWidget {
     Function()? onPressed,
     String? title,
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
-    bool isOutlined = false,
     IconData? prefixIcon,
     IconData? suffixIcon,
   }) {
@@ -123,7 +141,6 @@ class AdaptivePrimaryButton extends StatelessWidget {
       onPressed: onPressed,
       title: title,
       paddingSize: paddingSize,
-      isOutlined: isOutlined,
       buttonType: ButtonTypeEnum.iconTitleAndIcon,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
@@ -134,14 +151,12 @@ class AdaptivePrimaryButton extends StatelessWidget {
     required RequestStateEnum requestState,
     Function()? onPressed,
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
-    bool isOutlined = false,
     IconData? baseIcon,
   }) {
     return AdaptivePrimaryButton(
       requestState: requestState,
       onPressed: onPressed,
       paddingSize: paddingSize,
-      isOutlined: isOutlined,
       buttonType: ButtonTypeEnum.iconOnly,
       baseIcon: baseIcon,
     );
@@ -149,23 +164,27 @@ class AdaptivePrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Button(
-      style: getFluentButtonStyleMethod(
-        context: context,
-        paddingSize: paddingSize,
-        isOutlined: isOutlined,
-      ),
-      onPressed: (requestState == RequestStateEnum.loading) ? null : onPressed,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
-        child: AdaptiveButtonContent(
-          requestState: requestState,
-          suffixIcon: suffixIcon,
-          prefixIcon: prefixIcon,
-          title: title,
-          loadingDotColor: FluentTheme.of(context).accentColor.lightest,
-          buttonType: buttonType,
-          icon: baseIcon,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: Button(
+        style: getFluentButtonStyleMethod(
+          context: context,
+          paddingSize: paddingSize,
+        ),
+        onPressed:
+            (requestState == RequestStateEnum.loading) ? null : onPressed,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
+          child: AdaptiveButtonContent(
+            requestState: requestState,
+            suffixIcon: suffixIcon,
+            prefixIcon: prefixIcon,
+            title: title,
+            loadingDotColor: FluentTheme.of(context).accentColor.lightest,
+            buttonType: buttonType,
+            icon: baseIcon,
+            paddingSize: paddingSize,
+          ),
         ),
       ),
     );

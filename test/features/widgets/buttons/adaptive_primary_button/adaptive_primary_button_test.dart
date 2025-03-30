@@ -21,7 +21,6 @@ void main() {
       required FluentThemeData themeWithAccent,
       required ButtonTypeEnum buttonType,
       required PaddingSizeEnum paddingSize,
-      bool isOutlined = false,
     }) {
       return FluentApp(
         debugShowCheckedModeBanner: false,
@@ -36,7 +35,6 @@ void main() {
                 onPressed: onPressed,
                 buttonType: buttonType,
                 paddingSize: paddingSize,
-                isOutlined: isOutlined,
               ),
             ),
           ),
@@ -139,7 +137,6 @@ void main() {
         themeWithAccent: themeWithAccent,
         buttonType: ButtonTypeEnum.titleOnly,
         paddingSize: PaddingSizeEnum.medium,
-        isOutlined: true,
       ));
 
       expect(find.text(testTitle), findsOneWidget);

@@ -13,7 +13,6 @@ import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
 /// ### Parameters:
 /// - **[context]** (`BuildContext`): The context is used to access the app's theme for applying consistent colors and styles.
 /// - **[paddingSize]** (`PaddingSizeEnum`): Specifies the amount of padding to apply horizontally inside the button. This affects the layout of the button content.
-/// - **[isOutlined]** (`bool`): Determines whether the button has an outlined style. When `true`, the button's background is transparent, and a border is drawn around the button. Otherwise, the button has a solid background.
 ///
 /// ### Function Logic:
 /// - **Padding**: The padding is set based on the provided `paddingSize`. The horizontal padding is determined by the value of `paddingSize.horizontalSize`.
@@ -30,7 +29,6 @@ import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
 ButtonStyle getFluentButtonStyleMethod({
   required BuildContext context,
   required PaddingSizeEnum paddingSize,
-  required bool isOutlined,
 }) {
   final theme = AppTheme.of(context);
 
@@ -39,11 +37,8 @@ ButtonStyle getFluentButtonStyleMethod({
         EdgeInsetsDirectional.symmetric(
             horizontal: paddingSize.horizontalSize)),
     backgroundColor: WidgetStateProperty.resolveWith<Color?>((states) {
-      if (isOutlined) {
-        return Colors.transparent;
-      }
       if (states.isDisabled) {
-        return theme.accentColor.lightest;
+        return theme.accentColor.darkest;
       }
       if (states.isPressed) {
         return theme.accentColor.darker;
@@ -54,17 +49,8 @@ ButtonStyle getFluentButtonStyleMethod({
       return theme.accentColor;
     }),
     foregroundColor: WidgetStateProperty.resolveWith<Color?>((states) {
-      if (isOutlined) {
-        return theme.accentColor.lightest;
-      }
       if (states.isDisabled) {
         return theme.inactiveColor;
-      }
-      if (states.isHovered) {
-        return theme.accentColor.lightest;
-      }
-      if (states.isPressed) {
-        return theme.accentColor.darkest;
       }
       return AppTheme.of(context).extension<OnAccentPallet>()!.onAccentColor;
     }),
@@ -76,9 +62,6 @@ ButtonStyle getFluentButtonStyleMethod({
     }),
     shape: WidgetStateProperty.all(RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10),
-      side: isOutlined
-          ? BorderSide(color: theme.accentColor, width: 1)
-          : BorderSide.none,
     )),
   );
 }

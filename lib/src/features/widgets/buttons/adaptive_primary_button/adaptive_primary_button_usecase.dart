@@ -33,10 +33,11 @@ Widget adaptivePrimaryButtonUseCase(BuildContext context) {
     options: RequestStateEnum.values,
     initialOption: RequestStateEnum.loaded,
   );
-  final isOutlined = context.knobs.boolean(
-    label: 'Is Outlined',
+  final isDisabled = context.knobs.boolean(
+    label: 'Disable Button',
     initialValue: false,
   );
+
   final text = context.knobs.string(
     label: 'Button Text',
     initialValue: 'Click Me',
@@ -76,31 +77,31 @@ Widget adaptivePrimaryButtonUseCase(BuildContext context) {
     child: SizedBox(
       height: 40,
       child: AdaptivePrimaryButton(
-        isOutlined: isOutlined,
         title: buttonType == ButtonTypeEnum.titleOnly ||
-                buttonType == ButtonTypeEnum.iconAndTitle ||
-                buttonType == ButtonTypeEnum.titleAndIcon ||
-                buttonType == ButtonTypeEnum.iconTitleAndIcon
+            buttonType == ButtonTypeEnum.iconAndTitle ||
+            buttonType == ButtonTypeEnum.titleAndIcon ||
+            buttonType == ButtonTypeEnum.iconTitleAndIcon
             ? text
             : null,
         requestState: requestState,
         buttonType: buttonType,
         prefixIcon: buttonType == ButtonTypeEnum.iconAndTitle ||
-                buttonType == ButtonTypeEnum.iconTitleAndIcon
+            buttonType == ButtonTypeEnum.iconTitleAndIcon
             ? prefixIcon
             : null,
         suffixIcon: buttonType == ButtonTypeEnum.titleAndIcon ||
-                buttonType == ButtonTypeEnum.iconTitleAndIcon
+            buttonType == ButtonTypeEnum.iconTitleAndIcon
             ? suffixIcon
             : null,
         baseIcon: buttonType == ButtonTypeEnum.iconOnly ? baseIcon : null,
-        onPressed: requestState == RequestStateEnum.loading
+        onPressed: (requestState == RequestStateEnum.loading || isDisabled)
             ? null
             : () {
-                debugPrint('Adaptive Primary Button Pressed');
-              },
+          debugPrint('Adaptive Primary Button Pressed');
+        },
         paddingSize: paddingSize,
       ),
     ),
   );
 }
+
