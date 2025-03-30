@@ -4,7 +4,60 @@ import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/methods/get_fluent_outlined_button_style_method.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
-
+/// ## [AdaptiveSecondaryButton] Class Documentation
+///
+/// The `AdaptiveSecondaryButton` class is a customizable secondary button designed for various UI configurations.
+/// It supports different styles, including outlined and adaptive content variations.
+///
+/// ### Properties:
+///
+/// - **[requestState]** (`RequestStateEnum`):
+///   - Defines the state of the button (e.g., loading, success, failure).
+///   - Determines if the button should be disabled.
+///
+/// - **[onPressed]** (`Function()?`):
+///   - Callback function triggered when the button is pressed.
+///   - Disabled if `requestState` is `loading`.
+///
+/// - **[suffixIcon]** (`IconData?`):
+///   - An optional suffix icon displayed at the end of the button.
+///
+/// - **[prefixIcon]** (`IconData?`):
+///   - An optional prefix icon displayed at the start of the button.
+///
+/// - **[title]** (`String?`):
+///   - The text label of the button.
+///   - Optional and used in applicable button configurations.
+///
+/// - **[buttonType]** (`ButtonTypeEnum`):
+///   - Specifies the type of button (e.g., title-only, icon-only, both).
+///
+/// - **[baseIcon]** (`IconData?`):
+///   - The primary icon used when the button is of type `iconOnly`.
+///
+/// - **[paddingSize]** (`PaddingSizeEnum`):
+///   - Determines the padding size of the button.
+///
+/// - **[isDefaultOutlinedButton]** (`bool`):
+///   - Specifies whether the button should use the default outlined button style.
+///
+/// ### Factory Methods:
+///
+/// - **[AdaptiveSecondaryButton.createTitleOnly]**:
+///   - Creates a button with only a title.
+///
+/// - **[AdaptiveSecondaryButton.createIconAndTitle]**:
+///   - Creates a button with a title and a leading icon.
+///
+/// - **[AdaptiveSecondaryButton.createTitleAndIcon]**:
+///   - Creates a button with a title and a trailing icon.
+///
+/// - **[createIconTitleAndIcon]**:
+///   - Creates a button with both leading and trailing icons along with a title.
+///
+/// - **[AdaptiveSecondaryButton.createIconOnly]**:
+///   - Creates a button that contains only an icon.
+///
 class AdaptiveSecondaryButton extends StatelessWidget {
   const AdaptiveSecondaryButton({
     super.key,

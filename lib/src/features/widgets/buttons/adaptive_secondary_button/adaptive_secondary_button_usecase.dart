@@ -5,7 +5,46 @@ import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/adaptive_seco
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
-
+/// ## [adaptiveSecondaryButtonUseCase] Use Case Documentation
+///
+/// This use case demonstrates the `AdaptiveSecondaryButton` with various configurable knobs using `Widgetbook`.
+///
+/// ### Knobs:
+///
+/// - **`Request State`** (`RequestStateEnum`):
+///   - Selects the button's state (e.g., `loading`, `loaded`, `error`).
+///
+/// - **`Default Outlined Style`** (`bool`):
+///   - Toggles whether the button should use the default outlined style.
+///
+/// - **`Disable Button`** (`bool`):
+///   - Disables the button when enabled.
+///
+/// - **`Button Text`** (`String`):
+///   - Sets the displayed text for the button.
+///
+/// - **`Padding Size`** (`PaddingSizeEnum`):
+///   - Configures the button’s padding size.
+///
+/// - **`Button Type`** (`ButtonTypeEnum`):
+///   - Defines the type of button (e.g., `titleOnly`, `iconOnly`, `iconAndTitle`).
+///
+/// - **`Prefix Icon`** (`IconData?`):
+///   - Selects an optional leading icon for the button.
+///
+/// - **`Suffix Icon`** (`IconData?`):
+///   - Selects an optional trailing icon for the button.
+///
+/// - **`Base Icon`** (`IconData?`):
+///   - Defines the primary icon when `iconOnly` is selected.
+///
+/// ### Behavior:
+///
+/// - Displays an `AdaptiveSecondaryButton` with user-defined configurations.
+/// - Disables the button when in `loading` state or explicitly set to `disabled`.
+/// - Uses `debugPrint` to log button press interactions.
+/// - Adjusts icons dynamically based on the selected `buttonType`.
+///
 @UseCase(
   name: 'Adaptive Secondary Button with Knobs',
   type: AdaptiveSecondaryButton,
