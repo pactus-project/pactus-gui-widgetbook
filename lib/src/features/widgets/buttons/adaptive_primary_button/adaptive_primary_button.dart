@@ -167,7 +167,7 @@ class AdaptivePrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
-      child: Button(
+      child: FilledButton(
         style: getFluentButtonStyleMethod(
           context: context,
           paddingSize: paddingSize,
