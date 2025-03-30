@@ -1,3 +1,20 @@
+# 1.9.1+12
+- [Refactor] : Make every title in `AdaptivePrimaryButton` multilingual support. [#31](https://github.com/pactus-project/pactus-gui-widgetbook/pull/32)
+  - Updated `AdaptiveButtonContent`.
+
+- [Refactor] : Re-arrange import files to create access from outside this package. [#31](https://github.com/pactus-project/pactus-gui-widgetbook/pull/32)
+  - Updated & renamed `app_core`.
+  - Updated & renamed `app_widgets`.
+
+- [Refactor] : Refactored `AdaptivePrimaryButton` widget. [#31](https://github.com/pactus-project/pactus-gui-widgetbook/pull/32)
+  - Updated `getFluentButtonStyleMethod`.
+  - Added `isDisabled` & removed `isOutlined` from `AdaptivePrimaryButton` use case.
+  - Updated `AdaptivePrimaryButton` tests.
+  - Updated `AdaptivePrimaryButton` & added `MouseRegion` to it.
+
+- [Update] : Replaced `Button` widget with `FilledButton` in `AdaptivePrimaryButton`. [#31](https://github.com/pactus-project/pactus-gui-widgetbook/pull/32)
+  - Updated `AdaptivePrimaryButton` tests.
+
 # 1.9.0+11
 - [Refactor] : Update `AdaptivePrimaryButton` & its use case. [#28](https://github.com/pactus-project/pactus-gui-widgetbook/pull/29)
   - Removed `AdaptiveSecondaryButton` & `adaptiveSecondaryButtonUseCase`.
