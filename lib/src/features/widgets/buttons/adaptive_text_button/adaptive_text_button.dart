@@ -4,6 +4,7 @@ import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
+
 /// ## [AdaptiveTextButton] Class Documentation
 ///
 /// The `AdaptiveTextButton` class is a customizable button widget that adapts its appearance based on different states and configurations.
@@ -164,7 +165,8 @@ class AdaptiveTextButton extends StatelessWidget {
       cursor: SystemMouseCursors.click,
       child: Button(
         style: ButtonStyle(
-          padding: WidgetStateProperty.all(EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize)),
+          padding: WidgetStateProperty.all(
+              EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize)),
           backgroundColor: WidgetStateProperty.all(Colors.transparent),
           foregroundColor: WidgetStateProperty.resolveWith((states) {
             if (states.isPressed) {
@@ -176,14 +178,15 @@ class AdaptiveTextButton extends StatelessWidget {
             if (states.isDisabled) {
               return AppTheme.of(context).inactiveColor;
             }
-              return AppTheme.of(context).accentColor;
+            return AppTheme.of(context).accentColor;
           }),
           elevation: WidgetStateProperty.all(0),
           shape: WidgetStateProperty.all(const RoundedRectangleBorder(
             side: BorderSide.none,
           )),
         ),
-        onPressed: (requestState == RequestStateEnum.loading) ? null : onPressed,
+        onPressed:
+            (requestState == RequestStateEnum.loading) ? null : onPressed,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
           child: AdaptiveButtonContent(
