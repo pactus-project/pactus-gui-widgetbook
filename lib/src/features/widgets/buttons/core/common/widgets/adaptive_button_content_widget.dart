@@ -1,10 +1,9 @@
 import 'package:fluent_ui/fluent_ui.dart';
+import 'package:pactus_gui_widgetbook/app_styles.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
-import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
 import 'package:pactus_gui_widgetbook/src/features/main/language/core/localization_extension.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
-import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/methods/get_text_style_based_on_padding_method.dart';
 
 /// ## [AdaptiveButtonContent] Widget Documentation
 ///
@@ -65,7 +64,8 @@ class AdaptiveButtonContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = AppTheme.of(context);
-    final TextStyle buttonInformation = getTextStyleBasedOnPadding(paddingSize);
+    final TextStyle buttonInformation =
+        TextStyle(color: theme.extension<OnAccentPallet>()!.onAccentColor);
 
     return Center(
       child: switch (requestState) {
