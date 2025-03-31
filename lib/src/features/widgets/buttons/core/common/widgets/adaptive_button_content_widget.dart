@@ -18,7 +18,7 @@ import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/me
 /// - **[suffixIcon] (`suffixIcon`)**: The icon displayed after the button text (applicable for certain button types).
 /// - **[prefixIcon] (`prefixIcon`)**: The icon displayed before the button text (applicable for certain button types).
 /// - **[title] (`title`)**: The text to be displayed on the button (applicable for button types that include text).
-/// - **[loadingDotColor] (`loadingDotColor`)**: The color of the loading dot in the `loading` state.
+/// - **[loadingProgressRingColor] (`loadingDotColor`)**: The color of the loading dot in the `loading` state.
 /// - **[buttonType] (`buttonType`)**: Specifies the button's layout (e.g., just text, text and icon, icon only).
 /// - **[icon] (`icon`)**: The base icon to be displayed for icon-only buttons.
 /// - **[paddingSize] (`paddingSize`)**: Defines the padding around the button content, which affects the text styling.
@@ -47,7 +47,7 @@ class AdaptiveButtonContent extends StatelessWidget {
     required this.suffixIcon,
     required this.prefixIcon,
     this.title,
-    this.loadingDotColor,
+    this.loadingProgressRingColor,
     required this.buttonType,
     this.icon,
     this.paddingSize = PaddingSizeEnum.medium,
@@ -57,7 +57,7 @@ class AdaptiveButtonContent extends StatelessWidget {
   final IconData? suffixIcon;
   final IconData? prefixIcon;
   final String? title;
-  final Color? loadingDotColor;
+  final Color? loadingProgressRingColor;
   final ButtonTypeEnum buttonType;
   final IconData? icon;
   final PaddingSizeEnum paddingSize;
@@ -73,7 +73,8 @@ class AdaptiveButtonContent extends StatelessWidget {
             height: 16,
             width: 16,
             child: ProgressRing(
-              activeColor: loadingDotColor ?? theme.accentColor.lightest,
+              activeColor:
+                  loadingProgressRingColor ?? theme.accentColor.lightest,
               strokeWidth: 1,
             ),
           ),
