@@ -18,7 +18,7 @@ import 'package:pactus_gui_widgetbook/src/core/text_styles/inter_text_styles.dar
 ///   from `InterTextStyles`, applying a smaller text style for minimal padding.
 /// - When the padding size is `PaddingSizeEnum.medium`, the text style is `bodyRegular`
 ///   from `InterTextStyles`, providing a standard, regular font weight.
-/// - When the padding size is `PaddingSizeEnum.large`, the text style is `bodyBold`
+/// - When the padding size is `PaddingSizeEnum.large`, the text style is `subtitleRegular`
 ///   from `InterTextStyles`, applying a bolder font for larger padding.
 ///
 TextStyle getTextStyleBasedOnPadding(PaddingSizeEnum paddingSize) {
@@ -28,6 +28,6 @@ TextStyle getTextStyleBasedOnPadding(PaddingSizeEnum paddingSize) {
     case PaddingSizeEnum.medium:
       return InterTextStyles.bodyRegular;
     case PaddingSizeEnum.large:
-      return InterTextStyles.bodyBold;
+      return InterTextStyles.subtitleRegular;
   }
 }

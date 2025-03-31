@@ -21,7 +21,6 @@ void main() {
       required FluentThemeData themeWithAccent,
       required ButtonTypeEnum buttonType,
       required PaddingSizeEnum paddingSize,
-      bool isOutlined = false,
     }) {
       return FluentApp(
         debugShowCheckedModeBanner: false,
@@ -36,7 +35,6 @@ void main() {
                 onPressed: onPressed,
                 buttonType: buttonType,
                 paddingSize: paddingSize,
-                isOutlined: isOutlined,
               ),
             ),
           ),
@@ -62,8 +60,8 @@ void main() {
 
       expect(find.text(testTitle), findsOneWidget);
 
-      final button = find.byType(Button);
-      expect(tester.widget<Button>(button).onPressed, isNotNull);
+      final button = find.byType(FilledButton);
+      expect(tester.widget<FilledButton>(button).onPressed, isNotNull);
 
       await tester.tap(button);
       await tester.pumpAndSettle();
@@ -89,8 +87,8 @@ void main() {
 
       expect(find.text(testTitle), findsOneWidget);
 
-      final button = find.byType(Button);
-      expect(tester.widget<Button>(button).onPressed, isNotNull);
+      final button = find.byType(FilledButton);
+      expect(tester.widget<FilledButton>(button).onPressed, isNotNull);
 
       await tester.tap(button);
       await tester.pumpAndSettle();
@@ -116,8 +114,8 @@ void main() {
 
       expect(find.text(testTitle), findsOneWidget);
 
-      final button = find.byType(Button);
-      expect(tester.widget<Button>(button).onPressed, isNotNull);
+      final button = find.byType(FilledButton);
+      expect(tester.widget<FilledButton>(button).onPressed, isNotNull);
 
       await tester.tap(button);
       await tester.pumpAndSettle();
@@ -139,13 +137,12 @@ void main() {
         themeWithAccent: themeWithAccent,
         buttonType: ButtonTypeEnum.titleOnly,
         paddingSize: PaddingSizeEnum.medium,
-        isOutlined: true,
       ));
 
       expect(find.text(testTitle), findsOneWidget);
 
-      final button = find.byType(Button);
-      expect(tester.widget<Button>(button).onPressed, isNotNull);
+      final button = find.byType(FilledButton);
+      expect(tester.widget<FilledButton>(button).onPressed, isNotNull);
 
       await tester.tap(button);
       await tester.pumpAndSettle();
