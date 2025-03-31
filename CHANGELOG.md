@@ -1,3 +1,17 @@
+# 1.10.1+13
+- [Feature] : Implement `AdaptiveSecondaryButton` widget & its use cases. [#33](https://github.com/pactus-project/pactus-gui-widgetbook/pull/34)
+  - Added/created `AdaptiveSecondaryButton`.
+  - Added/created `adaptiveSecondaryButtonUseCase` method.
+  - Added/created `getFluentOutlinedButtonStyleMethod`.
+  - Updated `AppColors` & added `primaryBlackColor` to it.
+- [Fix] : Fix font size after changing padding in buttons core. [#33](https://github.com/pactus-project/pactus-gui-widgetbook/pull/34)
+  - Removed deprecated `getTextStyleBasedOnPadding` method.
+
+- [Fix] : Fix color of contents in outline button. [#33](https://github.com/pactus-project/pactus-gui-widgetbook/pull/34)
+  - Updated color resolution logic for outline button contents.
+
+- [Test] : Added tests for `AdaptiveSecondaryButton` in different states. [#33](https://github.com/pactus-project/pactus-gui-widgetbook/pull/34)
+
 # 1.9.1+12
 - [Refactor] : Make every title in `AdaptivePrimaryButton` multilingual support. [#31](https://github.com/pactus-project/pactus-gui-widgetbook/pull/32)
   - Updated `AdaptiveButtonContent`.

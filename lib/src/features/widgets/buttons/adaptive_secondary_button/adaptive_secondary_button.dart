@@ -1,14 +1,14 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
-import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
-import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/methods/get_fluent_button_style_method.dart';
+import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/methods/get_fluent_outlined_button_style_method.dart';
+import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
 
-/// ## [AdaptivePrimaryButton] Class Documentation
+/// ## [AdaptiveSecondaryButton] Class Documentation
 ///
-/// The `AdaptivePrimaryButton` class is a customizable primary button designed to adapt to different UI requirements.
-/// It supports various configurations, including text-only, icon-only, and combinations of text and icons.
+/// The `AdaptiveSecondaryButton` class is a customizable secondary button designed for various UI configurations.
+/// It supports different styles, including outlined and adaptive content variations.
 ///
 /// ### Properties:
 ///
@@ -39,26 +39,28 @@ import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/me
 /// - **[paddingSize]** (`PaddingSizeEnum`):
 ///   - Determines the padding size of the button.
 ///
+/// - **[isDefaultOutlinedButton]** (`bool`):
+///   - Specifies whether the button should use the default outlined button style.
+///
 /// ### Factory Methods:
 ///
-/// - **[AdaptivePrimaryButton.createTitleOnly]**:
+/// - **[AdaptiveSecondaryButton.createTitleOnly]**:
 ///   - Creates a button with only a title.
 ///
-/// - **[AdaptivePrimaryButton.createIconAndTitle]**:
+/// - **[AdaptiveSecondaryButton.createIconAndTitle]**:
 ///   - Creates a button with a title and a leading icon.
 ///
-/// - **[AdaptivePrimaryButton.createTitleAndIcon]**:
+/// - **[AdaptiveSecondaryButton.createTitleAndIcon]**:
 ///   - Creates a button with a title and a trailing icon.
 ///
-/// - **[AdaptivePrimaryButton.createIconTitleAndIcon]**:
+/// - **[createIconTitleAndIcon]**:
 ///   - Creates a button with both leading and trailing icons along with a title.
 ///
-/// - **[AdaptivePrimaryButton.createIconOnly]**:
+/// - **[AdaptiveSecondaryButton.createIconOnly]**:
 ///   - Creates a button that contains only an icon.
 ///
-
-class AdaptivePrimaryButton extends StatelessWidget {
-  const AdaptivePrimaryButton({
+class AdaptiveSecondaryButton extends StatelessWidget {
+  const AdaptiveSecondaryButton({
     super.key,
     required this.requestState,
     this.onPressed,
@@ -68,6 +70,7 @@ class AdaptivePrimaryButton extends StatelessWidget {
     required this.buttonType,
     this.baseIcon,
     required this.paddingSize,
+    this.isDefaultOutlinedButton = false,
   });
 
   final RequestStateEnum requestState;
@@ -78,66 +81,74 @@ class AdaptivePrimaryButton extends StatelessWidget {
   final ButtonTypeEnum buttonType;
   final IconData? baseIcon;
   final PaddingSizeEnum paddingSize;
+  final bool isDefaultOutlinedButton;
 
   // Factory methods to create buttons with specific button types
-  factory AdaptivePrimaryButton.createTitleOnly({
+  factory AdaptiveSecondaryButton.createTitleOnly({
     required RequestStateEnum requestState,
     Function()? onPressed,
     String? title,
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    bool isDefaultOutlinedButton = false,
   }) {
-    return AdaptivePrimaryButton(
+    return AdaptiveSecondaryButton(
       requestState: requestState,
       onPressed: onPressed,
       title: title,
       paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.titleOnly,
+      isDefaultOutlinedButton: isDefaultOutlinedButton,
     );
   }
 
-  factory AdaptivePrimaryButton.createIconAndTitle({
+  factory AdaptiveSecondaryButton.createIconAndTitle({
     required RequestStateEnum requestState,
     Function()? onPressed,
     String? title,
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
+    bool isDefaultOutlinedButton = false,
   }) {
-    return AdaptivePrimaryButton(
+    return AdaptiveSecondaryButton(
       requestState: requestState,
       onPressed: onPressed,
       title: title,
       paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.iconAndTitle,
       prefixIcon: prefixIcon,
+      isDefaultOutlinedButton: isDefaultOutlinedButton,
     );
   }
 
-  factory AdaptivePrimaryButton.createTitleAndIcon({
+  factory AdaptiveSecondaryButton.createTitleAndIcon({
     required RequestStateEnum requestState,
     Function()? onPressed,
     String? title,
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? suffixIcon,
+    bool isDefaultOutlinedButton = false,
   }) {
-    return AdaptivePrimaryButton(
+    return AdaptiveSecondaryButton(
       requestState: requestState,
       onPressed: onPressed,
       title: title,
       paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.titleAndIcon,
       suffixIcon: suffixIcon,
+      isDefaultOutlinedButton: isDefaultOutlinedButton,
     );
   }
 
-  factory AdaptivePrimaryButton.createIconTitleAndIcon({
+  factory AdaptiveSecondaryButton.createIconTitleAndIcon({
     required RequestStateEnum requestState,
     Function()? onPressed,
     String? title,
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     IconData? suffixIcon,
+    bool isDefaultOutlinedButton = false,
   }) {
-    return AdaptivePrimaryButton(
+    return AdaptiveSecondaryButton(
       requestState: requestState,
       onPressed: onPressed,
       title: title,
@@ -145,21 +156,24 @@ class AdaptivePrimaryButton extends StatelessWidget {
       buttonType: ButtonTypeEnum.iconTitleAndIcon,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
+      isDefaultOutlinedButton: isDefaultOutlinedButton,
     );
   }
 
-  factory AdaptivePrimaryButton.createIconOnly({
+  factory AdaptiveSecondaryButton.createIconOnly({
     required RequestStateEnum requestState,
     Function()? onPressed,
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? baseIcon,
+    bool isDefaultOutlinedButton = false,
   }) {
-    return AdaptivePrimaryButton(
+    return AdaptiveSecondaryButton(
       requestState: requestState,
       onPressed: onPressed,
       paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.iconOnly,
       baseIcon: baseIcon,
+      isDefaultOutlinedButton: isDefaultOutlinedButton,
     );
   }
 
@@ -167,10 +181,11 @@ class AdaptivePrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
-      child: FilledButton(
-        style: getFluentButtonStyleMethod(
+      child: OutlinedButton(
+        style: getFluentOutlinedButtonStyleMethod(
           context: context,
           paddingSize: paddingSize,
+          isDefaultOutlinedButton: isDefaultOutlinedButton,
         ),
         onPressed:
             (requestState == RequestStateEnum.loading) ? null : onPressed,
@@ -178,6 +193,9 @@ class AdaptivePrimaryButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
           child: AdaptiveButtonContent(
             requestState: requestState,
+            contentColorMode: isDefaultOutlinedButton
+                ? ContentColorMode.defaultMode
+                : ContentColorMode.accentMode,
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
             title: title,
