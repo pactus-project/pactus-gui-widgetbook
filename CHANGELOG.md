@@ -15,6 +15,11 @@
 - [Update] : Replaced `Button` widget with `FilledButton` in `AdaptivePrimaryButton`. [#31](https://github.com/pactus-project/pactus-gui-widgetbook/pull/32)
   - Updated `AdaptivePrimaryButton` tests.
 
+- [Fix] : update `AdaptivePrimaryButton` styles. [#31](https://github.com/pactus-project/pactus-gui-widgetbook/pull/32)
+  - update a text style in `getTextStyleBasedOnPadding`
+  - rename `loadingDotColor` to `loadingProgressRingColor`
+  - correct `foregroundColor` in `getFluentButtonStyleMethod`
+
 # 1.9.0+11
 - [Refactor] : Update `AdaptivePrimaryButton` & its use case. [#28](https://github.com/pactus-project/pactus-gui-widgetbook/pull/29)
   - Removed `AdaptiveSecondaryButton` & `adaptiveSecondaryButtonUseCase`.
