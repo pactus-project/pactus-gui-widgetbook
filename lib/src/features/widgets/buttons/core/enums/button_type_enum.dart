@@ -18,3 +18,31 @@ enum ButtonTypeEnum {
   iconTitleAndIcon,
   iconOnly,
 }
+
+/// ## [ContentColorMode] Enum Documentation
+///
+/// Defines color modes for button content (text/icon) theming.
+///
+/// ### Values:
+///
+/// [ContentColorMode.accentMode] :
+/// Uses the accent color for button content.
+/// Ideal when you want content to match the app's primary accent color.
+///
+/// [ContentColorMode.onAccentMode] :
+/// Uses the onAccent color (designed to be readable on accent-colored backgrounds).
+/// Best for buttons with accent-colored backgrounds.
+///
+/// [ContentColorMode.defaultMode] :
+/// Automatically chooses content color based on theme:
+/// - Dark theme → Light content color
+/// - Light theme → Dark content color
+/// Provides proper contrast regardless of theme.
+///
+/// Example:
+/// ```dart
+/// ButtonStyle(
+///   contentColorMode: ContentColorMode.onAccentMode,
+/// )
+/// ```
+enum ContentColorMode { accentMode, onAccentMode, defaultMode }

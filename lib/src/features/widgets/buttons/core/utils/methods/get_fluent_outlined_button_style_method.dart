@@ -1,7 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
+import 'package:pactus_gui_widgetbook/app_styles.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
-import 'package:pactus_gui_widgetbook/src/core/pallets/colors/app_colors.dart';
-import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
 
 /// ## [getFluentOutlinedButtonStyleMethod] Documentation
 ///
@@ -48,22 +47,21 @@ ButtonStyle getFluentOutlinedButtonStyleMethod({
   required bool isDefaultOutlinedButton,
 }) {
   final theme = AppTheme.of(context);
-  final borderColor =
-      isDefaultOutlinedButton ? AppColors.borderColor : theme.accentColor;
-  final foregroundColor =
-      isDefaultOutlinedButton ? AppColors.primaryBlackColor : theme.accentColor;
+  final buttonColor = isDefaultOutlinedButton
+      ? theme.extension<DarkPallet>()!.dark900!
+      : theme.accentColor;
 
   return ButtonStyle(
     padding: WidgetStateProperty.all<EdgeInsetsDirectional?>(
       EdgeInsetsDirectional.symmetric(horizontal: paddingSize.horizontalSize),
     ),
     backgroundColor: WidgetStateProperty.all<Color>(Colors.transparent),
-    foregroundColor: WidgetStateProperty.all<Color>(foregroundColor),
+    foregroundColor: WidgetStateProperty.all<Color>(buttonColor),
     elevation: WidgetStateProperty.all<double>(0),
     shape: WidgetStateProperty.all<RoundedRectangleBorder>(
       RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        side: BorderSide(color: borderColor, width: 1),
+        side: BorderSide(color: buttonColor, width: 1),
       ),
     ),
   );

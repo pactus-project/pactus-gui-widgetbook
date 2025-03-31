@@ -181,8 +181,6 @@ class AdaptivePrimaryButton extends StatelessWidget {
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
             title: title,
-            loadingProgressRingColor:
-                FluentTheme.of(context).accentColor.lightest,
             buttonType: buttonType,
             icon: baseIcon,
             paddingSize: paddingSize,

@@ -193,11 +193,12 @@ class AdaptiveSecondaryButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
           child: AdaptiveButtonContent(
             requestState: requestState,
+            contentColorMode: isDefaultOutlinedButton
+                ? ContentColorMode.defaultMode
+                : ContentColorMode.accentMode,
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
             title: title,
-            loadingProgressRingColor:
-                FluentTheme.of(context).accentColor.lightest,
             buttonType: buttonType,
             icon: baseIcon,
             paddingSize: paddingSize,
