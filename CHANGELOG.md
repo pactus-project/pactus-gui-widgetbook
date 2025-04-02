@@ -1,3 +1,17 @@
+# 1.11.0+14
+- [Feature] : Implement `AdaptiveTextButton` widget & its use case. [#30](https://github.com/pactus-project/pactus-gui-widgetbook/pull/35)
+  - Added/created `AdaptiveTextButton`.
+  - Added/created `adaptiveTextButtonUseCase`.
+  - Updated `mai.directories` file.
+
+- [Test] : Added tests for `AdaptiveTextButton` in different states. [#30](https://github.com/pactus-project/pactus-gui-widgetbook/pull/35)
+
+- [Fix] : correct foreground color in adaptive text button.  [#30](https://github.com/pactus-project/pactus-gui-widgetbook/pull/35)
+  - remove conditions in foreground color & remove `isDisables` knob from it`s use case
+
+- [Fix] : add isDefaultTextButton to AdaptiveTextButton. [#30](https://github.com/pactus-project/pactus-gui-widgetbook/pull/35)
+  - update AdaptiveTextButton class & it`s use case
+
 # 1.10.1+13
 - [Feature] : Implement `AdaptiveSecondaryButton` widget & its use cases. [#33](https://github.com/pactus-project/pactus-gui-widgetbook/pull/34)
   - Added/created `AdaptiveSecondaryButton`.
