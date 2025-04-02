@@ -1,3 +1,11 @@
+# 1.11.1+14
+- [Feature] : Implement `AdaptiveTextButton` widget & its use case. [#30](https://github.com/pactus-project/pactus-gui-widgetbook/pull/35)
+  - Added/created `AdaptiveTextButton`.
+  - Added/created `adaptiveTextButtonUseCase`.
+  - Updated `mai.directories` file.
+
+- [Test] : Added tests for `AdaptiveTextButton` in different states. [#30](https://github.com/pactus-project/pactus-gui-widgetbook/pull/35)
+
 # 1.10.1+13
 - [Feature] : Implement `AdaptiveSecondaryButton` widget & its use cases. [#33](https://github.com/pactus-project/pactus-gui-widgetbook/pull/34)
   - Added/created `AdaptiveSecondaryButton`.
