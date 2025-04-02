@@ -1,3 +1,39 @@
+# 1.10.1+13
+- [Feature] : Implement `AdaptiveSecondaryButton` widget & its use cases. [#33](https://github.com/pactus-project/pactus-gui-widgetbook/pull/34)
+  - Added/created `AdaptiveSecondaryButton`.
+  - Added/created `adaptiveSecondaryButtonUseCase` method.
+  - Added/created `getFluentOutlinedButtonStyleMethod`.
+  - Updated `AppColors` & added `primaryBlackColor` to it.
+- [Fix] : Fix font size after changing padding in buttons core. [#33](https://github.com/pactus-project/pactus-gui-widgetbook/pull/34)
+  - Removed deprecated `getTextStyleBasedOnPadding` method.
+
+- [Fix] : Fix color of contents in outline button. [#33](https://github.com/pactus-project/pactus-gui-widgetbook/pull/34)
+  - Updated color resolution logic for outline button contents.
+
+- [Test] : Added tests for `AdaptiveSecondaryButton` in different states. [#33](https://github.com/pactus-project/pactus-gui-widgetbook/pull/34)
+
+# 1.9.1+12
+- [Refactor] : Make every title in `AdaptivePrimaryButton` multilingual support. [#31](https://github.com/pactus-project/pactus-gui-widgetbook/pull/32)
+  - Updated `AdaptiveButtonContent`.
+
+- [Refactor] : Re-arrange import files to create access from outside this package. [#31](https://github.com/pactus-project/pactus-gui-widgetbook/pull/32)
+  - Updated & renamed `app_core`.
+  - Updated & renamed `app_widgets`.
+
+- [Refactor] : Refactored `AdaptivePrimaryButton` widget. [#31](https://github.com/pactus-project/pactus-gui-widgetbook/pull/32)
+  - Updated `getFluentButtonStyleMethod`.
+  - Added `isDisabled` & removed `isOutlined` from `AdaptivePrimaryButton` use case.
+  - Updated `AdaptivePrimaryButton` tests.
+  - Updated `AdaptivePrimaryButton` & added `MouseRegion` to it.
+
+- [Update] : Replaced `Button` widget with `FilledButton` in `AdaptivePrimaryButton`. [#31](https://github.com/pactus-project/pactus-gui-widgetbook/pull/32)
+  - Updated `AdaptivePrimaryButton` tests.
+
+- [Fix] : update `AdaptivePrimaryButton` styles. [#31](https://github.com/pactus-project/pactus-gui-widgetbook/pull/32)
+  - update a text style in `getTextStyleBasedOnPadding`
+  - rename `loadingDotColor` to `loadingProgressRingColor`
+  - correct `foregroundColor` in `getFluentButtonStyleMethod`
+
 # 1.9.0+11
 - [Refactor] : Update `AdaptivePrimaryButton` & its use case. [#28](https://github.com/pactus-project/pactus-gui-widgetbook/pull/29)
   - Removed `AdaptiveSecondaryButton` & `adaptiveSecondaryButtonUseCase`.

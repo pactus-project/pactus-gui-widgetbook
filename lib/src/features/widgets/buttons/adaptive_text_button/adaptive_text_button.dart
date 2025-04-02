@@ -194,7 +194,6 @@ class AdaptiveTextButton extends StatelessWidget {
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
             title: title,
-            loadingDotColor: AppTheme.of(context).accentColor.lightest,
             buttonType: buttonType,
             icon: baseIcon,
             paddingSize: paddingSize,

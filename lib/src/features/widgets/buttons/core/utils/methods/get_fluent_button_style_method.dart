@@ -48,12 +48,9 @@ ButtonStyle getFluentButtonStyleMethod({
       }
       return theme.accentColor;
     }),
-    foregroundColor: WidgetStateProperty.resolveWith<Color?>((states) {
-      if (states.isDisabled) {
-        return theme.inactiveColor;
-      }
-      return AppTheme.of(context).extension<OnAccentPallet>()!.onAccentColor;
-    }),
+    foregroundColor: WidgetStateProperty.all<Color?>(
+      AppTheme.of(context).extension<OnAccentPallet>()!.onAccentColor,
+    ),
     elevation: WidgetStateProperty.resolveWith<double>((states) {
       if (states.isPressed) {
         return 8.0;

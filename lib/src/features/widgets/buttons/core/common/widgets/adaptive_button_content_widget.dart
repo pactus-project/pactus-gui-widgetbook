@@ -1,10 +1,9 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
-import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
 import 'package:pactus_gui_widgetbook/src/features/main/language/core/localization_extension.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
-import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/methods/get_text_style_based_on_padding_method.dart';
+import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/extensions/content_color_mode_extension.dart';
 
 /// ## [AdaptiveButtonContent] Widget Documentation
 ///
@@ -18,7 +17,7 @@ import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/me
 /// - **[suffixIcon] (`suffixIcon`)**: The icon displayed after the button text (applicable for certain button types).
 /// - **[prefixIcon] (`prefixIcon`)**: The icon displayed before the button text (applicable for certain button types).
 /// - **[title] (`title`)**: The text to be displayed on the button (applicable for button types that include text).
-/// - **[loadingDotColor] (`loadingDotColor`)**: The color of the loading dot in the `loading` state.
+/// - **[contentColorMode] (`contentColorMode`)**: Used for detect color of the button contents like text , loading  .
 /// - **[buttonType] (`buttonType`)**: Specifies the button's layout (e.g., just text, text and icon, icon only).
 /// - **[icon] (`icon`)**: The base icon to be displayed for icon-only buttons.
 /// - **[paddingSize] (`paddingSize`)**: Defines the padding around the button content, which affects the text styling.
@@ -47,7 +46,7 @@ class AdaptiveButtonContent extends StatelessWidget {
     required this.suffixIcon,
     required this.prefixIcon,
     this.title,
-    this.loadingDotColor,
+    this.contentColorMode = ContentColorMode.onAccentMode,
     required this.buttonType,
     this.icon,
     this.paddingSize = PaddingSizeEnum.medium,
@@ -57,15 +56,15 @@ class AdaptiveButtonContent extends StatelessWidget {
   final IconData? suffixIcon;
   final IconData? prefixIcon;
   final String? title;
-  final Color? loadingDotColor;
+  final ContentColorMode? contentColorMode;
   final ButtonTypeEnum buttonType;
   final IconData? icon;
   final PaddingSizeEnum paddingSize;
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
-    final TextStyle buttonInformation = getTextStyleBasedOnPadding(paddingSize);
+    final Color contentColor =
+        context.getColorOfContentColorMode(contentColorMode);
 
     return Center(
       child: switch (requestState) {
@@ -73,7 +72,8 @@ class AdaptiveButtonContent extends StatelessWidget {
             height: 16,
             width: 16,
             child: ProgressRing(
-              activeColor: loadingDotColor ?? theme.accentColor.lightest,
+              activeColor: contentColor,
+              backgroundColor: contentColor.basedOnLuminance(),
               strokeWidth: 1,
             ),
           ),
@@ -81,7 +81,7 @@ class AdaptiveButtonContent extends StatelessWidget {
               buttonType) {
             ButtonTypeEnum.titleOnly => Text(
                 context.tr(title!),
-                style: buttonInformation,
+                style: TextStyle(color: contentColor),
               ),
             ButtonTypeEnum.iconAndTitle => Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -91,7 +91,7 @@ class AdaptiveButtonContent extends StatelessWidget {
                   const SizedBox(width: 8),
                   Text(
                     context.tr(title!),
-                    style: buttonInformation,
+                    style: TextStyle(color: contentColor),
                   ),
                 ],
               ),
@@ -101,7 +101,7 @@ class AdaptiveButtonContent extends StatelessWidget {
                 children: [
                   Text(
                     context.tr(title!),
-                    style: buttonInformation,
+                    style: TextStyle(color: contentColor),
                   ),
                   const SizedBox(width: 8),
                   Icon(suffixIcon),
@@ -115,7 +115,7 @@ class AdaptiveButtonContent extends StatelessWidget {
                   const SizedBox(width: 8),
                   Text(
                     context.tr(title!),
-                    style: buttonInformation,
+                    style: TextStyle(color: contentColor),
                   ),
                   const SizedBox(width: 8),
                   Icon(suffixIcon),

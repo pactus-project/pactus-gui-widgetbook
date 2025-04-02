@@ -60,8 +60,8 @@ void main() {
 
       expect(find.text(testTitle), findsOneWidget);
 
-      final button = find.byType(Button);
-      expect(tester.widget<Button>(button).onPressed, isNotNull);
+      final button = find.byType(FilledButton);
+      expect(tester.widget<FilledButton>(button).onPressed, isNotNull);
 
       await tester.tap(button);
       await tester.pumpAndSettle();
@@ -87,8 +87,8 @@ void main() {
 
       expect(find.text(testTitle), findsOneWidget);
 
-      final button = find.byType(Button);
-      expect(tester.widget<Button>(button).onPressed, isNotNull);
+      final button = find.byType(FilledButton);
+      expect(tester.widget<FilledButton>(button).onPressed, isNotNull);
 
       await tester.tap(button);
       await tester.pumpAndSettle();
@@ -114,8 +114,8 @@ void main() {
 
       expect(find.text(testTitle), findsOneWidget);
 
-      final button = find.byType(Button);
-      expect(tester.widget<Button>(button).onPressed, isNotNull);
+      final button = find.byType(FilledButton);
+      expect(tester.widget<FilledButton>(button).onPressed, isNotNull);
 
       await tester.tap(button);
       await tester.pumpAndSettle();
@@ -141,8 +141,8 @@ void main() {
 
       expect(find.text(testTitle), findsOneWidget);
 
-      final button = find.byType(Button);
-      expect(tester.widget<Button>(button).onPressed, isNotNull);
+      final button = find.byType(FilledButton);
+      expect(tester.widget<FilledButton>(button).onPressed, isNotNull);
 
       await tester.tap(button);
       await tester.pumpAndSettle();
