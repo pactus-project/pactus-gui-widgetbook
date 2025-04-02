@@ -1,5 +1,4 @@
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:pactus_gui_widgetbook/app_styles.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
@@ -35,6 +34,8 @@ import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/w
 ///
 /// - **[paddingSize]** (PaddingSizeEnum):
 ///   - Specifies the padding size to be applied around the button content.
+/// - **[isDefaultTextButton]** (`bool`):
+///   - Specifies whether the button should use the default Text button style.
 ///
 /// ### Factory Methods:
 ///
@@ -64,6 +65,7 @@ class AdaptiveTextButton extends StatelessWidget {
     required this.buttonType,
     this.baseIcon,
     required this.paddingSize,
+    this.isDefaultTextButton = false,
   });
 
   final RequestStateEnum requestState;
@@ -74,6 +76,7 @@ class AdaptiveTextButton extends StatelessWidget {
   final ButtonTypeEnum buttonType;
   final IconData? baseIcon;
   final PaddingSizeEnum paddingSize;
+  final bool isDefaultTextButton;
 
   // Factory methods to create buttons with specific button types
   factory AdaptiveTextButton.createTitleOnly({
@@ -81,6 +84,7 @@ class AdaptiveTextButton extends StatelessWidget {
     Function()? onPressed,
     String? title,
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
+    bool isDefaultTextButton = false,
   }) {
     return AdaptiveTextButton(
       requestState: requestState,
@@ -88,6 +92,7 @@ class AdaptiveTextButton extends StatelessWidget {
       title: title,
       paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.titleOnly,
+      isDefaultTextButton: isDefaultTextButton,
     );
   }
 
@@ -97,6 +102,7 @@ class AdaptiveTextButton extends StatelessWidget {
     String? title,
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
+    bool isDefaultTextButton = false,
   }) {
     return AdaptiveTextButton(
       requestState: requestState,
@@ -105,6 +111,7 @@ class AdaptiveTextButton extends StatelessWidget {
       paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.iconAndTitle,
       prefixIcon: prefixIcon,
+      isDefaultTextButton: isDefaultTextButton,
     );
   }
 
@@ -114,6 +121,7 @@ class AdaptiveTextButton extends StatelessWidget {
     String? title,
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? suffixIcon,
+    bool isDefaultTextButton = false,
   }) {
     return AdaptiveTextButton(
       requestState: requestState,
@@ -122,6 +130,7 @@ class AdaptiveTextButton extends StatelessWidget {
       paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.titleAndIcon,
       suffixIcon: suffixIcon,
+      isDefaultTextButton: isDefaultTextButton,
     );
   }
 
@@ -132,6 +141,7 @@ class AdaptiveTextButton extends StatelessWidget {
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     IconData? suffixIcon,
+    bool isDefaultTextButton = false,
   }) {
     return AdaptiveTextButton(
       requestState: requestState,
@@ -141,6 +151,7 @@ class AdaptiveTextButton extends StatelessWidget {
       buttonType: ButtonTypeEnum.iconTitleAndIcon,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
+      isDefaultTextButton: isDefaultTextButton,
     );
   }
 
@@ -149,6 +160,7 @@ class AdaptiveTextButton extends StatelessWidget {
     Function()? onPressed,
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? baseIcon,
+    bool isDefaultTextButton = false,
   }) {
     return AdaptiveTextButton(
       requestState: requestState,
@@ -156,6 +168,7 @@ class AdaptiveTextButton extends StatelessWidget {
       paddingSize: paddingSize,
       buttonType: ButtonTypeEnum.iconOnly,
       baseIcon: baseIcon,
+      isDefaultTextButton: isDefaultTextButton,
     );
   }
 
@@ -168,9 +181,6 @@ class AdaptiveTextButton extends StatelessWidget {
           padding: WidgetStateProperty.all(
               EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize)),
           backgroundColor: WidgetStateProperty.all(Colors.transparent),
-          foregroundColor: WidgetStateProperty.all(
-            AppTheme.of(context).extension<DarkPallet>()!.dark900!,
-          ),
           elevation: WidgetStateProperty.all(0),
           shape: WidgetStateProperty.all(const RoundedRectangleBorder(
             side: BorderSide.none,
@@ -188,6 +198,9 @@ class AdaptiveTextButton extends StatelessWidget {
             buttonType: buttonType,
             icon: baseIcon,
             paddingSize: paddingSize,
+            contentColorMode: isDefaultTextButton
+                ? ContentColorMode.defaultMode
+                : ContentColorMode.accentMode,
           ),
         ),
       ),

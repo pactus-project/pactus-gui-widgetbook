@@ -16,6 +16,9 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 /// - **[requestState]** (RequestStateEnum):
 ///   - The state of the button, which can be loaded, loading, or error.
 ///
+/// - **[isDefaultTextButton]** (`bool`):
+///   - Toggles whether the button should use the default Text style.
+///
 /// - **[isDisabled]** (bool):
 ///   - A boolean value that determines whether the button is disabled.
 ///
@@ -47,6 +50,12 @@ Widget adaptiveTextButtonUseCase(BuildContext context) {
     options: RequestStateEnum.values,
     initialOption: RequestStateEnum.loaded,
   );
+
+  final isDefaultTextButton = context.knobs.boolean(
+    label: 'Default Text Style',
+    initialValue: false,
+  );
+
   final text = context.knobs.string(
     label: 'Button Text',
     initialValue: 'Click Me',
@@ -108,6 +117,7 @@ Widget adaptiveTextButtonUseCase(BuildContext context) {
                 debugPrint('Adaptive Text Button Pressed');
               },
         paddingSize: paddingSize,
+        isDefaultTextButton: isDefaultTextButton,
       ),
     ),
   );
