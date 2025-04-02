@@ -47,12 +47,6 @@ Widget adaptiveTextButtonUseCase(BuildContext context) {
     options: RequestStateEnum.values,
     initialOption: RequestStateEnum.loaded,
   );
-
-  final isDisabled = context.knobs.boolean(
-    label: 'Disable Button',
-    initialValue: false,
-  );
-
   final text = context.knobs.string(
     label: 'Button Text',
     initialValue: 'Click Me',
@@ -108,7 +102,7 @@ Widget adaptiveTextButtonUseCase(BuildContext context) {
             ? suffixIcon
             : null,
         baseIcon: buttonType == ButtonTypeEnum.iconOnly ? baseIcon : null,
-        onPressed: (requestState == RequestStateEnum.loading || isDisabled)
+        onPressed: (requestState == RequestStateEnum.loading)
             ? null
             : () {
                 debugPrint('Adaptive Text Button Pressed');

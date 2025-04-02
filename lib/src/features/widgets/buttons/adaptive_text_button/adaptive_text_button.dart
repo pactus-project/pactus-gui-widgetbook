@@ -168,18 +168,9 @@ class AdaptiveTextButton extends StatelessWidget {
           padding: WidgetStateProperty.all(
               EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize)),
           backgroundColor: WidgetStateProperty.all(Colors.transparent),
-          foregroundColor: WidgetStateProperty.resolveWith((states) {
-            if (states.isPressed) {
-              return AppTheme.of(context).accentColor.darkest;
-            }
-            if (states.isHovered) {
-              return AppTheme.of(context).accentColor.darker;
-            }
-            if (states.isDisabled) {
-              return AppTheme.of(context).inactiveColor;
-            }
-            return AppTheme.of(context).accentColor;
-          }),
+          foregroundColor: WidgetStateProperty.all(
+            AppTheme.of(context).extension<DarkPallet>()!.dark900!,
+          ),
           elevation: WidgetStateProperty.all(0),
           shape: WidgetStateProperty.all(const RoundedRectangleBorder(
             side: BorderSide.none,
