@@ -1,4 +1,5 @@
 import 'package:fluent_ui/fluent_ui.dart';
+import 'package:pactus_gui_widgetbook/app_styles.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
@@ -174,6 +175,10 @@ class AdaptiveTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
+    final buttonColor = isDefaultTextButton
+        ? theme.extension<DarkPallet>()!.dark900!
+        : theme.accentColor;
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: Button(
@@ -181,6 +186,7 @@ class AdaptiveTextButton extends StatelessWidget {
           padding: WidgetStateProperty.all(
               EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize)),
           backgroundColor: WidgetStateProperty.all(Colors.transparent),
+          foregroundColor: WidgetStateProperty.all<Color>(buttonColor),
           elevation: WidgetStateProperty.all(0),
           shape: WidgetStateProperty.all(const RoundedRectangleBorder(
             side: BorderSide.none,
