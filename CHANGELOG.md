@@ -1,3 +1,8 @@
+# 1.11.1+15
+- [Fix] : Corrected the color of icons in text buttons that have icons. [#30](https://github.com/pactus-project/pactus-gui-widgetbook/pull/36)
+  - Updated `AdaptiveTextButton` class.
+
+
 # 1.11.0+14
 - [Feature] : Implement `AdaptiveTextButton` widget & its use case. [#30](https://github.com/pactus-project/pactus-gui-widgetbook/pull/35)
   - Added/created `AdaptiveTextButton`.
