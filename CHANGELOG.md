@@ -1,3 +1,16 @@
+# 1.12.0+16
+- [Fix] : Implement proper localization setup for FluentApp. [#37](https://github.com/pactus-project/pactus-gui-widgetbook/pull/38)
+  - Updated `FluentApp` widget configuration.
+  - Added missing localization delegates.
+
+- [Fix] : Add null-safety to tr() context extension. [#37](https://github.com/pactus-project/pactus-gui-widgetbook/pull/38)
+  - Updated `LocalizationExtension` to handle null keys.
+  - Ensures empty string fallback for null/missing translations.
+
+- [Fix] : Implement tr() for button titles. [#37](https://github.com/pactus-project/pactus-gui-widgetbook/pull/38)
+  - Replaced hardcoded button titles with localized strings.
+  - Updated all button widgets to use `context.tr()`.
+
 # 1.11.1+15
 - [Fix] : Corrected the color of icons in text buttons that have icons. [#30](https://github.com/pactus-project/pactus-gui-widgetbook/pull/36)
   - Updated `AdaptiveTextButton` class.
