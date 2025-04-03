@@ -1,6 +1,7 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
+import 'package:pactus_gui_widgetbook/src/features/main/language/core/localization_extension.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/methods/get_fluent_outlined_button_style_method.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
@@ -198,7 +199,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
                 : ContentColorMode.accentMode,
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
-            title: title,
+            title: context.tr(title),
             buttonType: buttonType,
             icon: baseIcon,
             paddingSize: paddingSize,

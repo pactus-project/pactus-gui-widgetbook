@@ -1,6 +1,7 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
+import 'package:pactus_gui_widgetbook/src/features/main/language/core/localization_extension.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/widgets/adaptive_button_content_widget.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/methods/get_fluent_button_style_method.dart';
@@ -161,7 +162,7 @@ class AdaptivePrimaryButton extends StatelessWidget {
             requestState: requestState,
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
-            title: title,
+            title: context.tr(title),
             buttonType: buttonType,
             icon: baseIcon,
             paddingSize: paddingSize,
