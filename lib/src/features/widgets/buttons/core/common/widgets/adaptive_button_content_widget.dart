@@ -1,7 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
-import 'package:pactus_gui_widgetbook/src/features/main/language/core/localization_extension.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/extensions/content_color_mode_extension.dart';
 
@@ -80,7 +79,7 @@ class AdaptiveButtonContent extends StatelessWidget {
         RequestStateEnum.initial || RequestStateEnum.loaded => switch (
               buttonType) {
             ButtonTypeEnum.titleOnly => Text(
-                context.tr(title!),
+                title!,
                 style: TextStyle(color: contentColor),
               ),
             ButtonTypeEnum.iconAndTitle => Row(
@@ -90,7 +89,7 @@ class AdaptiveButtonContent extends StatelessWidget {
                   Icon(prefixIcon),
                   const SizedBox(width: 8),
                   Text(
-                    context.tr(title!),
+                    title!,
                     style: TextStyle(color: contentColor),
                   ),
                 ],
@@ -100,7 +99,7 @@ class AdaptiveButtonContent extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    context.tr(title!),
+                    title!,
                     style: TextStyle(color: contentColor),
                   ),
                   const SizedBox(width: 8),
@@ -114,7 +113,7 @@ class AdaptiveButtonContent extends StatelessWidget {
                   Icon(prefixIcon),
                   const SizedBox(width: 8),
                   Text(
-                    context.tr(title!),
+                    title!,
                     style: TextStyle(color: contentColor),
                   ),
                   const SizedBox(width: 8),
