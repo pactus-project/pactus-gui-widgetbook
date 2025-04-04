@@ -45,7 +45,7 @@ class AdaptiveButtonContent extends StatelessWidget {
     required this.requestState,
     required this.suffixIcon,
     required this.prefixIcon,
-    this.title,
+    this.title = '',
     this.textOverflow,
     this.contentColorMode = ContentColorMode.onAccentMode,
     required this.buttonType,

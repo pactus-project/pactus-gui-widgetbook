@@ -79,7 +79,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
     this.minHeight = 32,
     this.textOverflow,
     this.maxWidth = double.infinity,
-    this.title,
+    this.title = '',
     required this.buttonType,
     this.baseIcon,
     required this.paddingSize,
@@ -104,7 +104,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   factory AdaptiveSecondaryButton.createTitleOnly({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     bool isDefaultOutlinedButton = false,
   }) {
@@ -121,7 +121,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   factory AdaptiveSecondaryButton.createIconAndTitle({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     bool isDefaultOutlinedButton = false,
@@ -140,7 +140,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   factory AdaptiveSecondaryButton.createTitleAndIcon({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? suffixIcon,
     bool isDefaultOutlinedButton = false,
@@ -159,7 +159,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   factory AdaptiveSecondaryButton.createIconTitleAndIcon({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     IconData? suffixIcon,

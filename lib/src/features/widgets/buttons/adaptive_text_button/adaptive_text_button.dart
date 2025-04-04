@@ -70,7 +70,7 @@ class AdaptiveTextButton extends StatelessWidget {
     this.onPressed,
     this.suffixIcon,
     this.prefixIcon,
-    this.title,
+    this.title = '',
     this.borderRadius = 4,
     this.minHeight = 32,
     this.textOverflow,
@@ -99,7 +99,7 @@ class AdaptiveTextButton extends StatelessWidget {
   factory AdaptiveTextButton.createTitleOnly({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     bool isDefaultTextButton = false,
   }) {
@@ -116,7 +116,7 @@ class AdaptiveTextButton extends StatelessWidget {
   factory AdaptiveTextButton.createIconAndTitle({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     bool isDefaultTextButton = false,
@@ -135,7 +135,7 @@ class AdaptiveTextButton extends StatelessWidget {
   factory AdaptiveTextButton.createTitleAndIcon({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? suffixIcon,
     bool isDefaultTextButton = false,
@@ -154,7 +154,7 @@ class AdaptiveTextButton extends StatelessWidget {
   factory AdaptiveTextButton.createIconTitleAndIcon({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     IconData? suffixIcon,
