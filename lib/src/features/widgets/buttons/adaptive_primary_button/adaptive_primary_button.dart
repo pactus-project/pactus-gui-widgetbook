@@ -24,10 +24,13 @@ import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/utils/me
 /// - **[suffixIcon]** (`IconData?`): The icon to be displayed at the end of the button (after the title).
 /// - **[prefixIcon]** (`IconData?`): The icon to be displayed at the beginning of the button (before the title).
 /// - **[title]** (`String?`): The text displayed on the button.
+/// - **[textOverflow]** (`TextOverflow?`): Determines how overflowing text should be handled when the button's text content exceeds available space.
+/// - **[minHeight]** (`double`): The minimum height allowed for the button and Defaults to `32`.
+/// - **[maxWidth]** (`double`): The maximum width allowed for the button and Defaults to `double.infinity`.
+/// - **[borderRadius]** (`double`): Controls the corner rounding of the button's border.
 /// - **[buttonType]** (`ButtonTypeEnum`): Specifies the type of button layout, including options like title-only, icon-and-title, and others.
 /// - **[baseIcon]** (`IconData?`): The main icon to be displayed when only the icon is needed (used in the `iconOnly` button type).
 /// - **[paddingSize]** (`PaddingSizeEnum`): Defines the horizontal padding size for the button content. It determines the spacing inside the button around the text and icons.
-/// - **[isOutlined]** (`bool`): If `true`, the button will have an outline, otherwise, it will have a solid fill.
 ///
 /// ### Factory Constructors:
 /// These factory methods create `AdaptivePrimaryButton` instances with different button types:
@@ -46,6 +49,10 @@ class AdaptivePrimaryButton extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.title,
+    this.textOverflow ,
+    this.minHeight = 32,
+    this.maxWidth = double.infinity,
+    this.borderRadius = 4,
     required this.buttonType,
     this.baseIcon,
     required this.paddingSize,
@@ -56,6 +63,10 @@ class AdaptivePrimaryButton extends StatelessWidget {
   final IconData? suffixIcon;
   final IconData? prefixIcon;
   final String? title;
+  final TextOverflow? textOverflow;
+  final double minHeight;
+  final double maxWidth;
+  final double borderRadius;
   final ButtonTypeEnum buttonType;
   final IconData? baseIcon;
   final PaddingSizeEnum paddingSize;
@@ -146,25 +157,34 @@ class AdaptivePrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      child: FilledButton(
-        style: getFluentButtonStyleMethod(
-          context: context,
-          paddingSize: paddingSize,
-        ),
-        onPressed:
-            (requestState == RequestStateEnum.loading) ? null : onPressed,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
-          child: AdaptiveButtonContent(
-            requestState: requestState,
-            suffixIcon: suffixIcon,
-            prefixIcon: prefixIcon,
-            title: title,
-            buttonType: buttonType,
-            icon: baseIcon,
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+          minHeight: minHeight,
+          maxWidth: maxWidth,
+          ),
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: FilledButton(
+          style: getFluentButtonStyleMethod(
+            context: context,
             paddingSize: paddingSize,
+            borderRadius: borderRadius,
+          ),
+          onPressed:
+              (requestState == RequestStateEnum.loading) ? null : onPressed,
+          child: Padding(
+            padding:
+                EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
+            child: AdaptiveButtonContent(
+              textOverflow: textOverflow,
+              requestState: requestState,
+              suffixIcon: suffixIcon,
+              prefixIcon: prefixIcon,
+              title: title!,
+              buttonType: buttonType,
+              icon: baseIcon,
+              paddingSize: paddingSize,
+            ),
           ),
         ),
       ),
