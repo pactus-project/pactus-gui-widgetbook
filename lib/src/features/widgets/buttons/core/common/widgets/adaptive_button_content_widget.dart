@@ -82,7 +82,8 @@ class AdaptiveButtonContent extends StatelessWidget {
         RequestStateEnum.initial || RequestStateEnum.loaded => switch (
               buttonType) {
             ButtonTypeEnum.titleOnly => Text(
-              title!,overflow: textOverflow,
+                title!,
+                overflow: textOverflow,
                 style: TextStyle(color: contentColor),
               ),
             ButtonTypeEnum.iconAndTitle => Row(

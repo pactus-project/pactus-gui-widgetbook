@@ -49,7 +49,7 @@ class AdaptivePrimaryButton extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.title,
-    this.textOverflow ,
+    this.textOverflow,
     this.minHeight = 32,
     this.maxWidth = double.infinity,
     this.borderRadius = 4,
@@ -159,9 +159,9 @@ class AdaptivePrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-          minHeight: minHeight,
-          maxWidth: maxWidth,
-          ),
+        minHeight: minHeight,
+        maxWidth: maxWidth,
+      ),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: FilledButton(
