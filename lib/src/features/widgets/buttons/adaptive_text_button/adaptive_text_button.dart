@@ -27,6 +27,14 @@ import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/w
 /// - **[title]** (String?):
 ///   - The text to be displayed on the button.
 ///
+/// - **[textOverflow]** (`TextOverflow?`): Determines how overflowing text should be handled when the button's text content exceeds available space.
+///
+/// - **[minHeight]** (`double`): The minimum height allowed for the button and Defaults to `32`.
+///
+/// - **[maxWidth]** (`double`): The maximum width allowed for the button and Defaults to `double.infinity`.
+///
+/// - **[borderRadius]** (`double`): Controls the corner rounding of the button's border.
+///
 /// - **[buttonType]** (ButtonTypeEnum):
 ///   - Specifies the type of button, influencing the layout of the button content (e.g., title only, icon and title, etc.).
 ///
@@ -62,7 +70,11 @@ class AdaptiveTextButton extends StatelessWidget {
     this.onPressed,
     this.suffixIcon,
     this.prefixIcon,
-    this.title,
+    this.title = '',
+    this.borderRadius = 4,
+    this.minHeight = 32,
+    this.textOverflow,
+    this.maxWidth = double.infinity,
     required this.buttonType,
     this.baseIcon,
     required this.paddingSize,
@@ -74,6 +86,10 @@ class AdaptiveTextButton extends StatelessWidget {
   final IconData? suffixIcon;
   final IconData? prefixIcon;
   final String? title;
+  final double minHeight;
+  final double maxWidth;
+  final TextOverflow? textOverflow;
+  final double borderRadius;
   final ButtonTypeEnum buttonType;
   final IconData? baseIcon;
   final PaddingSizeEnum paddingSize;
@@ -83,7 +99,7 @@ class AdaptiveTextButton extends StatelessWidget {
   factory AdaptiveTextButton.createTitleOnly({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     bool isDefaultTextButton = false,
   }) {
@@ -100,7 +116,7 @@ class AdaptiveTextButton extends StatelessWidget {
   factory AdaptiveTextButton.createIconAndTitle({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     bool isDefaultTextButton = false,
@@ -119,7 +135,7 @@ class AdaptiveTextButton extends StatelessWidget {
   factory AdaptiveTextButton.createTitleAndIcon({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? suffixIcon,
     bool isDefaultTextButton = false,
@@ -138,7 +154,7 @@ class AdaptiveTextButton extends StatelessWidget {
   factory AdaptiveTextButton.createIconTitleAndIcon({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     IconData? suffixIcon,
@@ -179,34 +195,42 @@ class AdaptiveTextButton extends StatelessWidget {
     final buttonColor = isDefaultTextButton
         ? theme.extension<DarkPallet>()!.dark900!
         : theme.accentColor;
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      child: Button(
-        style: ButtonStyle(
-          padding: WidgetStateProperty.all(
-              EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize)),
-          backgroundColor: WidgetStateProperty.all(Colors.transparent),
-          foregroundColor: WidgetStateProperty.all<Color>(buttonColor),
-          elevation: WidgetStateProperty.all(0),
-          shape: WidgetStateProperty.all(const RoundedRectangleBorder(
-            side: BorderSide.none,
-          )),
-        ),
-        onPressed:
-            (requestState == RequestStateEnum.loading) ? null : onPressed,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
-          child: AdaptiveButtonContent(
-            requestState: requestState,
-            suffixIcon: suffixIcon,
-            prefixIcon: prefixIcon,
-            title: title,
-            buttonType: buttonType,
-            icon: baseIcon,
-            paddingSize: paddingSize,
-            contentColorMode: isDefaultTextButton
-                ? ContentColorMode.defaultMode
-                : ContentColorMode.accentMode,
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        minHeight: minHeight,
+        maxWidth: maxWidth,
+      ),
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: Button(
+          style: ButtonStyle(
+            padding: WidgetStateProperty.all(
+                EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize)),
+            backgroundColor: WidgetStateProperty.all(Colors.transparent),
+            foregroundColor: WidgetStateProperty.all<Color>(buttonColor),
+            elevation: WidgetStateProperty.all(0),
+            shape: WidgetStateProperty.all(RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(borderRadius),
+            )),
+          ),
+          onPressed:
+              (requestState == RequestStateEnum.loading) ? null : onPressed,
+          child: Padding(
+            padding:
+                EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
+            child: AdaptiveButtonContent(
+              textOverflow: textOverflow,
+              requestState: requestState,
+              suffixIcon: suffixIcon,
+              prefixIcon: prefixIcon,
+              title: title,
+              buttonType: buttonType,
+              icon: baseIcon,
+              paddingSize: paddingSize,
+              contentColorMode: isDefaultTextButton
+                  ? ContentColorMode.defaultMode
+                  : ContentColorMode.accentMode,
+            ),
           ),
         ),
       ),

@@ -107,6 +107,14 @@ class WidgetBookApp extends StatelessWidget {
             return FluentApp(
               debugShowCheckedModeBanner: false,
               theme: data,
+              locale: Localizations.localeOf(context),
+              supportedLocales: AppLocales.supportedLocales,
+              localizationsDelegates: const [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
               home: AppTheme(
                 themeData: data,
                 child: AppScaffold(child: child),

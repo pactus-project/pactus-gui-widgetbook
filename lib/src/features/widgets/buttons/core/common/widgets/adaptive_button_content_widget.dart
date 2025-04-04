@@ -1,7 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
-import 'package:pactus_gui_widgetbook/src/features/main/language/core/localization_extension.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/extensions/content_color_mode_extension.dart';
 
@@ -17,6 +16,7 @@ import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/extensio
 /// - **[suffixIcon] (`suffixIcon`)**: The icon displayed after the button text (applicable for certain button types).
 /// - **[prefixIcon] (`prefixIcon`)**: The icon displayed before the button text (applicable for certain button types).
 /// - **[title] (`title`)**: The text to be displayed on the button (applicable for button types that include text).
+/// - **[textOverflow]** (`TextOverflow`): Determines how overflowing text should be handled when the button's text content exceeds available space.
 /// - **[contentColorMode] (`contentColorMode`)**: Used for detect color of the button contents like text , loading  .
 /// - **[buttonType] (`buttonType`)**: Specifies the button's layout (e.g., just text, text and icon, icon only).
 /// - **[icon] (`icon`)**: The base icon to be displayed for icon-only buttons.
@@ -45,7 +45,8 @@ class AdaptiveButtonContent extends StatelessWidget {
     required this.requestState,
     required this.suffixIcon,
     required this.prefixIcon,
-    this.title,
+    this.title = '',
+    this.textOverflow,
     this.contentColorMode = ContentColorMode.onAccentMode,
     required this.buttonType,
     this.icon,
@@ -56,6 +57,7 @@ class AdaptiveButtonContent extends StatelessWidget {
   final IconData? suffixIcon;
   final IconData? prefixIcon;
   final String? title;
+  final TextOverflow? textOverflow;
   final ContentColorMode? contentColorMode;
   final ButtonTypeEnum buttonType;
   final IconData? icon;
@@ -80,7 +82,8 @@ class AdaptiveButtonContent extends StatelessWidget {
         RequestStateEnum.initial || RequestStateEnum.loaded => switch (
               buttonType) {
             ButtonTypeEnum.titleOnly => Text(
-                context.tr(title!),
+                title!,
+                overflow: textOverflow,
                 style: TextStyle(color: contentColor),
               ),
             ButtonTypeEnum.iconAndTitle => Row(
@@ -90,7 +93,7 @@ class AdaptiveButtonContent extends StatelessWidget {
                   Icon(prefixIcon),
                   const SizedBox(width: 8),
                   Text(
-                    context.tr(title!),
+                    title!,
                     style: TextStyle(color: contentColor),
                   ),
                 ],
@@ -100,7 +103,7 @@ class AdaptiveButtonContent extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    context.tr(title!),
+                    title!,
                     style: TextStyle(color: contentColor),
                   ),
                   const SizedBox(width: 8),
@@ -114,7 +117,7 @@ class AdaptiveButtonContent extends StatelessWidget {
                   Icon(prefixIcon),
                   const SizedBox(width: 8),
                   Text(
-                    context.tr(title!),
+                    title!,
                     style: TextStyle(color: contentColor),
                   ),
                   const SizedBox(width: 8),

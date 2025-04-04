@@ -1,3 +1,27 @@
+# 1.13.0+17
+- [Update] : Add properties to button widgets. [#39](https://github.com/pactus-project/pactus-gui-widgetbook/pull/40)
+  - Added `textOverflow` property to control text truncation behavior
+  - Added `minHeight` property for minimum button height constraints
+  - Added `maxWidth` property for maximum button width constraints
+  - Added `borderRadius` property for customizable corner rounding
+  - Updated all button factory constructors to support new properties
+  - Updated Widgetbook use cases to demonstrate new properties
+
+- [Refactor] : Fix null safety when buttons title is null. [#39](https://github.com/pactus-project/pactus-gui-widgetbook/pull/40)
+
+# 1.12.0+16
+- [Fix] : Implement proper localization setup for FluentApp. [#37](https://github.com/pactus-project/pactus-gui-widgetbook/pull/38)
+  - Updated `FluentApp` widget configuration.
+  - Added missing localization delegates.
+
+- [Fix] : Add null-safety to tr() context extension. [#37](https://github.com/pactus-project/pactus-gui-widgetbook/pull/38)
+  - Updated `LocalizationExtension` to handle null keys.
+  - Ensures empty string fallback for null/missing translations.
+
+- [Fix] : Implement tr() for button titles in related use cases. [#37](https://github.com/pactus-project/pactus-gui-widgetbook/pull/38)
+  - Replaced hardcoded button titles with localized strings.
+  - Remove all button widgets to use `context.tr()`.
+
 # 1.11.1+15
 - [Fix] : Corrected the color of icons in text buttons that have icons. [#30](https://github.com/pactus-project/pactus-gui-widgetbook/pull/36)
   - Updated `AdaptiveTextButton` class.

@@ -1,6 +1,7 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/request_state_enum.dart';
+import 'package:pactus_gui_widgetbook/src/features/main/language/core/localization_extension.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/adaptive_primary_button/adaptive_primary_button.dart';
 import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/enums/button_type_enum.dart';
 import 'package:widgetbook/widgetbook.dart';
@@ -15,12 +16,15 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 ///
 /// ### Parameters (from knobs):
 /// - **Request State (`requestState`)**: A list of options (e.g., `loaded`, `loading`, etc.) representing the current state of the request. It controls whether the button shows as loading or in its normal state.
-/// - **Is Outlined (`isOutlined`)**: A boolean knob that determines if the button will be outlined or solid.
 /// - **Button Text (`text`)**: A string for the text displayed on the button.
 /// - **Padding Size (`paddingSize`)**: A list of predefined padding options (e.g., `min`, `medium`, `large`) to control the horizontal padding inside the button.
 /// - **Button Type (`buttonType`)**: A list of button types (e.g., `titleOnly`, `iconAndTitle`, `iconTitleAndIcon`, etc.) to adjust the button's layout (text and/or icon).
 /// - **Prefix Icon (`prefixIcon`)**: An optional knob to choose an icon that will be displayed before the button's text (only applicable for certain button types).
 /// - **Suffix Icon (`suffixIcon`)**: An optional knob to choose an icon that will be displayed after the button's text (only applicable for certain button types).
+/// - **`textOverflow`** (`TextOverflow?`): Determines how overflowing text should be handled when the button's text content exceeds available space.
+/// - **`minHeight`** (`double`): The minimum height allowed for the button and Defaults to `32`.
+/// - **`maxWidth`** (`double`): The maximum width allowed for the button and Defaults to `double.infinity`.
+/// - **`borderRadius`** (`double`): Controls the corner rounding of the button's border.
 /// - **Base Icon (`baseIcon`)**: An optional knob for an icon when the button displays only an icon (for `iconOnly` button type).
 ///
 @UseCase(
@@ -73,15 +77,41 @@ Widget adaptivePrimaryButtonUseCase(BuildContext context) {
     initialOption: FluentIcons.search,
   );
 
-  return IntrinsicWidth(
-    child: SizedBox(
-      height: 40,
+  final minHeight = context.knobs.double.slider(
+    label: 'Min Height',
+    initialValue: 32,
+    min: 0,
+    max: 100,
+  );
+
+  final maxWidth = context.knobs.double.slider(
+    label: 'Max Width',
+    initialValue: 200,
+    min: 0,
+    max: 500,
+  );
+
+  final borderRadius = context.knobs.double.slider(
+    label: 'Border Radius',
+    initialValue: 4,
+    min: 0,
+    max: 20,
+  );
+
+  final textOverflow = context.knobs.list<TextOverflow>(
+    label: 'Text Overflow',
+    options: TextOverflow.values,
+    initialOption: TextOverflow.ellipsis,
+  );
+
+  return IntrinsicHeight(
+    child: IntrinsicWidth(
       child: AdaptivePrimaryButton(
         title: buttonType == ButtonTypeEnum.titleOnly ||
                 buttonType == ButtonTypeEnum.iconAndTitle ||
                 buttonType == ButtonTypeEnum.titleAndIcon ||
                 buttonType == ButtonTypeEnum.iconTitleAndIcon
-            ? text
+            ? context.tr(text)
             : null,
         requestState: requestState,
         buttonType: buttonType,
@@ -100,6 +130,10 @@ Widget adaptivePrimaryButtonUseCase(BuildContext context) {
                 debugPrint('Adaptive Primary Button Pressed');
               },
         paddingSize: paddingSize,
+        textOverflow: textOverflow,
+        minHeight: minHeight,
+        maxWidth: maxWidth,
+        borderRadius: borderRadius,
       ),
     ),
   );

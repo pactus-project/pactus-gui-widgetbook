@@ -30,6 +30,15 @@ import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/common/w
 ///   - The text label of the button.
 ///   - Optional and used in applicable button configurations.
 ///
+/// - [borderRadius] (`double`):
+///   - Controls the corner rounding of the button's border.
+///
+/// - **[minHeight]** (`double`): The minimum height allowed for the button and Defaults to `32`.
+///
+/// - **[maxWidth]** (`double`): The maximum width allowed for the button and Defaults to `double.infinity`.
+///
+/// - **[textOverflow]** (`TextOverflow?`): Determines how overflowing text should be handled when the button's text content exceeds available space.
+///
 /// - **[buttonType]** (`ButtonTypeEnum`):
 ///   - Specifies the type of button (e.g., title-only, icon-only, both).
 ///
@@ -66,7 +75,11 @@ class AdaptiveSecondaryButton extends StatelessWidget {
     this.onPressed,
     this.suffixIcon,
     this.prefixIcon,
-    this.title,
+    this.borderRadius = 4,
+    this.minHeight = 32,
+    this.textOverflow,
+    this.maxWidth = double.infinity,
+    this.title = '',
     required this.buttonType,
     this.baseIcon,
     required this.paddingSize,
@@ -78,6 +91,10 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   final IconData? suffixIcon;
   final IconData? prefixIcon;
   final String? title;
+  final double minHeight;
+  final double maxWidth;
+  final TextOverflow? textOverflow;
+  final double borderRadius;
   final ButtonTypeEnum buttonType;
   final IconData? baseIcon;
   final PaddingSizeEnum paddingSize;
@@ -87,7 +104,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   factory AdaptiveSecondaryButton.createTitleOnly({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     bool isDefaultOutlinedButton = false,
   }) {
@@ -104,7 +121,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   factory AdaptiveSecondaryButton.createIconAndTitle({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     bool isDefaultOutlinedButton = false,
@@ -123,7 +140,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   factory AdaptiveSecondaryButton.createTitleAndIcon({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? suffixIcon,
     bool isDefaultOutlinedButton = false,
@@ -142,7 +159,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
   factory AdaptiveSecondaryButton.createIconTitleAndIcon({
     required RequestStateEnum requestState,
     Function()? onPressed,
-    String? title,
+    String? title = '',
     PaddingSizeEnum paddingSize = PaddingSizeEnum.medium,
     IconData? prefixIcon,
     IconData? suffixIcon,
@@ -179,29 +196,38 @@ class AdaptiveSecondaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      child: OutlinedButton(
-        style: getFluentOutlinedButtonStyleMethod(
-          context: context,
-          paddingSize: paddingSize,
-          isDefaultOutlinedButton: isDefaultOutlinedButton,
-        ),
-        onPressed:
-            (requestState == RequestStateEnum.loading) ? null : onPressed,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
-          child: AdaptiveButtonContent(
-            requestState: requestState,
-            contentColorMode: isDefaultOutlinedButton
-                ? ContentColorMode.defaultMode
-                : ContentColorMode.accentMode,
-            suffixIcon: suffixIcon,
-            prefixIcon: prefixIcon,
-            title: title,
-            buttonType: buttonType,
-            icon: baseIcon,
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        minHeight: minHeight,
+        maxWidth: maxWidth,
+      ),
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: OutlinedButton(
+          style: getFluentOutlinedButtonStyleMethod(
+            context: context,
             paddingSize: paddingSize,
+            isDefaultOutlinedButton: isDefaultOutlinedButton,
+            borderRadius: borderRadius,
+          ),
+          onPressed:
+              (requestState == RequestStateEnum.loading) ? null : onPressed,
+          child: Padding(
+            padding:
+                EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize),
+            child: AdaptiveButtonContent(
+              textOverflow: textOverflow,
+              requestState: requestState,
+              contentColorMode: isDefaultOutlinedButton
+                  ? ContentColorMode.defaultMode
+                  : ContentColorMode.accentMode,
+              suffixIcon: suffixIcon,
+              prefixIcon: prefixIcon,
+              title: title,
+              buttonType: buttonType,
+              icon: baseIcon,
+              paddingSize: paddingSize,
+            ),
           ),
         ),
       ),
