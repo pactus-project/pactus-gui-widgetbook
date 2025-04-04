@@ -38,6 +38,14 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 /// - **[suffixIcon]** (IconData?):
 ///   - The icon to display after the button text, used when the button type includes an icon at the end.
 ///
+/// - **[textOverflow]** (`TextOverflow?`): Determines how overflowing text should be handled when the button's text content exceeds available space.
+///
+/// - **[minHeight]** (`double`): The minimum height allowed for the button and Defaults to `32`.
+///
+/// - **[maxWidth]** (`double`): The maximum width allowed for the button and Defaults to `double.infinity`.
+///
+/// - **[borderRadius]** (`double`): Controls the corner rounding of the button's border.
+///
 /// - **[baseIcon]** (IconData?):
 ///   - The icon to display on the button when only an icon is shown (icon-only button).
 
@@ -91,9 +99,35 @@ Widget adaptiveTextButtonUseCase(BuildContext context) {
     initialOption: FluentIcons.search,
   );
 
-  return IntrinsicWidth(
-    child: SizedBox(
-      height: 40,
+  final minHeight = context.knobs.double.slider(
+    label: 'Min Height',
+    initialValue: 32,
+    min: 0,
+    max: 100,
+  );
+
+  final maxWidth = context.knobs.double.slider(
+    label: 'Max Width',
+    initialValue: 0,
+    min: 0,
+    max: 500,
+  );
+
+  final borderRadius = context.knobs.double.slider(
+    label: 'Border Radius',
+    initialValue: 4,
+    min: 0,
+    max: 20,
+  );
+
+  final textOverflow = context.knobs.list<TextOverflow>(
+    label: 'Text Overflow',
+    options: TextOverflow.values,
+    initialOption: TextOverflow.ellipsis,
+  );
+
+  return IntrinsicHeight(
+    child: IntrinsicWidth(
       child: AdaptiveTextButton(
         title: buttonType == ButtonTypeEnum.titleOnly ||
                 buttonType == ButtonTypeEnum.iconAndTitle ||
@@ -118,6 +152,10 @@ Widget adaptiveTextButtonUseCase(BuildContext context) {
                 debugPrint('Adaptive Text Button Pressed');
               },
         paddingSize: paddingSize,
+        textOverflow: textOverflow,
+        minHeight: minHeight,
+        maxWidth: maxWidth,
+        borderRadius: borderRadius,
         isDefaultTextButton: isDefaultTextButton,
       ),
     ),

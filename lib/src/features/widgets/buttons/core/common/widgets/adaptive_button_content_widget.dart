@@ -16,6 +16,7 @@ import 'package:pactus_gui_widgetbook/src/features/widgets/buttons/core/extensio
 /// - **[suffixIcon] (`suffixIcon`)**: The icon displayed after the button text (applicable for certain button types).
 /// - **[prefixIcon] (`prefixIcon`)**: The icon displayed before the button text (applicable for certain button types).
 /// - **[title] (`title`)**: The text to be displayed on the button (applicable for button types that include text).
+/// - **[textOverflow]** (`TextOverflow`): Determines how overflowing text should be handled when the button's text content exceeds available space.
 /// - **[contentColorMode] (`contentColorMode`)**: Used for detect color of the button contents like text , loading  .
 /// - **[buttonType] (`buttonType`)**: Specifies the button's layout (e.g., just text, text and icon, icon only).
 /// - **[icon] (`icon`)**: The base icon to be displayed for icon-only buttons.
@@ -44,7 +45,8 @@ class AdaptiveButtonContent extends StatelessWidget {
     required this.requestState,
     required this.suffixIcon,
     required this.prefixIcon,
-    this.title,
+    this.title = '',
+    this.textOverflow,
     this.contentColorMode = ContentColorMode.onAccentMode,
     required this.buttonType,
     this.icon,
@@ -55,6 +57,7 @@ class AdaptiveButtonContent extends StatelessWidget {
   final IconData? suffixIcon;
   final IconData? prefixIcon;
   final String? title;
+  final TextOverflow? textOverflow;
   final ContentColorMode? contentColorMode;
   final ButtonTypeEnum buttonType;
   final IconData? icon;
@@ -80,6 +83,7 @@ class AdaptiveButtonContent extends StatelessWidget {
               buttonType) {
             ButtonTypeEnum.titleOnly => Text(
                 title!,
+                overflow: textOverflow,
                 style: TextStyle(color: contentColor),
               ),
             ButtonTypeEnum.iconAndTitle => Row(

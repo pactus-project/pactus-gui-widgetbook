@@ -8,14 +8,17 @@ import 'package:pactus_gui_widgetbook/src/core/enum/padding_size_enum.dart';
 ///
 /// ### Parameters:
 ///
-/// - **[context]** (`BuildContext`):
+/// - [context] (`BuildContext`):
 ///   - Provides the current widget context.
 ///
-/// - **[paddingSize]** (`PaddingSizeEnum`):
+/// - [paddingSize] (`PaddingSizeEnum`):
 ///   - Determines the horizontal padding of the button.
 ///
-/// - **[isDefaultOutlinedButton]** (`bool`):
+/// - [isDefaultOutlinedButton] (`bool`):
 ///   - If `true`, applies a default outlined button style with predefined colors.
+///
+/// - [borderRadius] (`double`):
+///   - Controls the corner rounding of the button's border.
 ///
 /// ### Behavior:
 ///
@@ -45,6 +48,7 @@ ButtonStyle getFluentOutlinedButtonStyleMethod({
   required BuildContext context,
   required PaddingSizeEnum paddingSize,
   required bool isDefaultOutlinedButton,
+  required double borderRadius,
 }) {
   final theme = AppTheme.of(context);
   final buttonColor = isDefaultOutlinedButton
@@ -60,7 +64,7 @@ ButtonStyle getFluentOutlinedButtonStyleMethod({
     elevation: WidgetStateProperty.all<double>(0),
     shape: WidgetStateProperty.all<RoundedRectangleBorder>(
       RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(borderRadius),
         side: BorderSide(color: buttonColor, width: 1),
       ),
     ),

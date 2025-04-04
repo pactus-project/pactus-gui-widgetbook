@@ -1,3 +1,14 @@
+# 1.13.0+17
+- [Update] : Add properties to button widgets. [#39](https://github.com/pactus-project/pactus-gui-widgetbook/pull/40)
+  - Added `textOverflow` property to control text truncation behavior
+  - Added `minHeight` property for minimum button height constraints
+  - Added `maxWidth` property for maximum button width constraints
+  - Added `borderRadius` property for customizable corner rounding
+  - Updated all button factory constructors to support new properties
+  - Updated Widgetbook use cases to demonstrate new properties
+
+- [Refactor] : Fix null safety when buttons title is null. [#39](https://github.com/pactus-project/pactus-gui-widgetbook/pull/40)
+
 # 1.12.0+16
 - [Fix] : Implement proper localization setup for FluentApp. [#37](https://github.com/pactus-project/pactus-gui-widgetbook/pull/38)
   - Updated `FluentApp` widget configuration.

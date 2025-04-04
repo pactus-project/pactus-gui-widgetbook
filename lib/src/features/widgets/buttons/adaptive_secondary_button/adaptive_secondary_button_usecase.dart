@@ -37,6 +37,14 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 /// - **`Suffix Icon`** (`IconData?`):
 ///   - Selects an optional trailing icon for the button.
 ///
+/// - **`textOverflow`** (`TextOverflow?`): Determines how overflowing text should be handled when the button's text content exceeds available space.
+///
+/// - **`minHeight`** (`double`): The minimum height allowed for the button and Defaults to `32`.
+///
+/// - **`maxWidth`** (`double`): The maximum width allowed for the button and Defaults to `double.infinity`.
+///
+/// - **`borderRadius`** (`double`): Controls the corner rounding of the button's border.
+///
 /// - **`Base Icon`** (`IconData?`):
 ///   - Defines the primary icon when `iconOnly` is selected.
 ///
@@ -100,9 +108,35 @@ Widget adaptiveSecondaryButtonUseCase(BuildContext context) {
     initialOption: FluentIcons.search,
   );
 
-  return IntrinsicWidth(
-    child: SizedBox(
-      height: 40,
+  final minHeight = context.knobs.double.slider(
+    label: 'Min Height',
+    initialValue: 32,
+    min: 0,
+    max: 100,
+  );
+
+  final maxWidth = context.knobs.double.slider(
+    label: 'Max Width',
+    initialValue: 200,
+    min: 0,
+    max: 500,
+  );
+
+  final borderRadius = context.knobs.double.slider(
+    label: 'Border Radius',
+    initialValue: 4,
+    min: 0,
+    max: 20,
+  );
+
+  final textOverflow = context.knobs.list<TextOverflow>(
+    label: 'Text Overflow',
+    options: TextOverflow.values,
+    initialOption: TextOverflow.ellipsis,
+  );
+
+  return IntrinsicHeight(
+    child: IntrinsicWidth(
       child: AdaptiveSecondaryButton(
         title: buttonType == ButtonTypeEnum.titleOnly ||
                 buttonType == ButtonTypeEnum.iconAndTitle ||
@@ -127,6 +161,10 @@ Widget adaptiveSecondaryButtonUseCase(BuildContext context) {
                 debugPrint('Adaptive Primary Button Pressed');
               },
         paddingSize: paddingSize,
+        textOverflow: textOverflow,
+        minHeight: minHeight,
+        maxWidth: maxWidth,
+        borderRadius: borderRadius,
         isDefaultOutlinedButton: isDefaultOutlinedButton,
       ),
     ),
