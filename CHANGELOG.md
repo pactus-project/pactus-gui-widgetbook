@@ -7,9 +7,9 @@
   - Updated `LocalizationExtension` to handle null keys.
   - Ensures empty string fallback for null/missing translations.
 
-- [Fix] : Implement tr() for button titles. [#37](https://github.com/pactus-project/pactus-gui-widgetbook/pull/38)
+- [Fix] : Implement tr() for button titles in related use cases. [#37](https://github.com/pactus-project/pactus-gui-widgetbook/pull/38)
   - Replaced hardcoded button titles with localized strings.
-  - Updated all button widgets to use `context.tr()`.
+  - Remove all button widgets to use `context.tr()`.
 
 # 1.11.1+15
 - [Fix] : Corrected the color of icons in text buttons that have icons. [#30](https://github.com/pactus-project/pactus-gui-widgetbook/pull/36)
