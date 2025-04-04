@@ -7,6 +7,8 @@
   - Updated all button factory constructors to support new properties
   - Updated Widgetbook use cases to demonstrate new properties
 
+- [Refactor] : Fix null safety when buttons title is null. [#39](https://github.com/pactus-project/pactus-gui-widgetbook/pull/40)
+
 # 1.12.0+16
 - [Fix] : Implement proper localization setup for FluentApp. [#37](https://github.com/pactus-project/pactus-gui-widgetbook/pull/38)
   - Updated `FluentApp` widget configuration.
