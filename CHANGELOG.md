@@ -1,3 +1,6 @@
+# 1.13.1+18
+- [Refactor] : Remove height property from text styles. [#41](https://github.com/pactus-project/pactus-gui-widgetbook/pull/42)
+
 # 1.13.0+17
 - [Update] : Add properties to button widgets. [#39](https://github.com/pactus-project/pactus-gui-widgetbook/pull/40)
   - Added `textOverflow` property to control text truncation behavior
