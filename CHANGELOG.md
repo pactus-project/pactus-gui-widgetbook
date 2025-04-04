@@ -1,3 +1,6 @@
+# 1.13.2+19
+- [Refactor] : update all text  styles to height `1.0` [#41](https://github.com/pactus-project/pactus-gui-widgetbook/pull/42q)
+
 # 1.13.1+18
 - [Refactor] : Remove height property from text styles. [#41](https://github.com/pactus-project/pactus-gui-widgetbook/pull/42)
 
