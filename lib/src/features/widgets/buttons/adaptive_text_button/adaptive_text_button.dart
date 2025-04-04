@@ -62,7 +62,7 @@ class AdaptiveTextButton extends StatelessWidget {
     this.onPressed,
     this.suffixIcon,
     this.prefixIcon,
-    this.title,
+    this.title = '',
     required this.buttonType,
     this.baseIcon,
     required this.paddingSize,
