@@ -200,7 +200,7 @@ class AdaptiveTextButton extends StatelessWidget {
             requestState: requestState,
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
-            title: title!,
+            title: title,
             buttonType: buttonType,
             icon: baseIcon,
             paddingSize: paddingSize,

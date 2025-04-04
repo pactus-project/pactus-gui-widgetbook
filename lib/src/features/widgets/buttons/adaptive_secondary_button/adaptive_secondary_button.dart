@@ -198,7 +198,7 @@ class AdaptiveSecondaryButton extends StatelessWidget {
                 : ContentColorMode.accentMode,
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
-            title: title!,
+            title: title,
             buttonType: buttonType,
             icon: baseIcon,
             paddingSize: paddingSize,
