@@ -1,5 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/app_styles.dart';
+import 'package:pactus_gui_widgetbook/src/core/pallets/colors/app_colors.dart';
 
 /// ## [AppThemeData] Class Documentation
 ///
@@ -113,6 +114,7 @@ class AppThemeData {
           ...lightExtensions.where((ext) => ext is! OnAccentPallet),
           OnAccentPallet.lightPallet(selectedAccentColor),
         ],
+        scaffoldBackgroundColor: AppColors.scaffoldBackgroundColorLight,
         accentColor: selectedAccentColor.toAccentColor(),
       );
 
@@ -124,6 +126,7 @@ class AppThemeData {
           ...darkExtensions.where((ext) => ext is! OnAccentPallet),
           OnAccentPallet.darkPallet(selectedAccentColor),
         ],
+        scaffoldBackgroundColor: AppColors.scaffoldBackgroundColorDark,
         accentColor: selectedAccentColor.toAccentColor(),
       );
 
