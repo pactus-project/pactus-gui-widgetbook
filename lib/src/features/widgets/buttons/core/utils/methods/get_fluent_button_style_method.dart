@@ -58,6 +58,11 @@ ButtonStyle getFluentButtonStyleMethod({
       }
       return 0.0;
     }),
+    textStyle: WidgetStateProperty.all(
+      const TextStyle(
+        height: 1,
+      ),
+    ),
     shape: WidgetStateProperty.all(RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(borderRadius),
     )),

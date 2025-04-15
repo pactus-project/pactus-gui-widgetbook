@@ -204,6 +204,11 @@ class AdaptiveTextButton extends StatelessWidget {
         cursor: SystemMouseCursors.click,
         child: Button(
           style: ButtonStyle(
+            textStyle: WidgetStateProperty.all(
+              const TextStyle(
+                height: 1,
+              ),
+            ),
             padding: WidgetStateProperty.all(
                 EdgeInsets.symmetric(horizontal: paddingSize.horizontalSize)),
             backgroundColor: WidgetStateProperty.all(Colors.transparent),

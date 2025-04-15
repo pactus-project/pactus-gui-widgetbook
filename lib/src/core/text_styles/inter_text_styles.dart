@@ -90,56 +90,63 @@ class InterTextStyles {
   static const TextStyle captionMedium = TextStyle(
     fontFamily: interMedium, // font-family: Inter-Medium;
     fontSize: 12, // font-size: 12px;
-
-    height: 1, fontWeight: FontWeight.w500, // font-weight: 500 (Medium);
+    height: 1.83, // line-height: 22px (22px line-height / 12px font-size);
+    fontWeight: FontWeight.w500, // font-weight: 500 (Medium);
   );
 
   // Small/regular
   static const TextStyle smallRegular = TextStyle(
     fontFamily: interRegular, // font-family: Inter-Regular;
     fontSize: 14, // font-size: 14px;
-    height: 1, fontWeight: FontWeight.w400, // font-weight: 400 (Regular);
+    height: 1.57, // line-height: 22px (22px line-height / 14px font-size);
+    fontWeight: FontWeight.w400, // font-weight: 400 (Regular);
   );
 
   // Body/bold
   static const TextStyle bodyBold = TextStyle(
     fontFamily: interBold, // font-family: Inter-Bold;
     fontSize: 16, // font-size: 16px;
-    height: 1, fontWeight: FontWeight.w700, // font-weight: 700 (Bold);
+    height: 1.5, // line-height: 24px (24px line-height / 16px font-size);
+    fontWeight: FontWeight.w700, // font-weight: 700 (Bold);
   );
 
   // Body/regular
   static const TextStyle bodyRegular = TextStyle(
     fontFamily: interRegular, // font-family: Inter-Regular;
     fontSize: 16, // font-size: 16px;
-    height: 1, fontWeight: FontWeight.w400, // font-weight: 400 (Regular);
+    height: 1.375, // line-height: 22px (22px line-height / 16px font-size);
+    fontWeight: FontWeight.w400, // font-weight: 400 (Regular);
   );
 
   // Subtitle/regular
   static const TextStyle subtitleRegular = TextStyle(
     fontFamily: interRegular, // font-family: Inter-Regular;
     fontSize: 20, // font-size: 20px;
-    height: 1, fontWeight: FontWeight.w400, // font-weight: 400 (Regular);
+    height: 1.1, // line-height: 22px (22px line-height / 20px font-size);
+    fontWeight: FontWeight.w400, // font-weight: 400 (Regular);
   );
 
   // Title/medium
   static const TextStyle titleMedium = TextStyle(
     fontFamily: interMedium, // font-family: Inter-Medium;
     fontSize: 24, // font-size: 24px;
-    height: 1, fontWeight: FontWeight.w500, // font-weight: 500 (Medium);
+    height: 1.5, // line-height: 36px (36px line-height / 24px font-size);
+    fontWeight: FontWeight.w500, // font-weight: 500 (Medium);
   );
 
   // Title/bold
   static const TextStyle titleBold = TextStyle(
     fontFamily: interBold, // font-family: Inter-Bold;
     fontSize: 28, // font-size: 28px;
-    height: 1, fontWeight: FontWeight.w700, // font-weight: 700 (Bold);
+    height: 1.0, // line-height: 28px (28px line-height / 28px font-size);
+    fontWeight: FontWeight.w700, // font-weight: 700 (Bold);
   );
 
   // Header/bold
   static const TextStyle headerBold = TextStyle(
     fontFamily: interBold, // font-family: Inter-Bold;
     fontSize: 42, // font-size: 42px;
-    height: 1, fontWeight: FontWeight.w700, // font-weight: 700 (Bold);
+    height: 1.24, // line-height: 52px (52px line-height / 42px font-size);
+    fontWeight: FontWeight.w700, // font-weight: 700 (Bold);
   );
 }
