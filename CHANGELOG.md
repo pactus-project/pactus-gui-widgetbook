@@ -1,5 +1,10 @@
+# 1.13.3+20
+- [Refactor] : Fix scaffold background color according figma design [#45](https://github.com/pactus-project/pactus-gui-widgetbook/pull/46)
+ - update(core): update font height value according figma spec
+ - refactor(core): fix scaffold background color according figma design
+
 # 1.13.2+19
-- [Refactor] : update all text  styles to height `1.0` [#41](https://github.com/pactus-project/pactus-gui-widgetbook/pull/42q)
+- [Refactor] : update all text  styles to height `1.0` [#41](https://github.com/pactus-project/pactus-gui-widgetbook/pull/42)
 
 # 1.13.1+18
 - [Refactor] : Remove height property from text styles. [#41](https://github.com/pactus-project/pactus-gui-widgetbook/pull/42)

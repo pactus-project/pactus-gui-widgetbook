@@ -62,6 +62,11 @@ ButtonStyle getFluentOutlinedButtonStyleMethod({
     backgroundColor: WidgetStateProperty.all<Color>(Colors.transparent),
     foregroundColor: WidgetStateProperty.all<Color>(buttonColor),
     elevation: WidgetStateProperty.all<double>(0),
+    textStyle: WidgetStateProperty.all(
+      const TextStyle(
+        height: 1,
+      ),
+    ),
     shape: WidgetStateProperty.all<RoundedRectangleBorder>(
       RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(borderRadius),
