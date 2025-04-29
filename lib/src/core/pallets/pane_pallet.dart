@@ -16,6 +16,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 ///
 /// - **[enableColor]** (Color?): The color used for an active pane.
 /// - **[disableColor]** (Color?): The color used for an inactive pane.
+/// - **[itemColor]** (Color?): The color used for an item pane (texts or icons).
 ///
 /// ### Methods:
 ///
@@ -40,16 +41,20 @@ class PanePallet extends ThemeExtension<PanePallet> {
   const PanePallet({
     required this.enableColor,
     required this.disableColor,
+    required this.itemColor,
   });
 
   final Color? enableColor;
   final Color? disableColor;
+  final Color? itemColor;
 
   @override
-  PanePallet copyWith({Color? enableColor, Color? disableColor}) {
+  PanePallet copyWith(
+      {Color? enableColor, Color? disableColor, Color? itemColor}) {
     return PanePallet(
       enableColor: enableColor ?? this.enableColor,
       disableColor: disableColor ?? this.disableColor,
+      itemColor: itemColor ?? this.itemColor,
     );
   }
 
@@ -62,6 +67,7 @@ class PanePallet extends ThemeExtension<PanePallet> {
     return PanePallet(
       enableColor: Color.lerp(enableColor, other.enableColor, t),
       disableColor: Color.lerp(disableColor, other.disableColor, t),
+      itemColor: Color.lerp(itemColor, other.itemColor, t),
     );
   }
 
@@ -71,10 +77,13 @@ class PanePallet extends ThemeExtension<PanePallet> {
   String toString() => 'PanePallet('
       'enableColor:$enableColor, '
       'disableColor: $disableColor, '
+      'itemColor: $itemColor, '
       ')';
 
   Color? getByIndex(int index) {
     switch (index) {
+      case 3:
+        return itemColor;
       case 2:
         return disableColor;
       case 1:
@@ -88,11 +97,13 @@ class PanePallet extends ThemeExtension<PanePallet> {
   static const light = PanePallet(
     enableColor: Color(0xFF131440),
     disableColor: Color(0xFFCBC9C7),
+    itemColor: Color(0xFF242424),
   );
 
   // the dark theme
   static const dark = PanePallet(
     enableColor: Color(0xFFFFFFFF),
     disableColor: Color(0xFFC1C1C1),
+    itemColor: Color(0xFFffffff),
   );
 }
