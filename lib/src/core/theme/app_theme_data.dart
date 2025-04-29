@@ -62,6 +62,7 @@ class AppThemeData {
     PanePallet.light,
     AccentPallet.light,
     OnAccentPallet.light,
+    SeedPallet.light,
   ];
 
   static const Iterable<ThemeExtension<dynamic>> darkExtensions = [
@@ -82,6 +83,7 @@ class AppThemeData {
     PanePallet.dark,
     AccentPallet.dark,
     OnAccentPallet.dark,
+    SeedPallet.dark,
   ];
 
   /// to-do : add a proper name for each accent color after identifying

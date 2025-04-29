@@ -1,6 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/chip_text_mode.dart';
-import 'package:pactus_gui_widgetbook/src/core/extensions/color_context_extension.dart';
+import 'package:pactus_gui_widgetbook/src/core/pallets/seed_pallet.dart';
 
 /// [ChipTextBox] Documentation
 ///
@@ -50,30 +50,29 @@ class ChipTextBox extends StatelessWidget {
   final ValueChanged<String> onChanged;
   @override
   Widget build(BuildContext context) {
-    return IgnorePointer(
-      ignoring: isReadOnly!,
-      child: Container(
-        padding: const EdgeInsets.only(bottom: 2, left: 2, right: 2, top: 6),
-        decoration: BoxDecoration(
-          color: context.fromPalletColor(chipTextMode.background),
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(
-            color: Colors.transparent, // Remove any default border
-            width: 0,
+    return ExcludeSemantics(
+      child: IgnorePointer(
+        ignoring: isReadOnly!,
+        child: Container(
+          decoration: BoxDecoration(
+            color: context.fromSeedPalletColor(chipTextMode.background),
+            borderRadius: BorderRadius.circular(100),
+            border: Border.all(
+              color: Colors.transparent, // Remove any default border
+              width: 0,
+            ),
           ),
-        ),
-        child: ExcludeSemantics(
           child: TextBox(
             readOnly: isReadOnly!,
             prefix: Padding(
               padding: const EdgeInsetsDirectional.only(
-                bottom: 8,
+                bottom: 4,
                 start: 16,
               ),
               child: Text(
                 '$prefixText',
                 style: TextStyle(
-                  color: context.fromPalletColor(chipTextMode.textColor),
+                  color: context.fromSeedPalletColor(chipTextMode.textColor),
                 ),
               ),
             ),
@@ -81,14 +80,14 @@ class ChipTextBox extends StatelessWidget {
                 const EdgeInsetsDirectional.only(bottom: 4, start: 4, end: 16),
             placeholder: placeholder,
             style: TextStyle(
-                color: context.fromPalletColor(chipTextMode.textColor)),
+                color: context.fromSeedPalletColor(chipTextMode.textColor)),
             placeholderStyle: TextStyle(
-                color: context.fromPalletColor(chipTextMode.textColor)),
+                color: context.fromSeedPalletColor(chipTextMode.textColor)),
             decoration: WidgetStateProperty.resolveWith<BoxDecoration>(
               (Set<WidgetState> states) {
                 return BoxDecoration(
-                  color: context.fromPalletColor(chipTextMode.background),
-                  borderRadius: BorderRadius.circular(8),
+                  color: context.fromSeedPalletColor(chipTextMode.background),
+                  borderRadius: BorderRadius.circular(100),
                   border: Border.all(
                     color: Colors.transparent, // Remove any default border
                     width: 0,
