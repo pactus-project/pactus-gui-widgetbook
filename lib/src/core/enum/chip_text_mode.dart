@@ -10,13 +10,13 @@ import 'package:pactus_gui_widgetbook/src/core/enum/pallet_colors_enum.dart';
 /// - [ChipTextMode.correct] → Green color scheme (correct state)
 enum ChipTextMode {
   /// Normal mode with a blue color scheme.
-  normal(PalletColors.blue400, PalletColors.blue700),
+  normal(PalletColors.blue400, PalletColors.blueContrast),
 
   /// Incorrect mode with a red color scheme.
-  inCorrect(PalletColors.red400, PalletColors.red700),
+  inCorrect(PalletColors.red400, PalletColors.redContrast),
 
   /// Correct mode with a green color scheme.
-  correct(PalletColors.green400, PalletColors.green700);
+  correct(PalletColors.green400, PalletColors.greenContrast);
 
   /// Constructor to define the background and text colors.
   const ChipTextMode(this.background, this.textColor);

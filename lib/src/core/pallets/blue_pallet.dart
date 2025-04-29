@@ -50,6 +50,10 @@ import 'package:fluent_ui/fluent_ui.dart';
 ///   - The lightest shade of blue, close to white.
 ///   - Defaults to `null` if not provided.
 ///
+/// - **[blueContrast]** (`Color?`):
+///   - In the dark mode has `blue800` and in light mode color is `white`.
+///   - Defaults to `null` if not provided.
+///
 /// ### Methods:
 ///
 /// - **[copyWith]**:
@@ -95,7 +99,8 @@ class BluePallet extends ThemeExtension<BluePallet> {
       required this.blue300,
       required this.blue200,
       required this.blue100,
-      required this.blue50});
+      required this.blue50,
+      required this.blueContrast,});
 
   final Color? blue900;
   final Color? blue800;
@@ -107,6 +112,7 @@ class BluePallet extends ThemeExtension<BluePallet> {
   final Color? blue200;
   final Color? blue100;
   final Color? blue50;
+  final Color? blueContrast;
 
   @override
   BluePallet copyWith(
@@ -119,7 +125,8 @@ class BluePallet extends ThemeExtension<BluePallet> {
       Color? blue300,
       Color? blue200,
       Color? blue100,
-      Color? blue50}) {
+      Color? blue50,
+      Color? blueContrast,}) {
     return BluePallet(
       blue900: blue900 ?? this.blue900,
       blue800: blue800 ?? this.blue800,
@@ -131,6 +138,7 @@ class BluePallet extends ThemeExtension<BluePallet> {
       blue200: blue200 ?? this.blue200,
       blue100: blue100 ?? this.blue100,
       blue50: blue50 ?? this.blue50,
+      blueContrast: blueContrast ?? this.blueContrast,
     );
   }
 
@@ -151,6 +159,7 @@ class BluePallet extends ThemeExtension<BluePallet> {
       blue200: Color.lerp(blue200, other.blue200, t),
       blue100: Color.lerp(blue100, other.blue100, t),
       blue50: Color.lerp(blue50, other.blue50, t),
+      blueContrast: Color.lerp(blueContrast, other.blueContrast, t),
     );
   }
 
@@ -168,6 +177,7 @@ class BluePallet extends ThemeExtension<BluePallet> {
       'blue200: $blue200, '
       'blue100: $blue100, '
       'blue50: $blue50, '
+      'blueContrast: $blueContrast, '
       ')';
 
   Color? getByIndex(int index) {
@@ -192,6 +202,9 @@ class BluePallet extends ThemeExtension<BluePallet> {
         return blue100;
       case 1:
         return blue50;
+      case 0:
+        return blueContrast;
+
       default:
         throw Exception('Invalid BluePallet color index');
     }
@@ -209,6 +222,7 @@ class BluePallet extends ThemeExtension<BluePallet> {
     blue200: Color(0xFFBEDBFE),
     blue100: Color(0xFFDCEBFE),
     blue50: Color(0xFFF2F7FF),
+    blueContrast: Color(0xFFFFFFFF),
   );
 
   // the dark theme
@@ -223,5 +237,6 @@ class BluePallet extends ThemeExtension<BluePallet> {
     blue200: Color(0xFF1347CC),
     blue100: Color(0xFF0A2F85),
     blue50: Color(0xFF181D34),
+    blueContrast: Color(0xFF0A2F85),
   );
 }

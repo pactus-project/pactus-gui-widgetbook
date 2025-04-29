@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/chip_text_mode.dart';
 import 'package:pactus_gui_widgetbook/src/core/extensions/color_context_extension.dart';
@@ -52,37 +54,65 @@ class ChipTextBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return IgnorePointer(
       ignoring: isReadOnly!,
-      child: ExcludeSemantics(
-        child: TextBox(
-          readOnly: isReadOnly!,
-          prefix: Padding(
-            padding: const EdgeInsetsDirectional.only(
-              bottom: 8,
-              start: 16,
-            ),
-            child: Text(
-              '$prefixText',
-              style: TextStyle(
-                color: context.fromPalletColor(chipTextMode.textColor),
+      child: Container(
+        padding: const EdgeInsets.only(bottom: 2, left: 2, right: 2, top: 6),
+        decoration: BoxDecoration(
+          color: context.fromPalletColor(chipTextMode.background),
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(
+            color: Colors.transparent, // Remove any default border
+            width: 0,
+          ),
+        ),
+        child: ExcludeSemantics(
+          child: TextBox(
+            readOnly: isReadOnly!,
+            prefix: Padding(
+              padding: const EdgeInsetsDirectional.only(
+                bottom: 8,
+                start: 16,
+              ),
+              child: Text(
+                '$prefixText',
+                style: TextStyle(
+                  color: context.fromPalletColor(chipTextMode.textColor),
+                ),
               ),
             ),
+            padding:
+                const EdgeInsetsDirectional.only(bottom: 4, start: 4, end: 16),
+            placeholder: placeholder,
+            style: TextStyle(
+                color: context.fromPalletColor(chipTextMode.textColor)),
+            placeholderStyle: TextStyle(
+                color: context.fromPalletColor(chipTextMode.textColor)),
+            decoration: WidgetStateProperty.resolveWith<BoxDecoration>(
+              (Set<WidgetState> states) {
+                return BoxDecoration(
+                  color: context.fromPalletColor(chipTextMode.background),
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: Colors.transparent, // Remove any default border
+                    width: 0,
+                  ),
+                );
+              },
+            ),
+            unfocusedColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            foregroundDecoration:
+                WidgetStateProperty.resolveWith<BoxDecoration>(
+              (Set<WidgetState> states) {
+                return BoxDecoration(
+                  border: Border.all(
+                    color: Colors.transparent, // Remove any default border
+                    width: 0,
+                  ),
+                );
+              },
+            ),
+            onChanged: onChanged,
           ),
-          padding:
-              const EdgeInsetsDirectional.only(bottom: 4, start: 4, end: 16),
-          placeholder: placeholder,
-          style:
-              TextStyle(color: context.fromPalletColor(chipTextMode.textColor)),
-          placeholderStyle:
-              TextStyle(color: context.fromPalletColor(chipTextMode.textColor)),
-          decoration: WidgetStateProperty.resolveWith<BoxDecoration>(
-            (Set<WidgetState> states) {
-              return BoxDecoration(
-                borderRadius: BorderRadius.circular(64),
-                color: context.fromPalletColor(chipTextMode.background),
-              );
-            },
-          ),
-          onChanged: onChanged,
         ),
       ),
     );
