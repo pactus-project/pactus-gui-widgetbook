@@ -1,3 +1,8 @@
+# 1.14.0+21
+- [Refactor] : Improve color and shape of `ChipTextBox` component [#47](https://github.com/pactus-project/pactus-gui-widgetbook/pull/48)
+  - improve text readability with updated color scheme 
+  - improve border and shape 
+
 # 1.13.3+20
 - [Refactor] : Fix scaffold background color according figma design [#45](https://github.com/pactus-project/pactus-gui-widgetbook/pull/46)
  - update(core): update font height value according figma spec
