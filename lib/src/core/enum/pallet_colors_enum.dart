@@ -47,6 +47,7 @@ enum PalletColors {
   rose800,
   rose900,
 
+  redContrast,
   red50,
   red100,
   red200,
@@ -102,6 +103,7 @@ enum PalletColors {
   light800,
   light900,
 
+  greenContrast,
   green50,
   green100,
   green200,
@@ -157,6 +159,7 @@ enum PalletColors {
   blueGray800,
   blueGray900,
 
+  blueContrast,
   blue50,
   blue100,
   blue200,

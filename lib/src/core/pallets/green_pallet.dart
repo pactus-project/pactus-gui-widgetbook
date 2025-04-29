@@ -50,6 +50,10 @@ import 'package:fluent_ui/fluent_ui.dart';
 ///   backgrounds or light highlights.
 ///   - Defaults to `null` if not provided.
 ///
+/// - **[greenContrast]** (`Color?`):
+///   - In the dark mode has `green800` and in light mode color is `white`.
+///   - Defaults to `null` if not provided.
+///
 /// ### Methods:
 ///
 /// - **[copyWith]**:
@@ -94,7 +98,8 @@ class GreenPallet extends ThemeExtension<GreenPallet> {
       required this.green300,
       required this.green200,
       required this.green100,
-      required this.green50});
+      required this.green50,
+      required this.greenContrast});
 
   final Color? green900;
   final Color? green800;
@@ -106,6 +111,7 @@ class GreenPallet extends ThemeExtension<GreenPallet> {
   final Color? green200;
   final Color? green100;
   final Color? green50;
+  final Color? greenContrast;
 
   @override
   GreenPallet copyWith(
@@ -118,7 +124,8 @@ class GreenPallet extends ThemeExtension<GreenPallet> {
       Color? green300,
       Color? green200,
       Color? green100,
-      Color? green50}) {
+      Color? green50,
+      Color? greenContrast}) {
     return GreenPallet(
       green900: green900 ?? this.green900,
       green800: green800 ?? this.green800,
@@ -130,6 +137,7 @@ class GreenPallet extends ThemeExtension<GreenPallet> {
       green200: green200 ?? this.green200,
       green100: green100 ?? this.green100,
       green50: green50 ?? this.green50,
+      greenContrast: greenContrast ?? this.greenContrast,
     );
   }
 
@@ -150,6 +158,7 @@ class GreenPallet extends ThemeExtension<GreenPallet> {
       green200: Color.lerp(green200, other.green200, t),
       green100: Color.lerp(green100, other.green100, t),
       green50: Color.lerp(green50, other.green50, t),
+      greenContrast: Color.lerp(greenContrast, other.greenContrast, t),
     );
   }
 
@@ -167,6 +176,7 @@ class GreenPallet extends ThemeExtension<GreenPallet> {
       'green200: $green200, '
       'green100: $green100, '
       'green50: $green50, '
+      'greenContrast: $greenContrast, '
       ')';
 
   Color? getByIndex(int index) {
@@ -191,6 +201,8 @@ class GreenPallet extends ThemeExtension<GreenPallet> {
         return green100;
       case 1:
         return green50;
+      case 0:
+        return greenContrast;
       default:
         throw Exception('Invalid GreenPallet color index');
     }
@@ -208,6 +220,7 @@ class GreenPallet extends ThemeExtension<GreenPallet> {
     green200: Color(0xFFBBF7D0),
     green100: Color(0xFFDEFCE9),
     green50: Color(0xFFF2FDF5),
+    greenContrast: Color(0xFFFFFFFF),
   );
 
   // the dark theme
@@ -222,5 +235,6 @@ class GreenPallet extends ThemeExtension<GreenPallet> {
     green200: Color(0xFF166434),
     green100: Color(0xFF14522D),
     green50: Color(0xFF0D3117),
+    greenContrast: Color(0xFF14522D),
   );
 }

@@ -27,6 +27,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 /// - **[red200]** (Color?): A very light red shade.
 /// - **[red100]** (Color?): A pale red shade.
 /// - **[red50]** (Color?): The lightest red shade, nearly white.
+/// - **[redContrast]** (Color?): In the dark mode has `red800` and in light mode color is `white`.
 ///
 /// ### Methods:
 ///
@@ -60,7 +61,8 @@ class RedPallet extends ThemeExtension<RedPallet> {
       required this.red300,
       required this.red200,
       required this.red100,
-      required this.red50});
+      required this.red50,
+      required this.redContrast});
 
   final Color? red900;
   final Color? red800;
@@ -72,6 +74,7 @@ class RedPallet extends ThemeExtension<RedPallet> {
   final Color? red200;
   final Color? red100;
   final Color? red50;
+  final Color? redContrast;
 
   @override
   RedPallet copyWith(
@@ -84,7 +87,8 @@ class RedPallet extends ThemeExtension<RedPallet> {
       Color? red300,
       Color? red200,
       Color? red100,
-      Color? red50}) {
+      Color? red50,
+      Color? redContrast}) {
     return RedPallet(
       red900: red900 ?? this.red900,
       red800: red800 ?? this.red800,
@@ -96,6 +100,7 @@ class RedPallet extends ThemeExtension<RedPallet> {
       red200: red200 ?? this.red200,
       red100: red100 ?? this.red100,
       red50: red50 ?? this.red50,
+      redContrast: redContrast ?? this.redContrast,
     );
   }
 
@@ -116,6 +121,7 @@ class RedPallet extends ThemeExtension<RedPallet> {
       red200: Color.lerp(red200, other.red200, t),
       red100: Color.lerp(red100, other.red100, t),
       red50: Color.lerp(red50, other.red50, t),
+      redContrast: Color.lerp(redContrast, other.redContrast, t),
     );
   }
 
@@ -133,6 +139,7 @@ class RedPallet extends ThemeExtension<RedPallet> {
       'red200: $red200, '
       'red100: $red100, '
       'red50: $red50, '
+      'redContrast: $redContrast, '
       ')';
 
   Color? getByIndex(int index) {
@@ -157,6 +164,8 @@ class RedPallet extends ThemeExtension<RedPallet> {
         return red100;
       case 1:
         return red50;
+      case 0:
+        return redContrast;
       default:
         throw Exception('Invalid RedPallet color index');
     }
@@ -174,6 +183,7 @@ class RedPallet extends ThemeExtension<RedPallet> {
     red200: Color(0xFFFFC9C9),
     red100: Color(0xFFFFDCDC),
     red50: Color(0xFFFEF1F1),
+    redContrast: Color(0xFFFFFFFF),
   );
 
   // the dark theme
@@ -188,5 +198,6 @@ class RedPallet extends ThemeExtension<RedPallet> {
     red200: Color(0xFFA42828),
     red100: Color(0xFF6B1919),
     red50: Color(0xFF461A1A),
+    redContrast: Color(0xFF6B1919),
   );
 }

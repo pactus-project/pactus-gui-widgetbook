@@ -1,6 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/src/core/enum/chip_text_mode.dart';
-import 'package:pactus_gui_widgetbook/src/core/extensions/color_context_extension.dart';
+import 'package:pactus_gui_widgetbook/src/core/pallets/seed_pallet.dart';
 
 /// [ChipTextBox] Documentation
 ///
@@ -50,39 +50,66 @@ class ChipTextBox extends StatelessWidget {
   final ValueChanged<String> onChanged;
   @override
   Widget build(BuildContext context) {
-    return IgnorePointer(
-      ignoring: isReadOnly!,
-      child: ExcludeSemantics(
-        child: TextBox(
-          readOnly: isReadOnly!,
-          prefix: Padding(
-            padding: const EdgeInsetsDirectional.only(
-              bottom: 8,
-              start: 16,
+    return ExcludeSemantics(
+      child: IgnorePointer(
+        ignoring: isReadOnly!,
+        child: Container(
+          decoration: BoxDecoration(
+            color: context.fromSeedPalletColor(chipTextMode.background),
+            borderRadius: BorderRadius.circular(100),
+            border: Border.all(
+              color: Colors.transparent, // Remove any default border
+              width: 0,
             ),
-            child: Text(
-              '$prefixText',
-              style: TextStyle(
-                color: context.fromPalletColor(chipTextMode.textColor),
+          ),
+          child: TextBox(
+            readOnly: isReadOnly!,
+            prefix: Padding(
+              padding: const EdgeInsetsDirectional.only(
+                bottom: 4,
+                start: 16,
+              ),
+              child: Text(
+                '$prefixText',
+                style: TextStyle(
+                  color: context.fromSeedPalletColor(chipTextMode.textColor),
+                ),
               ),
             ),
+            padding:
+                const EdgeInsetsDirectional.only(bottom: 4, start: 4, end: 16),
+            placeholder: placeholder,
+            style: TextStyle(
+                color: context.fromSeedPalletColor(chipTextMode.textColor)),
+            placeholderStyle: TextStyle(
+                color: context.fromSeedPalletColor(chipTextMode.textColor)),
+            decoration: WidgetStateProperty.resolveWith<BoxDecoration>(
+              (Set<WidgetState> states) {
+                return BoxDecoration(
+                  color: context.fromSeedPalletColor(chipTextMode.background),
+                  borderRadius: BorderRadius.circular(100),
+                  border: Border.all(
+                    color: Colors.transparent, // Remove any default border
+                    width: 0,
+                  ),
+                );
+              },
+            ),
+            unfocusedColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            foregroundDecoration:
+                WidgetStateProperty.resolveWith<BoxDecoration>(
+              (Set<WidgetState> states) {
+                return BoxDecoration(
+                  border: Border.all(
+                    color: Colors.transparent, // Remove any default border
+                    width: 0,
+                  ),
+                );
+              },
+            ),
+            onChanged: onChanged,
           ),
-          padding:
-              const EdgeInsetsDirectional.only(bottom: 4, start: 4, end: 16),
-          placeholder: placeholder,
-          style:
-              TextStyle(color: context.fromPalletColor(chipTextMode.textColor)),
-          placeholderStyle:
-              TextStyle(color: context.fromPalletColor(chipTextMode.textColor)),
-          decoration: WidgetStateProperty.resolveWith<BoxDecoration>(
-            (Set<WidgetState> states) {
-              return BoxDecoration(
-                borderRadius: BorderRadius.circular(64),
-                color: context.fromPalletColor(chipTextMode.background),
-              );
-            },
-          ),
-          onChanged: onChanged,
         ),
       ),
     );
