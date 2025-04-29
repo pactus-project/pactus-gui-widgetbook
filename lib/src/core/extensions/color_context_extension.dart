@@ -83,7 +83,8 @@ extension ComponentsModeExtension on BuildContext {
         AppTheme.of(this).extension<RosePallet>()!.rose900!,
 
       // RedPallet colors
-      PalletColors.redContrast => AppTheme.of(this).extension<RedPallet>()!.redContrast!,
+      PalletColors.redContrast =>
+        AppTheme.of(this).extension<RedPallet>()!.redContrast!,
       PalletColors.red50 => AppTheme.of(this).extension<RedPallet>()!.red50!,
       PalletColors.red100 => AppTheme.of(this).extension<RedPallet>()!.red100!,
       PalletColors.red200 => AppTheme.of(this).extension<RedPallet>()!.red200!,
@@ -293,7 +294,8 @@ extension ComponentsModeExtension on BuildContext {
         AppTheme.of(this).extension<BlueGrayPallet>()!.blueGray900!,
 
       // BluePallet colors
-      PalletColors.blueContrast => AppTheme.of(this).extension<BluePallet>()!.blueContrast!,
+      PalletColors.blueContrast =>
+        AppTheme.of(this).extension<BluePallet>()!.blueContrast!,
       PalletColors.blue50 => AppTheme.of(this).extension<BluePallet>()!.blue50!,
       PalletColors.blue100 =>
         AppTheme.of(this).extension<BluePallet>()!.blue100!,
