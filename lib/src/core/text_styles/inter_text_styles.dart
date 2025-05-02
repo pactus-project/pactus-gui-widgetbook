@@ -22,42 +22,42 @@ import 'package:flutter/material.dart' show FontWeight, TextStyle;
 ///
 /// ### Predefined Text Styles:
 ///
-/// - **[captionMedium]**:
+/// - **[caption]**:
 ///   - Font: `Inter-Medium`
 ///   - Font Size: `12px`
 ///   - Font Weight: `Medium (500)`
 ///
-/// - **[smallRegular]**:
+/// - **[body]**:
 ///   - Font: `Inter-Regular`
 ///   - Font Size: `14px`
 ///   - Font Weight: `Regular (400)`
 ///
-/// - **[bodyBold]**:
+/// - **[bodyStrong]**:
 ///   - Font: `Inter-Bold`
 ///   - Font Size: `16px`
 ///   - Font Weight: `Bold (700)`
 ///
-/// - **[bodyRegular]**:
+/// - **[bodyLarge]**:
 ///   - Font: `Inter-Regular`
 ///   - Font Size: `16px`
 ///   - Font Weight: `Regular (400)`
 ///
-/// - **[subtitleRegular]**:
+/// - **[subtitle]**:
 ///   - Font: `Inter-Regular`
 ///   - Font Size: `20px`
 ///   - Font Weight: `Regular (400)`
 ///
-/// - **[titleMedium]**:
+/// - **[title]**:
 ///   - Font: `Inter-Medium`
 ///   - Font Size: `24px`
 ///   - Font Weight: `Medium (500)`
 ///
-/// - **[titleBold]**:
+/// - **[titleLarge]**:
 ///   - Font: `Inter-Bold`
 ///   - Font Size: `28px`
 ///   - Font Weight: `Bold (700)`
 ///
-/// - **[headerBold]**:
+/// - **[display]**:
 ///   - Font: `Inter-Bold`
 ///   - Font Size: `42px`
 ///   - Font Weight: `Bold (700)`
@@ -67,7 +67,7 @@ import 'package:flutter/material.dart' show FontWeight, TextStyle;
 /// ```dart
 /// Text(
 ///   'Hello, world!',
-///   style: InterTextStyles.bodyBold,
+///   style: InterTextStyles.display,
 /// );
 /// ```
 ///
@@ -87,7 +87,7 @@ class InterTextStyles {
   static const interExtraBold = 'Inter-ExtraBold';
 
   // Caption/medium
-  static const TextStyle captionMedium = TextStyle(
+  static const TextStyle caption = TextStyle(
     fontFamily: interMedium, // font-family: Inter-Medium;
     fontSize: 12, // font-size: 12px;
     height: 1.83, // line-height: 22px (22px line-height / 12px font-size);
@@ -95,7 +95,7 @@ class InterTextStyles {
   );
 
   // Small/regular
-  static const TextStyle smallRegular = TextStyle(
+  static const TextStyle body = TextStyle(
     fontFamily: interRegular, // font-family: Inter-Regular;
     fontSize: 14, // font-size: 14px;
     height: 1.57, // line-height: 22px (22px line-height / 14px font-size);
@@ -103,7 +103,7 @@ class InterTextStyles {
   );
 
   // Body/bold
-  static const TextStyle bodyBold = TextStyle(
+  static const TextStyle bodyStrong = TextStyle(
     fontFamily: interBold, // font-family: Inter-Bold;
     fontSize: 16, // font-size: 16px;
     height: 1.5, // line-height: 24px (24px line-height / 16px font-size);
@@ -111,7 +111,7 @@ class InterTextStyles {
   );
 
   // Body/regular
-  static const TextStyle bodyRegular = TextStyle(
+  static const TextStyle bodyLarge = TextStyle(
     fontFamily: interRegular, // font-family: Inter-Regular;
     fontSize: 16, // font-size: 16px;
     height: 1.375, // line-height: 22px (22px line-height / 16px font-size);
@@ -119,7 +119,7 @@ class InterTextStyles {
   );
 
   // Subtitle/regular
-  static const TextStyle subtitleRegular = TextStyle(
+  static const TextStyle subtitle = TextStyle(
     fontFamily: interRegular, // font-family: Inter-Regular;
     fontSize: 20, // font-size: 20px;
     height: 1.1, // line-height: 22px (22px line-height / 20px font-size);
@@ -127,7 +127,7 @@ class InterTextStyles {
   );
 
   // Title/medium
-  static const TextStyle titleMedium = TextStyle(
+  static const TextStyle title = TextStyle(
     fontFamily: interMedium, // font-family: Inter-Medium;
     fontSize: 24, // font-size: 24px;
     height: 1.5, // line-height: 36px (36px line-height / 24px font-size);
@@ -135,7 +135,7 @@ class InterTextStyles {
   );
 
   // Title/bold
-  static const TextStyle titleBold = TextStyle(
+  static const TextStyle titleLarge = TextStyle(
     fontFamily: interBold, // font-family: Inter-Bold;
     fontSize: 28, // font-size: 28px;
     height: 1.0, // line-height: 28px (28px line-height / 28px font-size);
@@ -143,7 +143,7 @@ class InterTextStyles {
   );
 
   // Header/bold
-  static const TextStyle headerBold = TextStyle(
+  static const TextStyle display = TextStyle(
     fontFamily: interBold, // font-family: Inter-Bold;
     fontSize: 42, // font-size: 42px;
     height: 1.24, // line-height: 52px (52px line-height / 42px font-size);
