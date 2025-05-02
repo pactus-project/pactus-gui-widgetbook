@@ -49,6 +49,10 @@ import 'package:fluent_ui/fluent_ui.dart';
 ///   - The lightest gray shade, close to white.
 ///   - Defaults to `null` if not provided.
 ///
+/// - **[contrast]** (`Color?`):
+///   - Represents the very usable colors in the figma design (text,icons,etc).
+///   - Defaults to `null` if not provided.
+///
 /// ### Methods:
 ///
 /// - **[copyWith]**:
@@ -93,7 +97,8 @@ class GrayPallet extends ThemeExtension<GrayPallet> {
       required this.gray300,
       required this.gray200,
       required this.gray100,
-      required this.gray50});
+      required this.gray50,
+      required this.contrast});
 
   final Color? gray900;
   final Color? gray800;
@@ -105,6 +110,7 @@ class GrayPallet extends ThemeExtension<GrayPallet> {
   final Color? gray200;
   final Color? gray100;
   final Color? gray50;
+  final Color? contrast;
 
   @override
   GrayPallet copyWith(
@@ -117,7 +123,8 @@ class GrayPallet extends ThemeExtension<GrayPallet> {
       Color? gray300,
       Color? gray200,
       Color? gray100,
-      Color? gray50}) {
+      Color? gray50,
+      Color? contrast}) {
     return GrayPallet(
       gray900: gray900 ?? this.gray900,
       gray800: gray800 ?? this.gray800,
@@ -129,6 +136,7 @@ class GrayPallet extends ThemeExtension<GrayPallet> {
       gray200: gray200 ?? this.gray200,
       gray100: gray100 ?? this.gray100,
       gray50: gray50 ?? this.gray50,
+      contrast: contrast ?? this.contrast,
     );
   }
 
@@ -149,6 +157,7 @@ class GrayPallet extends ThemeExtension<GrayPallet> {
       gray200: Color.lerp(gray200, other.gray200, t),
       gray100: Color.lerp(gray100, other.gray100, t),
       gray50: Color.lerp(gray50, other.gray50, t),
+      contrast: Color.lerp(contrast, other.contrast, t),
     );
   }
 
@@ -166,6 +175,7 @@ class GrayPallet extends ThemeExtension<GrayPallet> {
       'gray200: $gray200, '
       'gray100: $gray100, '
       'gray50: $gray50, '
+      'contrast: $contrast, '
       ')';
 
   Color? getByIndex(int index) {
@@ -190,6 +200,8 @@ class GrayPallet extends ThemeExtension<GrayPallet> {
         return gray100;
       case 1:
         return gray50;
+      case 0:
+        return contrast;
       default:
         throw Exception('Invalid GrayPallet color index');
     }
@@ -207,6 +219,7 @@ class GrayPallet extends ThemeExtension<GrayPallet> {
     gray200: Color(0xFFE1E1E2),
     gray100: Color(0xFFF4F4F5),
     gray50: Color(0xFFFCFCFC),
+    contrast: Color(0xFF666666),
   );
 
   // the dark theme
@@ -221,5 +234,6 @@ class GrayPallet extends ThemeExtension<GrayPallet> {
     gray200: Color(0xFF3D3D3D),
     gray100: Color(0xFF333333),
     gray50: Color(0xFF231F1F),
+    contrast: Color(0xFFB3B3B3),
   );
 }
