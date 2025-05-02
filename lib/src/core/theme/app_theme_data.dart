@@ -133,13 +133,13 @@ class AppThemeData {
       );
 
   static Typography typography = const Typography.raw(
-    caption: InterTextStyles.captionMedium,
-    body: InterTextStyles.smallRegular,
-    bodyStrong: InterTextStyles.bodyBold,
-    bodyLarge: InterTextStyles.bodyRegular,
-    subtitle: InterTextStyles.subtitleRegular,
-    title: InterTextStyles.titleMedium,
-    titleLarge: InterTextStyles.titleBold,
-    display: InterTextStyles.headerBold,
+    caption: InterTextStyles.caption,
+    body: InterTextStyles.body,
+    bodyStrong: InterTextStyles.bodyStrong,
+    bodyLarge: InterTextStyles.bodyLarge,
+    subtitle: InterTextStyles.subtitle,
+    title: InterTextStyles.title,
+    titleLarge: InterTextStyles.titleLarge,
+    display: InterTextStyles.display,
   );
 }
