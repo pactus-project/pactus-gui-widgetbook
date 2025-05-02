@@ -78,22 +78,22 @@ class AccentPallet extends ThemeExtension<AccentPallet> {
   String toString() => 'AccentPallet(${colors.join(", ")})';
 
   static const light = AccentPallet(
-    blue: Color(0xFF5F9EE3),
-    orange: Color(0xFFFF9C60),
-    red: Color(0xFFFF6673),
-    purple: Color(0xFFD750C8),
-    teal: Color(0xFF4CD6C1),
-    lightGreen: Color(0xFF4EBB4F),
-    darkBlue: Color(0xFF505181),
+    blue: Color(0xFF0078D4),
+    orange: Color(0xFFF7630C),
+    red: Color(0xFFE81123),
+    purple: Color(0xFF5C2D91),
+    teal: Color(0xFF00B294),
+    lightGreen: Color(0xFF107C10),
+    darkBlue: Color(0xFF1B1A49),
   );
 
   static const dark = AccentPallet(
-    blue: Color(0xFF093A7B),
-    orange: Color(0xFF9C4700),
-    red: Color(0xFF8C0E1A),
-    purple: Color(0xFF7A0069),
-    teal: Color(0xFF007D64),
-    lightGreen: Color(0xFF0A4E07),
-    darkBlue: Color(0xFF0A0C1E),
+    blue: Color(0xFF0078D4),
+    orange: Color(0xFFF7630C),
+    red: Color(0xFFE81123),
+    purple: Color(0xFF5C2D91),
+    teal: Color(0xFF00B294),
+    lightGreen: Color(0xFF107C10),
+    darkBlue: Color(0xFF1B1A49),
   );
 }
