@@ -5,6 +5,7 @@
   - update(core:pallets): Optimized contrast for `disableColor` in `PanePallet` for accessibility compliance
   - update(core:pallets): Added high-contrast variants to `GrayPallet` for dark/light mode support
   - update(core:textStyles): Renamed styles in `InterTextStyles` for clearer semantic usage
+  - update(core:theme): remove  `darkBlue` from `lightAccentColors` and `darkAccentColors`
 
 # 1.14.0+21
 - [Refactor] : Improve color and shape of `ChipTextBox` component [#47](https://github.com/pactus-project/pactus-gui-widgetbook/pull/48)
