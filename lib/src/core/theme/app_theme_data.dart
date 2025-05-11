@@ -95,7 +95,6 @@ class AppThemeData {
     AccentPallet.light.purple,
     AccentPallet.light.teal,
     AccentPallet.light.lightGreen,
-    AccentPallet.light.darkBlue,
   ];
 
   static final List<Color> darkAccentColors = [
@@ -105,7 +104,6 @@ class AppThemeData {
     AccentPallet.dark.purple,
     AccentPallet.dark.teal,
     AccentPallet.dark.lightGreen,
-    AccentPallet.dark.darkBlue,
   ];
 
   static FluentThemeData lightTheme(Color selectedAccentColor) =>
