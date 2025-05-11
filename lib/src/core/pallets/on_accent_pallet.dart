@@ -25,7 +25,8 @@ class OnAccentPallet extends ThemeExtension<OnAccentPallet> {
 
   static OnAccentPallet lightPallet(Color backgroundColor) {
     final luminance = backgroundColor.computeLuminance();
-    final onAccentColor = luminance < 0.5 ? Colors.white : const Color(0xFF121212);
+    final onAccentColor =
+        luminance < 0.5 ? Colors.white : const Color(0xFF121212);
     return OnAccentPallet(onAccentColor: onAccentColor);
   }
 
@@ -34,7 +35,8 @@ class OnAccentPallet extends ThemeExtension<OnAccentPallet> {
 
   static OnAccentPallet darkPallet(Color accentColor) {
     final luminance = accentColor.computeLuminance();
-    final onAccentColor = luminance < 0.5 ? Colors.white : const Color(0xFF121212);
+    final onAccentColor =
+        luminance < 0.5 ? Colors.white : const Color(0xFF121212);
     return OnAccentPallet(onAccentColor: onAccentColor);
   }
 }
