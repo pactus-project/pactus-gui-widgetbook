@@ -95,7 +95,6 @@ class AppThemeData {
     AccentPallet.light.purple,
     AccentPallet.light.teal,
     AccentPallet.light.lightGreen,
-    AccentPallet.light.darkBlue,
   ];
 
   static final List<Color> darkAccentColors = [
@@ -105,7 +104,6 @@ class AppThemeData {
     AccentPallet.dark.purple,
     AccentPallet.dark.teal,
     AccentPallet.dark.lightGreen,
-    AccentPallet.dark.darkBlue,
   ];
 
   static FluentThemeData lightTheme(Color selectedAccentColor) =>
@@ -133,13 +131,13 @@ class AppThemeData {
       );
 
   static Typography typography = const Typography.raw(
-    caption: InterTextStyles.captionMedium,
-    body: InterTextStyles.smallRegular,
-    bodyStrong: InterTextStyles.bodyBold,
-    bodyLarge: InterTextStyles.bodyRegular,
-    subtitle: InterTextStyles.subtitleRegular,
-    title: InterTextStyles.titleMedium,
-    titleLarge: InterTextStyles.titleBold,
-    display: InterTextStyles.headerBold,
+    caption: InterTextStyles.caption,
+    body: InterTextStyles.body,
+    bodyStrong: InterTextStyles.bodyStrong,
+    bodyLarge: InterTextStyles.bodyLarge,
+    subtitle: InterTextStyles.subtitle,
+    title: InterTextStyles.title,
+    titleLarge: InterTextStyles.titleLarge,
+    display: InterTextStyles.display,
   );
 }

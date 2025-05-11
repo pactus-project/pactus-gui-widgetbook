@@ -39,7 +39,7 @@ ButtonStyle getFluentButtonStyleMethod({
             horizontal: paddingSize.horizontalSize)),
     backgroundColor: WidgetStateProperty.resolveWith<Color?>((states) {
       if (states.isDisabled) {
-        return theme.accentColor.darkest;
+        return theme.inactiveBackgroundColor.toAccentColor().darkest;
       }
       if (states.isPressed) {
         return theme.accentColor.darker;

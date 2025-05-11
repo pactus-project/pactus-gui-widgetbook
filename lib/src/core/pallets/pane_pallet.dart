@@ -96,14 +96,14 @@ class PanePallet extends ThemeExtension<PanePallet> {
   // the light theme
   static const light = PanePallet(
     enableColor: Color(0xFF131440),
-    disableColor: Color(0xFFCBC9C7),
+    disableColor: Color(0xFF666666),
     itemColor: Color(0xFF242424),
   );
 
   // the dark theme
   static const dark = PanePallet(
     enableColor: Color(0xFFFFFFFF),
-    disableColor: Color(0xFFC1C1C1),
+    disableColor: Color(0xFFB3B3B3),
     itemColor: Color(0xFFffffff),
   );
 }

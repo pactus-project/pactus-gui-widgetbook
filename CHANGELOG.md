@@ -1,3 +1,12 @@
+# 1.15.0+22
+- [Update] : Update some color palettes and component color adjustments [#49](https://github.com/pactus-project/pactus-gui-widgetbook/pull/50)
+  - update(core:pallets): Updated colors in `AccentPallet` for better visual consistency
+  - update(buttons): Adjusted hover color in `AdaptivePrimaryButton` for improved interaction feedback
+  - update(core:pallets): Optimized contrast for `disableColor` in `PanePallet` for accessibility compliance
+  - update(core:pallets): Added high-contrast variants to `GrayPallet` for dark/light mode support
+  - update(core:textStyles): Renamed styles in `InterTextStyles` for clearer semantic usage
+  - update(core:theme): remove  `darkBlue` from `lightAccentColors` and `darkAccentColors`
+
 # 1.14.0+21
 - [Refactor] : Improve color and shape of `ChipTextBox` component [#47](https://github.com/pactus-project/pactus-gui-widgetbook/pull/48)
   - improve text readability with updated color scheme 
