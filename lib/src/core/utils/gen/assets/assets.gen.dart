@@ -39,16 +39,16 @@ class $AssetsFontsGen {
 
   /// List of all assets
   List<String> get values => [
-        interBlack,
-        interBold,
-        interExtraBold,
-        interExtraLight,
-        interLight,
-        interMedium,
-        interRegular,
-        interSemiBold,
-        interThin
-      ];
+    interBlack,
+    interBold,
+    interExtraBold,
+    interExtraLight,
+    interLight,
+    interMedium,
+    interRegular,
+    interSemiBold,
+    interThin,
+  ];
 }
 
 class Assets {

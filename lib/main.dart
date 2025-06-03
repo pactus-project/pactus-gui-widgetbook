@@ -1,5 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/app_scaffold.dart';
+import 'package:pactus_gui_widgetbook/l10n/app_localizations.dart' show AppLocalizations;
 import 'package:pactus_gui_widgetbook/src/core/pallets/accent_pallet.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme_data.dart';
@@ -8,7 +9,6 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 import 'package:pactus_gui_widgetbook/src/core/utils/gen/localization/app_locales.dart';
 import 'package:pactus_gui_widgetbook/src/core/utils/gen/localization/customized_localization_addon.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'main.directories.g.dart';
 
 void main() {
