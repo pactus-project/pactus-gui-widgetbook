@@ -1,6 +1,7 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/app_scaffold.dart';
-import 'package:pactus_gui_widgetbook/l10n/app_localizations.dart' show AppLocalizations;
+import 'package:pactus_gui_widgetbook/l10n/app_localizations.dart'
+    show AppLocalizations;
 import 'package:pactus_gui_widgetbook/src/core/pallets/accent_pallet.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme.dart';
 import 'package:pactus_gui_widgetbook/src/core/theme/app_theme_data.dart';
