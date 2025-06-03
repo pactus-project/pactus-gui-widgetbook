@@ -1,3 +1,9 @@
+# 1.16.0+23
+- [Chore] : Upgrade Flutter to `v3.22.0` [#51](https://github.com/pactus-project/pactus-gui-widgetbook/pull/52)
+  - chore(deps): upgrade Flutter to v3.22.0
+    - Update `pubspec.yaml` SDK constraints.
+    - Adapt CI/CD workflows (GitHub Actions/Docker).
+
 # 1.15.0+22
 - [Update] : Update some color palettes and component color adjustments [#49](https://github.com/pactus-project/pactus-gui-widgetbook/pull/50)
   - update(core:pallets): Updated colors in `AccentPallet` for better visual consistency
