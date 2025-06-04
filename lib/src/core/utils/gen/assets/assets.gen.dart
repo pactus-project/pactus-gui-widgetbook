@@ -47,7 +47,7 @@ class $AssetsFontsGen {
         interMedium,
         interRegular,
         interSemiBold,
-        interThin
+        interThin,
       ];
 }
 

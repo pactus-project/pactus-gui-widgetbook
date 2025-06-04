@@ -12,16 +12,25 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.27.3'
+          flutter-version: '3.32.0'
       - name: Install dependencies
         run: flutter pub get
+      - name: Run Dart Format Check
+        run: |
+          dart format . --set-exit-if-changed || (
+            echo "Code formatting issues detected. Run 'dart format .' and commit the changes.";
+            exit 1;
+          )
+      - name: Run Flutter Analyze
+        run: flutter analyze
       - name: Generate Localization Files
         id: gen_l10n
         run: |
           # Run the command to generate localization files and capture the output
           output=$(flutter gen-l10n)
+          dart format .
           echo "$output"
-          
+        
           # Check if there are untranslated messages in the output
           if echo "$output" | grep -q "untranslated message"; then
             echo "::error file=lib/l10n/l10n.yaml::Error: Untranslated messages detected in your localization files."
@@ -44,15 +53,6 @@ jobs:
             echo "Error: Changes detected in translations_utils.dart. Please run the necessary custom translation utilities and commit changes.";
             exit 1;
           )
-
-      - name: Run Dart Format Check
-        run: |
-          dart format . --set-exit-if-changed || (
-            echo "Code formatting issues detected. Run 'dart format .' and commit the changes.";
-            exit 1;
-          )
-      - name: Run Flutter Analyze
-        run: flutter analyze
       - name: Run tests
         run: flutter test
 
