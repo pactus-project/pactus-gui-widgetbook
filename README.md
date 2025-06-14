@@ -99,8 +99,8 @@ This makes it easy to test how components behave with different languages and en
 ## System Requirements and Dependencies
 
 ### **Compatibility**
-- **Flutter Version**: Requires Flutter 3.3.0 or later.
-- **Dart Version**: Compatible with Dart 2.18.0 or higher.
+- **Flutter Version**: Requires [Flutter 3.32.0](https://docs.flutter.dev/release/release-notes/release-notes-3.32.0) or later.
+- **Dart Version**: Compatible with Dart 3.8.0 or higher.
 
 ### **Dependencies**
 This project utilizes the following packages:
