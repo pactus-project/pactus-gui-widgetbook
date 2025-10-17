@@ -1,3 +1,7 @@
+# 1.18.0+25
+- [Fix] : Add Transactions color pallet (dark & light) [#53](https://github.com/pactus-project/pactus-gui-widgetbook/pull/55)
+  - fix(core): adding `TransactionsPallet` in `app_theme_data.dart`
+
 # 1.17.0+24
 - [Feature] : Add Transactions color pallet (dark & light) [#53](https://github.com/pactus-project/pactus-gui-widgetbook/pull/54)
   - feat(pallets): update TransactionsPallet with status colors and improve documentation
