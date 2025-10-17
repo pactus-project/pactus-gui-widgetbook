@@ -1,3 +1,4 @@
+export 'package:pactus_gui_widgetbook/src/core/pallets/transactions_pallet.dart';
 export 'package:pactus_gui_widgetbook/src/core/pallets/blue_gray_pallet.dart';
 export 'package:pactus_gui_widgetbook/src/core/pallets/blue_pallet.dart';
 export 'package:pactus_gui_widgetbook/src/core/pallets/dark_pallet.dart';
