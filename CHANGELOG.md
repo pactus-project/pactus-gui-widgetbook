@@ -1,3 +1,12 @@
+# 1.17.0+24
+- [Feature] : Add Transactions color pallet (dark & light) [#53](https://github.com/pactus-project/pactus-gui-widgetbook/pull/54)
+  - feat(pallets): update TransactionsPallet with status colors and improve documentation
+    - Add 'failed' and 'succeed' color properties for transaction status indicators
+    - Update class documentation to reflect new color properties and usage
+    - Add light and dark theme constants with complete color definitions
+    - Implement getByIndex method for color retrieval
+    - Maintain theme extension pattern with copyWith and lerp methods
+
 # 1.16.0+23
 - [Chore] : Upgrade Flutter to `v3.22.0` [#51](https://github.com/pactus-project/pactus-gui-widgetbook/pull/52)
   - chore(deps): upgrade Flutter to v3.22.0
