@@ -11,7 +11,7 @@ import 'package:pactus_gui_widgetbook/src/core/pallets/transactions_pallet.dart'
 /// It is designed to support both light and dark modes and uses
 /// `FluentThemeData` for configuration.
 ///
-/// ### Usage: 
+/// ### Usage:
 ///
 /// This class offers methods and properties to retrieve predefined
 /// themes and typography for the application.
