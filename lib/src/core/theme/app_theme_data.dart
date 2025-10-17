@@ -1,6 +1,8 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/app_styles.dart';
 import 'package:pactus_gui_widgetbook/src/core/pallets/colors/app_colors.dart';
+import 'package:pactus_gui_widgetbook/src/core/pallets/transactions_pallet.dart'
+    show TransactionsPallet;
 
 /// ## [AppThemeData] Class Documentation
 ///
@@ -9,7 +11,7 @@ import 'package:pactus_gui_widgetbook/src/core/pallets/colors/app_colors.dart';
 /// It is designed to support both light and dark modes and uses
 /// `FluentThemeData` for configuration.
 ///
-/// ### Usage:
+/// ### Usage: 
 ///
 /// This class offers methods and properties to retrieve predefined
 /// themes and typography for the application.
@@ -63,6 +65,7 @@ class AppThemeData {
     AccentPallet.light,
     OnAccentPallet.light,
     SeedPallet.light,
+    TransactionsPallet.light,
   ];
 
   static const Iterable<ThemeExtension<dynamic>> darkExtensions = [
@@ -84,6 +87,7 @@ class AppThemeData {
     AccentPallet.dark,
     OnAccentPallet.dark,
     SeedPallet.dark,
+    TransactionsPallet.dark,
   ];
 
   /// to-do : add a proper name for each accent color after identifying
