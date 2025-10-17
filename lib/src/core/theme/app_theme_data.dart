@@ -1,8 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:pactus_gui_widgetbook/app_styles.dart';
 import 'package:pactus_gui_widgetbook/src/core/pallets/colors/app_colors.dart';
-import 'package:pactus_gui_widgetbook/src/core/pallets/transactions_pallet.dart'
-    show TransactionsPallet;
 
 /// ## [AppThemeData] Class Documentation
 ///
